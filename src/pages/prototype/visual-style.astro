@@ -1,0 +1,940 @@
+---
+// PROTOTYPE - throwaway visual exploration for the personal site.
+// Three variants of the personal-site visual direction, switchable via `?variant=`, on `/prototype/visual-style`.
+
+const shouldShowSwitcher = !import.meta.env.PROD
+
+const notes = [
+  'Why tasks earn mana instead of generic XP.',
+  'Designing a 20-minute beta quest.',
+  'What makes gamified productivity feel consequential?',
+  'Watching onboarding fail without flinching.'
+]
+
+const projects = [
+  {
+    title: 'Covenant',
+    kicker: 'Flagship project',
+    detail: 'A productivity RPG where real tasks become mana for tactical quests.',
+    metric: 'loop_closed'
+  },
+  {
+    title: 'Beta Quest',
+    kicker: 'Activation experiment',
+    detail: 'Create character, complete real work, earn mana, start a quest.',
+    metric: '20 min'
+  },
+  {
+    title: 'Founder Notes',
+    kicker: 'Public thinking',
+    detail: 'Essays on productivity, game loops, systems, and visible progress.',
+    metric: 'weekly'
+  }
+]
+---
+
+<!doctype html>
+<html lang="en" data-variant="manual">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visual Style Prototype - Yifan</title>
+    <meta name="description" content="Throwaway visual prototype for Yifan's personal website." />
+    <script is:inline>
+      const variants = ['manual', 'archive', 'workbench']
+      const requestedVariant = new URLSearchParams(window.location.search).get('variant')
+      document.documentElement.dataset.variant = variants.includes(requestedVariant) ? requestedVariant : 'manual'
+    </script>
+  </head>
+  <body>
+    <main class="manual surface variant-panel" data-prototype-variant="manual">
+      <header class="manual-nav">
+        <a href="/prototype/visual-style?variant=manual" aria-current="page">Yifan</a>
+        <nav aria-label="Primary">
+          <a href="#writing">Writing</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="manual-hero">
+        <p class="eyebrow">FIELD MANUAL / BUILDING IN PUBLIC</p>
+        <div>
+          <h1>I build software systems where effort turns into visible progress.</h1>
+          <p class="lede">
+            Product notes, design decisions, and field reports from the intersection of productivity, RPG loops,
+            narrative, and software craft.
+          </p>
+        </div>
+        <aside class="ledger" aria-label="Current status">
+          <p class="ledger-label">CURRENT QUEST</p>
+          <h2>Covenant beta</h2>
+          <p>Recruit 50-100 qualified users who close the core loop: real work -> mana -> quest.</p>
+          <a href="#covenant">Read the case file</a>
+        </aside>
+      </section>
+
+      <section class="manual-grid" id="writing" aria-labelledby="manual-writing-title">
+        <div>
+          <p class="section-number">01</p>
+          <h2 id="manual-writing-title">Latest field notes</h2>
+        </div>
+        <div class="note-stack">
+          {notes.map((note, index) => (
+            <article class="field-note">
+              <p>{String(index + 1).padStart(2, '0')} / PRODUCT DESIGN</p>
+              <h3>{note}</h3>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="manual-grid" id="projects" aria-labelledby="manual-projects-title">
+        <div>
+          <p class="section-number">02</p>
+          <h2 id="manual-projects-title">Selected systems</h2>
+        </div>
+        <div class="project-list">
+          {projects.map((project) => (
+            <article class="project-row">
+              <div>
+                <p>{project.kicker}</p>
+                <h3>{project.title}</h3>
+              </div>
+              <p>{project.detail}</p>
+              <strong>{project.metric}</strong>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <main class="archive surface variant-panel" data-prototype-variant="archive">
+      <header class="archive-nav">
+        <span>YIFAN / ARC-017</span>
+        <nav aria-label="Primary">
+          <a href="#covenant">Covenant</a>
+          <a href="#dispatches">Dispatches</a>
+          <a href="#signal">Signal</a>
+        </nav>
+      </header>
+
+      <section class="archive-hero" id="covenant">
+        <div class="archive-copy">
+          <p class="eyebrow">ACTIVE CASE STUDY</p>
+          <h1>Complete tasks. Kill demons. Learn what actually makes people return.</h1>
+          <p>
+            A darker product journal about Covenant, gameful productivity, activation loops, and the search for rewards
+            that feel earned instead of decorative.
+          </p>
+          <div class="archive-actions">
+            <a href="#dispatches">Read dispatches</a>
+            <a href="#signal">Join the beta signal</a>
+          </div>
+        </div>
+        <div class="ritual-panel" aria-label="Covenant activation loop">
+          <p>LOOP TRACE</p>
+          <ol>
+            <li>Create character</li>
+            <li>Complete real work</li>
+            <li>Earn mana</li>
+            <li>Start quest</li>
+          </ol>
+          <strong>STATUS: TESTING</strong>
+        </div>
+      </section>
+
+      <section class="archive-band" id="dispatches" aria-label="Dispatches">
+        {projects.map((project) => (
+          <article class="archive-card">
+            <p>{project.kicker}</p>
+            <h2>{project.title}</h2>
+            <span>{project.metric}</span>
+            <p>{project.detail}</p>
+          </article>
+        ))}
+      </section>
+
+      <section class="signal" id="signal">
+        <p>TRANSMISSION</p>
+        <h2>Looking for sharp feedback from people who understand RPGs, habit systems, and unfinished tools.</h2>
+      </section>
+    </main>
+
+    <main class="workbench surface variant-panel" data-prototype-variant="workbench">
+      <aside class="workbench-rail" aria-label="Site sections">
+        <strong>YF</strong>
+        <a href="#now">Now</a>
+        <a href="#notes">Notes</a>
+        <a href="#systems">Systems</a>
+      </aside>
+
+      <section class="workbench-main">
+        <header class="workbench-hero" id="now">
+          <p class="eyebrow">NOW BUILDING</p>
+          <h1>Systems, product loops, and tools for turning intent into motion.</h1>
+          <p>
+            A personal site as working surface: fewer polished claims, more decisions, artifacts, experiments, and traces
+            of how the work is made.
+          </p>
+        </header>
+
+        <section class="split-board" id="notes">
+          <div class="board-column">
+            <p class="column-label">NOTES</p>
+            {notes.slice(0, 3).map((note) => (
+              <article class="workbench-note">
+                <h2>{note}</h2>
+                <p>Short essay, design memo, or field report.</p>
+              </article>
+            ))}
+          </div>
+
+          <div class="board-column accent-column" id="systems">
+            <p class="column-label">SYSTEMS</p>
+            {projects.map((project) => (
+              <article class="system-line">
+                <span>{project.metric}</span>
+                <div>
+                  <h2>{project.title}</h2>
+                  <p>{project.detail}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </section>
+    </main>
+
+    {
+      shouldShowSwitcher && (
+        <nav class="prototype-switcher" aria-label="Prototype variant switcher">
+          <a href="/prototype/visual-style?variant=archive" data-switch="previous" aria-label="Previous variant">←</a>
+          <span data-variant-label>MANUAL - Field Manual</span>
+          <a href="/prototype/visual-style?variant=archive" data-switch="next" aria-label="Next variant">→</a>
+        </nav>
+      )
+    }
+
+    {
+      shouldShowSwitcher && (
+        <script is:inline>
+          const variantLabels = {
+            manual: 'Field Manual',
+            archive: 'Covenant Archive',
+            workbench: 'Systems Workbench'
+          }
+          const variantKeys = Object.keys(variantLabels)
+          const ignoredTags = ['INPUT', 'TEXTAREA', 'SELECT']
+
+          const getActiveVariant = () => {
+            const requested = new URLSearchParams(window.location.search).get('variant')
+            return variantKeys.includes(requested) ? requested : 'manual'
+          }
+
+          const updateSwitcher = (variant) => {
+            const index = variantKeys.indexOf(variant)
+            const previousVariant = variantKeys[(index + variantKeys.length - 1) % variantKeys.length]
+            const nextVariant = variantKeys[(index + 1) % variantKeys.length]
+            const label = document.querySelector('[data-variant-label]')
+            const previous = document.querySelector('[data-switch="previous"]')
+            const next = document.querySelector('[data-switch="next"]')
+
+            if (label) label.textContent = `${variant.toUpperCase()} - ${variantLabels[variant]}`
+            if (previous) previous.href = `/prototype/visual-style?variant=${previousVariant}`
+            if (next) next.href = `/prototype/visual-style?variant=${nextVariant}`
+          }
+
+          const setVariant = (variant, shouldReplace = false) => {
+            document.documentElement.dataset.variant = variant
+            updateSwitcher(variant)
+
+            const url = new URL(window.location.href)
+            url.searchParams.set('variant', variant)
+            if (shouldReplace) window.history.replaceState(null, '', url)
+            else window.history.pushState(null, '', url)
+          }
+
+          document.querySelectorAll('[data-switch]').forEach((link) => {
+            link.addEventListener('click', (event) => {
+              event.preventDefault()
+              const target = new URL(link.href).searchParams.get('variant')
+              if (target && variantKeys.includes(target)) setVariant(target)
+            })
+          })
+
+          window.addEventListener('keydown', (event) => {
+            const target = event.target
+            const isEditable = target instanceof HTMLElement && (target.isContentEditable || ignoredTags.includes(target.tagName))
+            if (isEditable || (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight')) return
+
+            const activeVariant = document.documentElement.dataset.variant || getActiveVariant()
+            const index = variantKeys.indexOf(activeVariant)
+            const nextIndex = event.key === 'ArrowLeft'
+              ? (index + variantKeys.length - 1) % variantKeys.length
+              : (index + 1) % variantKeys.length
+            setVariant(variantKeys[nextIndex])
+          })
+
+          window.addEventListener('popstate', () => setVariant(getActiveVariant(), true))
+          setVariant(getActiveVariant(), true)
+        </script>
+      )
+    }
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    color-scheme: light;
+    --paper: #f4f0e8;
+    --paper-deep: #e7dfd2;
+    --ink: #171512;
+    --muted: #6b6258;
+    --line: #2a2621;
+    --red: #a33a2b;
+    --green: #2f6b4f;
+    --gold: #b8872d;
+    --dark: #171512;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    min-height: 100%;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Atkinson Hyperlegible, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: 0;
+  }
+
+  body {
+    min-height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  .variant-panel {
+    display: none;
+  }
+
+  html[data-variant='manual'] .manual {
+    display: block;
+  }
+
+  html[data-variant='archive'] .archive {
+    display: block;
+  }
+
+  html[data-variant='workbench'] .workbench {
+    display: grid;
+  }
+
+  .surface {
+    min-height: 100vh;
+    padding: 28px;
+    padding-bottom: 112px;
+  }
+
+  .eyebrow,
+  .section-number,
+  .ledger-label,
+  .field-note p,
+  .project-row p:first-child,
+  .archive-nav,
+  .archive-card p:first-child,
+  .signal p,
+  .column-label,
+  .workbench-rail,
+  .system-line span {
+    font-family: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.3;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .prototype-switcher {
+    position: fixed;
+    z-index: 50;
+    left: 50%;
+    bottom: 22px;
+    display: grid;
+    grid-template-columns: 44px minmax(190px, auto) 44px;
+    align-items: center;
+    min-height: 48px;
+    overflow: hidden;
+    border: 1px solid rgba(244, 240, 232, 0.2);
+    border-radius: 999px;
+    background: #11100e;
+    color: #f4f0e8;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+    transform: translateX(-50%);
+  }
+
+  .prototype-switcher a,
+  .prototype-switcher span {
+    display: grid;
+    min-height: 48px;
+    place-items: center;
+    text-decoration: none;
+  }
+
+  .prototype-switcher span {
+    padding: 0 18px;
+    border-right: 1px solid rgba(244, 240, 232, 0.16);
+    border-left: 1px solid rgba(244, 240, 232, 0.16);
+    font-family: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .prototype-switcher a:hover {
+    background: #a33a2b;
+  }
+
+  .manual {
+    background:
+      linear-gradient(rgba(42, 38, 33, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(42, 38, 33, 0.04) 1px, transparent 1px),
+      var(--paper);
+    background-size: 28px 28px;
+  }
+
+  .manual-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1160px;
+    margin: 0 auto 76px;
+    border-bottom: 1px solid rgba(42, 38, 33, 0.28);
+    padding-bottom: 16px;
+    font-family: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    font-size: 13px;
+  }
+
+  .manual-nav nav {
+    display: flex;
+    gap: 22px;
+  }
+
+  .manual-hero {
+    display: grid;
+    grid-template-columns: 130px minmax(0, 1fr) 300px;
+    gap: 42px;
+    align-items: start;
+    max-width: 1160px;
+    margin: 0 auto 96px;
+  }
+
+  .manual-hero h1 {
+    max-width: 760px;
+    font-family: Fraunces, Georgia, serif;
+    font-size: clamp(56px, 8vw, 112px);
+    font-weight: 650;
+    line-height: 0.9;
+  }
+
+  .manual .lede {
+    max-width: 650px;
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 20px;
+    line-height: 1.55;
+  }
+
+  .ledger {
+    border-top: 4px solid var(--red);
+    border-bottom: 1px solid rgba(42, 38, 33, 0.26);
+    padding: 18px 0 20px;
+  }
+
+  .ledger h2 {
+    margin: 18px 0 12px;
+    font-family: Fraunces, Georgia, serif;
+    font-size: 31px;
+    line-height: 1;
+  }
+
+  .ledger p:not(.ledger-label) {
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .ledger a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--red);
+    font-weight: 700;
+  }
+
+  .manual-grid {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 72px;
+    max-width: 1160px;
+    margin: 0 auto 72px;
+    border-top: 1px solid rgba(42, 38, 33, 0.28);
+    padding-top: 22px;
+  }
+
+  .manual-grid h2 {
+    margin-top: 12px;
+    font-family: Fraunces, Georgia, serif;
+    font-size: 32px;
+  }
+
+  .note-stack {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
+  }
+
+  .field-note {
+    min-height: 155px;
+    border-bottom: 1px solid rgba(42, 38, 33, 0.24);
+    padding: 2px 0 26px;
+  }
+
+  .field-note h3 {
+    margin-top: 18px;
+    font-family: Fraunces, Georgia, serif;
+    font-size: 29px;
+    line-height: 1.02;
+  }
+
+  .project-list {
+    border-top: 2px solid var(--ink);
+  }
+
+  .project-row {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr) 120px;
+    gap: 28px;
+    align-items: start;
+    border-bottom: 1px solid rgba(42, 38, 33, 0.26);
+    padding: 24px 0;
+  }
+
+  .project-row h3 {
+    margin-top: 6px;
+    font-family: Fraunces, Georgia, serif;
+    font-size: 30px;
+  }
+
+  .project-row > p {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .project-row strong {
+    justify-self: end;
+    color: var(--green);
+    font-family: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    font-size: 13px;
+  }
+
+  .archive {
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 18% 12%, rgba(163, 58, 43, 0.32), transparent 28%),
+      linear-gradient(135deg, #171512 0%, #241a17 52%, #0e0d0c 100%);
+    color: #f4f0e8;
+  }
+
+  .archive::before {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(244, 240, 232, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(244, 240, 232, 0.028) 1px, transparent 1px);
+    background-size: 48px 48px;
+    content: '';
+  }
+
+  .archive-nav {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1180px;
+    margin: 0 auto 88px;
+    color: rgba(244, 240, 232, 0.7);
+  }
+
+  .archive-nav nav {
+    display: flex;
+    gap: 24px;
+  }
+
+  .archive-hero {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 80px;
+    align-items: end;
+    max-width: 1180px;
+    min-height: 560px;
+    margin: 0 auto 88px;
+  }
+
+  .archive-copy h1 {
+    max-width: 860px;
+    margin-top: 22px;
+    font-family: Fraunces, Georgia, serif;
+    font-size: clamp(60px, 8vw, 116px);
+    line-height: 0.86;
+  }
+
+  .archive-copy > p:not(.eyebrow) {
+    max-width: 620px;
+    margin-top: 30px;
+    color: rgba(244, 240, 232, 0.72);
+    font-size: 20px;
+    line-height: 1.55;
+  }
+
+  .archive-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 34px;
+  }
+
+  .archive-actions a {
+    border: 1px solid rgba(244, 240, 232, 0.22);
+    padding: 12px 16px;
+    background: rgba(244, 240, 232, 0.08);
+    color: #f4f0e8;
+    font-family: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .archive-actions a:first-child {
+    background: var(--red);
+    border-color: var(--red);
+  }
+
+  .ritual-panel {
+    border: 1px solid rgba(244, 240, 232, 0.22);
+    padding: 24px;
+    background: rgba(14, 13, 12, 0.62);
+    box-shadow: inset 0 0 0 1px rgba(163, 58, 43, 0.25), 0 30px 70px rgba(0, 0, 0, 0.36);
+  }
+
+  .ritual-panel p,
+  .ritual-panel strong {
+    color: var(--gold);
+    font-family: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .ritual-panel ol {
+    display: grid;
+    gap: 18px;
+    margin: 28px 0;
+    padding: 0;
+    list-style-position: inside;
+    color: rgba(244, 240, 232, 0.82);
+    font-family: Fraunces, Georgia, serif;
+    font-size: 26px;
+  }
+
+  .archive-band {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1180px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(244, 240, 232, 0.2);
+    border-left: 1px solid rgba(244, 240, 232, 0.16);
+  }
+
+  .archive-card {
+    min-height: 260px;
+    border-right: 1px solid rgba(244, 240, 232, 0.16);
+    border-bottom: 1px solid rgba(244, 240, 232, 0.16);
+    padding: 24px;
+  }
+
+  .archive-card h2 {
+    margin-top: 42px;
+    font-family: Fraunces, Georgia, serif;
+    font-size: 36px;
+    line-height: 0.96;
+  }
+
+  .archive-card span {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--gold);
+    font-family: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+    font-size: 12px;
+  }
+
+  .archive-card p:last-child {
+    margin-top: 28px;
+    color: rgba(244, 240, 232, 0.66);
+    line-height: 1.55;
+  }
+
+  .signal {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 86px auto 0;
+    border-top: 4px solid var(--red);
+    padding-top: 24px;
+  }
+
+  .signal h2 {
+    max-width: 900px;
+    margin-top: 16px;
+    font-family: Fraunces, Georgia, serif;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 0.95;
+  }
+
+  .workbench {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 28px;
+    background: #f8f7f2;
+  }
+
+  .workbench-rail {
+    position: sticky;
+    top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    height: calc(100vh - 56px);
+    border-right: 1px solid rgba(23, 21, 18, 0.16);
+    padding: 6px 28px 0 0;
+    color: var(--muted);
+  }
+
+  .workbench-rail strong {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 34px;
+    place-items: center;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+  }
+
+  .workbench-rail a {
+    text-decoration: none;
+  }
+
+  .workbench-main {
+    min-width: 0;
+    max-width: 1180px;
+  }
+
+  .workbench-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 60px;
+    align-items: end;
+    min-height: 420px;
+    border-bottom: 1px solid rgba(23, 21, 18, 0.18);
+    padding: 36px 0 56px;
+  }
+
+  .workbench-hero h1 {
+    grid-column: 1;
+    max-width: 850px;
+    margin-top: 20px;
+    font-family: 'Arial Narrow', 'Inter Tight', Inter, ui-sans-serif, system-ui, sans-serif;
+    font-size: clamp(56px, 8vw, 110px);
+    font-weight: 800;
+    line-height: 0.9;
+    text-transform: uppercase;
+  }
+
+  .workbench-hero p:last-child {
+    grid-column: 2;
+    align-self: end;
+    color: var(--muted);
+    font-size: 19px;
+    line-height: 1.55;
+  }
+
+  .workbench-hero .eyebrow {
+    grid-column: 1 / -1;
+  }
+
+  .split-board {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 34px;
+    padding-top: 34px;
+  }
+
+  .board-column {
+    display: grid;
+    align-content: start;
+    gap: 16px;
+  }
+
+  .column-label {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 10px;
+  }
+
+  .workbench-note {
+    display: grid;
+    gap: 18px;
+    border-bottom: 1px solid rgba(23, 21, 18, 0.16);
+    padding: 20px 0 24px;
+  }
+
+  .workbench-note h2 {
+    font-size: 30px;
+    line-height: 1.05;
+  }
+
+  .workbench-note p,
+  .system-line p {
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .accent-column {
+    border-left: 1px solid rgba(23, 21, 18, 0.18);
+    padding-left: 34px;
+  }
+
+  .system-line {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 22px;
+    border-bottom: 1px solid rgba(23, 21, 18, 0.16);
+    padding: 22px 0;
+  }
+
+  .system-line span {
+    color: var(--green);
+  }
+
+  .system-line h2 {
+    margin-bottom: 8px;
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  @media (max-width: 920px) {
+    .surface {
+      padding: 20px;
+      padding-bottom: 104px;
+    }
+
+    .manual-nav,
+    .archive-nav {
+      margin-bottom: 46px;
+    }
+
+    .manual-hero,
+    .manual-grid,
+    .archive-hero,
+    .archive-band,
+    html[data-variant='workbench'] .workbench,
+    .workbench-hero,
+    .split-board {
+      grid-template-columns: 1fr;
+    }
+
+    .manual-hero,
+    .archive-hero {
+      gap: 34px;
+      min-height: auto;
+      margin-bottom: 58px;
+    }
+
+    .manual-hero h1,
+    .archive-copy h1,
+    .workbench-hero h1 {
+      font-size: 56px;
+    }
+
+    .workbench-hero h1,
+    .workbench-hero p:last-child,
+    .workbench-hero .eyebrow {
+      grid-column: auto;
+    }
+
+    .note-stack {
+      grid-template-columns: 1fr;
+    }
+
+    .project-row {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .project-row strong {
+      justify-self: start;
+    }
+
+    .archive-band {
+      border-left: 0;
+    }
+
+    .archive-card {
+      border-right: 0;
+    }
+
+    .workbench-rail {
+      position: static;
+      flex-direction: row;
+      align-items: center;
+      height: auto;
+      border-right: 0;
+      border-bottom: 1px solid rgba(23, 21, 18, 0.16);
+      padding: 0 0 18px;
+    }
+
+    .workbench-rail strong {
+      margin: 0 auto 0 0;
+    }
+
+    .accent-column {
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    .prototype-switcher {
+      grid-template-columns: 42px minmax(150px, auto) 42px;
+      max-width: calc(100vw - 24px);
+    }
+
+    .prototype-switcher span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+</style>
