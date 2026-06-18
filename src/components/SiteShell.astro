@@ -1,6 +1,7 @@
 ---
 import { getAlternateLinks, getLocalizedPath, stripLocalePrefix, type Locale } from '../lib/i18n';
 import { NAV_COPY } from '../lib/ui';
+import ThemeToggle from './ThemeToggle.astro';
 
 type Props = {
 	locale: Locale;
@@ -37,6 +38,14 @@ const isActive = (path: string) => {
 				</a>
 			))}
 		</nav>
+
+		<ThemeToggle
+			label={copy.themeLabel}
+			lightLabel={copy.theme.light}
+			darkLabel={copy.theme.dark}
+			switchToLightLabel={copy.theme.switchToLight}
+			switchToDarkLabel={copy.theme.switchToDark}
+		/>
 
 		<nav class="site-shell__languages" aria-label={copy.languageLabel}>
 			{languageLinks.map((link) => (
@@ -109,7 +118,12 @@ const isActive = (path: string) => {
 		display: block;
 		width: 100%;
 		height: 100%;
+		transition: filter var(--theme-transition-duration) var(--theme-transition-easing);
 		object-fit: contain;
+	}
+
+	:global([data-theme='dark']) .site-shell__mark img {
+		filter: invert(1);
 	}
 
 	.site-shell__nav,
@@ -167,6 +181,11 @@ const isActive = (path: string) => {
 			align-items: center;
 			justify-content: flex-end;
 			gap: 10px 16px;
+		}
+
+		.site-shell__rail :global(.theme-toggle) {
+			grid-column: 2;
+			justify-self: end;
 		}
 
 		.site-shell__languages {

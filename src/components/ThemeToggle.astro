@@ -1,0 +1,184 @@
+---
+type Props = {
+	label: string;
+	lightLabel: string;
+	darkLabel: string;
+	switchToLightLabel: string;
+	switchToDarkLabel: string;
+};
+
+const { label, lightLabel, darkLabel, switchToLightLabel, switchToDarkLabel } = Astro.props;
+---
+
+<div class="theme-toggle" aria-label={label}>
+	<span class="theme-toggle__label">{label}</span>
+	<button
+		class="theme-toggle__button"
+		type="button"
+		data-theme-toggle
+		data-light-label={lightLabel}
+		data-dark-label={darkLabel}
+		data-switch-to-light-label={switchToLightLabel}
+		data-switch-to-dark-label={switchToDarkLabel}
+		aria-label={switchToDarkLabel}
+		aria-pressed="false"
+	>
+		<span class="theme-toggle__track" aria-hidden="true">
+			<span class="theme-toggle__thumb"></span>
+		</span>
+		<span data-theme-current>{lightLabel}</span>
+	</button>
+</div>
+
+<script>
+	const storageKey = 'yifan-theme';
+	const transitionDuration = 320;
+	const root = document.documentElement;
+	const toggles = document.querySelectorAll<HTMLButtonElement>('[data-theme-toggle]');
+	const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+	let transitionTimer: number | undefined;
+
+	const isTheme = (value: string | null): value is 'light' | 'dark' =>
+		value === 'light' || value === 'dark';
+
+	const getStoredTheme = () => {
+		try {
+			const storedTheme = localStorage.getItem(storageKey);
+			return isTheme(storedTheme) ? storedTheme : null;
+		} catch {
+			return null;
+		}
+	};
+
+	const getSystemTheme = () =>
+		window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+	const getCurrentTheme = () => {
+		const activeTheme = root.dataset.theme;
+		return isTheme(activeTheme ?? null) ? activeTheme : getStoredTheme() ?? getSystemTheme();
+	};
+
+	const persistTheme = (theme: 'light' | 'dark') => {
+		try {
+			localStorage.setItem(storageKey, theme);
+		} catch {
+			// Private browsing modes can reject storage; the in-page toggle should still work.
+		}
+	};
+
+	const updateToggle = (toggle: HTMLButtonElement, theme: 'light' | 'dark') => {
+		const currentLabel = toggle.querySelector<HTMLElement>('[data-theme-current]');
+		const isDark = theme === 'dark';
+
+		toggle.setAttribute('aria-pressed', String(isDark));
+		toggle.setAttribute(
+			'aria-label',
+			isDark ? toggle.dataset.switchToLightLabel ?? '' : toggle.dataset.switchToDarkLabel ?? '',
+		);
+
+		if (currentLabel) {
+			currentLabel.textContent = isDark ? toggle.dataset.darkLabel ?? '' : toggle.dataset.lightLabel ?? '';
+		}
+	};
+
+	const applyTheme = (theme: 'light' | 'dark') => {
+		root.dataset.theme = theme;
+		root.style.colorScheme = theme;
+		toggles.forEach((toggle) => updateToggle(toggle, theme));
+	};
+
+	const applyThemeWithTransition = (theme: 'light' | 'dark') => {
+		if (reducedMotionQuery.matches) {
+			applyTheme(theme);
+			return;
+		}
+
+		window.clearTimeout(transitionTimer);
+		root.style.setProperty('--theme-transition-overlay', getComputedStyle(document.body).backgroundColor);
+		root.dataset.themeTransition = 'true';
+		root.getBoundingClientRect();
+		applyTheme(theme);
+
+		transitionTimer = window.setTimeout(() => {
+			delete root.dataset.themeTransition;
+			root.style.removeProperty('--theme-transition-overlay');
+		}, transitionDuration);
+	};
+
+	applyTheme(getCurrentTheme());
+
+	toggles.forEach((toggle) => {
+		toggle.addEventListener('click', () => {
+			const nextTheme = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+			applyThemeWithTransition(nextTheme);
+			persistTheme(nextTheme);
+		});
+	});
+</script>
+
+<style>
+	.theme-toggle {
+		display: grid;
+		gap: 8px;
+		padding-top: 22px;
+		border-top: 1px solid var(--color-line);
+	}
+
+	.theme-toggle__label {
+		color: var(--color-muted);
+		font-size: 0.68rem;
+		letter-spacing: 0.05em;
+	}
+
+	.theme-toggle__button {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		width: fit-content;
+		border: 1px solid var(--color-line);
+		border-radius: 2px;
+		padding: 6px 7px;
+		background: transparent;
+		color: var(--color-ink);
+		cursor: pointer;
+		font: inherit;
+		text-transform: uppercase;
+	}
+
+	.theme-toggle__button:hover,
+	.theme-toggle__button:focus-visible {
+		border-color: var(--color-ink);
+		color: var(--color-green);
+	}
+
+	.theme-toggle__track {
+		position: relative;
+		width: 28px;
+		height: 14px;
+		border: 1px solid var(--color-ink);
+		background: var(--color-bg);
+	}
+
+	.theme-toggle__thumb {
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		width: 8px;
+		height: 8px;
+		background: var(--color-ink);
+		transition: transform 160ms ease;
+	}
+
+	:global([data-theme='dark']) .theme-toggle__thumb {
+		transform: translateX(14px);
+	}
+
+	@media (max-width: 920px) {
+		.theme-toggle {
+			align-items: center;
+			justify-items: end;
+			padding-top: 0;
+			border-top: 0;
+		}
+	}
+</style>

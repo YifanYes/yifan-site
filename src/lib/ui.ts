@@ -18,6 +18,13 @@ export const NAV_COPY: Record<
 		languageLabel: string;
 		homeLabel: string;
 		skipLabel: string;
+		themeLabel: string;
+		theme: {
+			light: string;
+			dark: string;
+			switchToLight: string;
+			switchToDark: string;
+		};
 		links: { label: string; path: string }[];
 	}
 > = {
@@ -26,6 +33,13 @@ export const NAV_COPY: Record<
 		languageLabel: 'Language',
 		homeLabel: 'Yifan home',
 		skipLabel: 'Skip to content',
+		themeLabel: 'Theme',
+		theme: {
+			light: 'Light',
+			dark: 'Dark',
+			switchToLight: 'Switch to light theme',
+			switchToDark: 'Switch to dark theme',
+		},
 		links: [
 			{ label: 'Now', path: '/now' },
 			{ label: 'Writing', path: '/writing' },
@@ -40,6 +54,13 @@ export const NAV_COPY: Record<
 		languageLabel: 'Idioma',
 		homeLabel: 'Inicio de Yifan',
 		skipLabel: 'Saltar al contenido',
+		themeLabel: 'Tema',
+		theme: {
+			light: 'Claro',
+			dark: 'Oscuro',
+			switchToLight: 'Cambiar al tema claro',
+			switchToDark: 'Cambiar al tema oscuro',
+		},
 		links: [
 			{ label: 'Ahora', path: '/now' },
 			{ label: 'Escritura', path: '/writing' },
