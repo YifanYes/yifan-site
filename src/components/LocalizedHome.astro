@@ -1,0 +1,205 @@
+---
+import { getAlternateLinks, type Locale } from '../lib/i18n';
+import { HOME_COPY } from '../lib/ui';
+
+type Props = {
+	locale: Locale;
+};
+
+const { locale } = Astro.props;
+const copy = HOME_COPY[locale];
+const languageLinks = getAlternateLinks(Astro.url.pathname).filter((link) => link.locale !== 'x-default');
+---
+
+<main class="home-surface">
+	<header class="site-rail" aria-label={copy.languageLabel}>
+		<a class="mark" href={`/${locale}/`} aria-label="Yifan home">YF</a>
+		<nav>
+			{languageLinks.map((link) => (
+				<a href={link.path} aria-current={link.locale === locale ? 'page' : undefined}>
+					{link.label}
+				</a>
+			))}
+		</nav>
+	</header>
+
+	<section class="home-board" aria-labelledby="home-title">
+		<div class="home-copy">
+			<p class="module-label">{copy.moduleLabel}</p>
+			<p class="eyebrow">{copy.eyebrow}</p>
+			<h1 id="home-title">{copy.title}</h1>
+			<p class="lede">{copy.lede}</p>
+		</div>
+
+		<aside class="status-panel" aria-label={copy.statusLabel}>
+			<p>{copy.statusLabel}</p>
+			<ul>
+				{copy.statusItems.map((item) => <li>{item}</li>)}
+			</ul>
+		</aside>
+	</section>
+</main>
+
+<style>
+	.home-surface {
+		min-height: 100vh;
+		display: grid;
+		grid-template-columns: minmax(128px, 0.22fr) minmax(0, 1fr);
+		border-top: 1px solid #171512;
+	}
+
+	.site-rail {
+		border-right: 1px solid rgba(23, 21, 18, 0.2);
+		padding: 24px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 48px;
+	}
+
+	.mark {
+		color: #171512;
+		font-family: 'IBM Plex Mono', SFMono-Regular, Consolas, monospace;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.site-rail nav {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.site-rail a {
+		color: #171512;
+		font-family: 'IBM Plex Mono', SFMono-Regular, Consolas, monospace;
+		font-size: 0.78rem;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
+	.site-rail a[aria-current='page'] {
+		color: #2f6b4f;
+	}
+
+	.home-board {
+		width: min(100%, 1180px);
+		align-self: center;
+		padding: 72px clamp(24px, 6vw, 88px);
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(240px, 340px);
+		gap: clamp(32px, 6vw, 80px);
+	}
+
+	.home-copy {
+		max-width: 760px;
+		min-width: 0;
+	}
+
+	.module-label,
+	.eyebrow,
+	.status-panel p {
+		margin: 0;
+		font-family: 'IBM Plex Mono', SFMono-Regular, Consolas, monospace;
+		font-size: 0.78rem;
+		text-transform: uppercase;
+	}
+
+	.module-label {
+		margin-bottom: 48px;
+		color: #2f6b4f;
+	}
+
+	.eyebrow {
+		margin-bottom: 18px;
+		color: #6b6258;
+	}
+
+	h1 {
+		max-width: 900px;
+		margin: 0;
+		font-family:
+			'Arial Narrow',
+			'Inter Tight',
+			Arial,
+			sans-serif;
+		font-size: clamp(3rem, 7vw, 6.8rem);
+		line-height: 0.92;
+		letter-spacing: 0;
+		text-transform: uppercase;
+	}
+
+	.lede {
+		max-width: 660px;
+		margin: 32px 0 0;
+		color: #4f4840;
+		font-size: 1.06rem;
+		line-height: 1.7;
+	}
+
+	.status-panel {
+		align-self: end;
+		border-top: 1px solid #171512;
+		min-width: 0;
+		padding-top: 18px;
+	}
+
+	.status-panel p {
+		margin-bottom: 18px;
+		color: #a33a2b;
+	}
+
+	.status-panel ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		border-bottom: 1px solid rgba(23, 21, 18, 0.16);
+	}
+
+	.status-panel li {
+		border-top: 1px solid rgba(23, 21, 18, 0.16);
+		padding: 14px 0;
+		color: #171512;
+		font-family: 'IBM Plex Mono', SFMono-Regular, Consolas, monospace;
+		font-size: 0.82rem;
+		line-height: 1.45;
+	}
+
+	@media (max-width: 820px) {
+		.home-surface {
+			display: block;
+		}
+
+		.site-rail {
+			border-right: 0;
+			border-bottom: 1px solid rgba(23, 21, 18, 0.2);
+			flex-direction: row;
+			align-items: center;
+			padding: 18px 20px;
+		}
+
+		.site-rail nav {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+		}
+
+		.home-board {
+			padding: 42px 20px 56px;
+			grid-template-columns: 1fr;
+		}
+
+		.module-label {
+			margin-bottom: 36px;
+		}
+
+		h1 {
+			font-size: clamp(2.7rem, 15vw, 5.2rem);
+			overflow-wrap: anywhere;
+		}
+
+		.status-panel {
+			align-self: start;
+		}
+	}
+</style>

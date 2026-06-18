@@ -1,0 +1,12 @@
+---
+import LocalizedHome from '../../components/LocalizedHome.astro';
+import Layout from '../../layouts/Layout.astro';
+import { HOME_COPY } from '../../lib/ui';
+
+const locale = 'en';
+const copy = HOME_COPY[locale];
+---
+
+<Layout title={copy.metaTitle} description={copy.description} locale={locale} path="/en/">
+	<LocalizedHome locale={locale} />
+</Layout>

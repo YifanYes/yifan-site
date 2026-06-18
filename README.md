@@ -81,33 +81,56 @@ Core visual patterns to preserve:
 
 ## Site Structure
 
-Planned routes:
+Planned localized routes use English and Spanish prefixes from the start. The root route redirects to the English source locale.
 
 ```text
 /
+  Redirects to /en/.
+
+/en
+/es
   Homepage: identity, current work, latest writing, selected notes, and selected projects.
 
-/now
+/{locale}/now
   What I am building, studying, training, and thinking about right now.
 
-/writing
+/{locale}/writing
   Long-form articles and essays.
 
-/notes
+/{locale}/notes
   Curated shorter notes, working models, references, and Obsidian exports.
 
-/documents
+/{locale}/documents
   Longer imported documents, study notes, PDFs, or polished Obsidian artifacts.
 
-/projects
+/{locale}/projects
   Covenant plus other experiments, tools, prototypes, and systems.
 
-/covenant
+/{locale}/projects/covenant
   A personal case study for Covenant, distinct from the official product landing page.
 
-/about
+/{locale}/about
   Bio, areas of interest, taste, contact links, and collaboration surface.
 ```
+
+## Internationalization
+
+The source locale is English (`en`). Spanish (`es`) is supported as a first-class locale, and Spanish can still be used as a drafting language when it helps the writing process.
+
+Routing strategy:
+
+- `/en/...` and `/es/...` are the canonical public route prefixes.
+- `/` redirects to `/en/`.
+- Locale labels, prefixes, default locale, source locale, translation strategy, and alternate-link helpers live in `src/lib/i18n.ts`.
+- Shared user-facing copy lives in locale-keyed dictionaries, starting with `src/lib/ui.ts`, so final copy is not scattered through page templates.
+- SEO basics are handled by `src/layouts/Layout.astro`: page `lang`, title template, description, canonical URL, and alternate `hreflang` links.
+- Add Astro's `site` config value once the production domain is final so canonical and alternate URLs build as absolute production URLs.
+
+Content translation strategy:
+
+- Use one content file per locale once Astro Content Collections are added.
+- Use `locale` on every content entry.
+- Use `translationOf` to connect translated entries across locales.
 
 ## Content Model
 

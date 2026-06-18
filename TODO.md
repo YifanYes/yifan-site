@@ -4,13 +4,13 @@
 
 The site should support English and Spanish from the beginning. Do not hardcode final user-facing copy without deciding where translations live.
 
-- [ ] Decide i18n routing strategy: recommended `/en/...` and `/es/...`, with one default locale redirect from `/`.
-- [ ] Choose source locale: recommended English for public writing structure, Spanish allowed as first draft language when easier.
-- [ ] Add Astro i18n configuration or a small locale helper layer.
-- [ ] Define supported locales: `en` and `es`.
-- [ ] Create shared constants for locale labels, default locale, route prefixes, and alternate links.
-- [ ] Add SEO basics for both languages: `lang`, canonical URL, alternate hreflang links, title templates, descriptions.
-- [ ] Decide whether content translations are one file per locale or bilingual frontmatter references.
+- [x] Decide i18n routing strategy: `/en/...` and `/es/...`, with `/` redirecting to `/en/`.
+- [x] Choose source locale: English for public writing structure, Spanish allowed as first draft language when easier.
+- [x] Add Astro i18n configuration plus a small locale helper layer.
+- [x] Define supported locales: `en` and `es`.
+- [x] Create shared constants for locale labels, default locale, route prefixes, and alternate links.
+- [x] Add SEO basics for both languages: `lang`, canonical URL, alternate hreflang links, title templates, descriptions.
+- [x] Decide content translations are one file per locale with `translationOf` frontmatter references.
 
 ## Phase 2: Content Architecture
 
