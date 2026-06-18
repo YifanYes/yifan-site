@@ -14,13 +14,13 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 
 ## Phase 2: Content Architecture
 
-- [ ] Add Astro Content Collections.
-- [ ] Define schemas for `writing`, `notes`, `documents`, `projects`, and optional `now`.
-- [ ] Include locale-aware fields in content schemas.
-- [ ] Add required frontmatter: `title`, `description`, `date`, `type`, `area`, `tags`, `draft`, `locale`.
-- [ ] Add optional frontmatter: `source`, `curated`, `featured`, `status`, `related`, `translationOf`.
-- [ ] Decide slug strategy for translated content.
-- [ ] Create sample English and Spanish entries for each content type.
+- [x] Add Astro Content Collections.
+- [x] Define schemas for `writing`, `notes`, `documents`, `projects`, and optional `now`.
+- [x] Include locale-aware fields in content schemas.
+- [x] Add required frontmatter: `title`, `description`, `date`, `type`, `area`, `tags`, `draft`, `locale`.
+- [x] Add optional frontmatter: `source`, `curated`, `featured`, `status`, `related`, `translationOf`.
+- [x] Decide slug strategy for translated content.
+- [x] Create sample English and Spanish entries for each content type.
 
 ## Phase 3: Design System
 
