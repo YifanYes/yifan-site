@@ -23,7 +23,9 @@ const isActive = (path: string) => {
 	<a class="site-shell__skip" href="#main-content">{copy.skipLabel}</a>
 
 	<aside class="site-shell__rail" aria-label={copy.primaryLabel}>
-		<a class="site-shell__mark" href={`/${locale}/`} aria-label={copy.homeLabel}>YF</a>
+		<a class="site-shell__mark" href={`/${locale}/`} aria-label={copy.homeLabel}>
+			<img src="/logo.svg" alt="" width="48" height="48" />
+		</a>
 
 		<nav class="site-shell__nav" aria-label={copy.primaryLabel}>
 			{copy.links.map((link) => (
@@ -96,14 +98,18 @@ const isActive = (path: string) => {
 	}
 
 	.site-shell__mark {
-		display: grid;
+		display: block;
 		width: 48px;
 		height: 48px;
 		margin-bottom: 26px;
-		place-items: center;
-		border: 1px solid var(--color-ink);
-		color: var(--color-ink);
 		text-decoration: none;
+	}
+
+	.site-shell__mark img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
 	}
 
 	.site-shell__nav,

@@ -60,33 +60,193 @@ export const HOME_COPY: Record<
 		eyebrow: string;
 		title: string;
 		lede: string;
-		statusLabel: string;
-		statusItems: string[];
+		currentThreadsLabel: string;
+		currentThreads: { title: string; description: string; path: string }[];
+		selectedArtifactsLabel: string;
+		selectedArtifacts: { type: string; title: string; description: string; path: string }[];
+		areasLabel: string;
+		areas: { title: string; description: string; icon: 'engineering' | 'product' | 'combat' | 'frameworks'; path: string }[];
+		openQuestionsLabel: string;
+		openQuestions: string[];
 	}
 > = {
 	en: {
-		metaTitle: 'Systems Workbench',
+		metaTitle: "Yifan's Field Notes",
 		description:
 			'Engineering, product systems, philosophy, productivity, martial arts, curated notes, and selected projects from Yifan.',
 		moduleLabel: 'WORKBENCH.001 //',
 		eyebrow: 'PUBLIC WORKING SURFACE',
-		title: 'Engineering, product systems, philosophy, productivity, and disciplined practice.',
+		title: "Yifan's Field Notes",
 		lede:
-			'A bilingual personal site is taking shape around writing, notes, documents, and selected projects. English is the source locale; Spanish translations live beside it from the start.',
-		statusLabel: 'FOUNDATION',
-		statusItems: ['Locale routes: /en and /es', 'Root redirect: / -> /en/', 'Translation model: one content entry per locale'],
+			'A collection of notes, guides, articles and resources for engineering, product thinking, philosophy, productivity, martial arts, and personal projects.',
+		currentThreadsLabel: 'CURRENT THREADS',
+		currentThreads: [
+			{
+				title: 'Building the workbench',
+				description: 'Shaping the site as a public surface for writing, notes, documents, and selected projects.',
+				path: '/now',
+			},
+			{
+				title: 'Testing product systems',
+				description: 'Turning Covenant and related experiments into case studies about judgment, loops, and tradeoffs.',
+				path: '/projects',
+			},
+			{
+				title: 'Training attention',
+				description: 'Using martial arts, combat practice, and disciplined repetition as a lens for better work.',
+				path: '/notes',
+			},
+		],
+		selectedArtifactsLabel: 'SELECTED ARTIFACTS',
+		selectedArtifacts: [
+			{
+				type: 'ARTICLE',
+				title: 'Engineering as Discipline',
+				description: 'Long-form writing on craft, pressure, systems, and judgment.',
+				path: '/writing',
+			},
+			{
+				type: 'NOTE',
+				title: 'Attention Is A Training Surface',
+				description: 'A shorter model for attention, practice, and productive constraint.',
+				path: '/notes',
+			},
+			{
+				type: 'DOCUMENT',
+				title: 'Workbench Operating Notes',
+				description: 'A structured artifact for how this site is being assembled.',
+				path: '/documents',
+			},
+			{
+				type: 'PROJECT',
+				title: 'Covenant',
+				description: 'A productivity RPG where real tasks become mana for tactical quests.',
+				path: '/projects',
+			},
+		],
+		areasLabel: 'AREAS',
+		areas: [
+			{
+				title: 'Engineering',
+				description: 'Systems, architecture, craft, pressure, and implementation judgment.',
+				icon: 'engineering',
+				path: '/writing',
+			},
+			{
+				title: 'Product Systems',
+				description: 'Loops, incentives, interfaces, tradeoffs, and product strategy.',
+				icon: 'product',
+				path: '/projects',
+			},
+			{
+				title: 'Martial Arts And Combat',
+				description: 'Training notes on discipline, attention, pressure, and embodied practice.',
+				icon: 'combat',
+				path: '/notes',
+			},
+			{
+				title: 'Frameworks',
+				description: 'Reusable models for productivity, philosophy, decision-making, and study.',
+				icon: 'frameworks',
+				path: '/documents',
+			},
+		],
+		openQuestionsLabel: 'OPEN QUESTIONS',
+		openQuestions: [
+			'What makes a personal site useful before it is complete?',
+			'How should engineering notes become reusable frameworks instead of loose observations?',
+			'Where does combat practice sharpen product and engineering judgment?',
+			'How can Covenant stay visible without taking over the whole identity?',
+		],
 	},
 	es: {
-		metaTitle: 'Mesa de Sistemas',
+		metaTitle: 'Notas de campo de Yifan',
 		description:
 			'Ingeniería, sistemas de producto, filosofía, productividad, artes marciales, notas curadas y proyectos seleccionados de Yifan.',
 		moduleLabel: 'WORKBENCH.001 //',
 		eyebrow: 'SUPERFICIE PUBLICA DE TRABAJO',
-		title: 'Ingeniería, sistemas de producto, filosofía, productividad y práctica disciplinada.',
+		title: 'Notas de campo de Yifan',
 		lede:
-			'Un sitio personal bilingüe empieza a tomar forma alrededor de escritura, notas, documentos y proyectos seleccionados. El inglés es el idioma fuente; las traducciones al español viven junto a él desde el inicio.',
-		statusLabel: 'BASE',
-		statusItems: ['Rutas por idioma: /en y /es', 'Redirección raíz: / -> /en/', 'Modelo de traducción: una entrada de contenido por idioma'],
+			'Una colección de notas, guías, artículos y recursos sobre ingeniería, pensamiento de producto, filosofía, productividad, artes marciales y proyectos personales.',
+		currentThreadsLabel: 'HILOS ACTUALES',
+		currentThreads: [
+			{
+				title: 'Construyendo el workbench',
+				description: 'Dando forma al sitio como superficie publica para escritura, notas, documentos y proyectos seleccionados.',
+				path: '/now',
+			},
+			{
+				title: 'Probando sistemas de producto',
+				description: 'Convirtiendo Covenant y otros experimentos en casos sobre criterio, bucles y tradeoffs.',
+				path: '/projects',
+			},
+			{
+				title: 'Entrenando atencion',
+				description: 'Usando artes marciales, combate y repeticion disciplinada como lente para trabajar mejor.',
+				path: '/notes',
+			},
+		],
+		selectedArtifactsLabel: 'ARTEFACTOS SELECCIONADOS',
+		selectedArtifacts: [
+			{
+				type: 'ARTICLE',
+				title: 'Ingenieria como disciplina',
+				description: 'Escritura larga sobre oficio, presion, sistemas y criterio.',
+				path: '/writing',
+			},
+			{
+				type: 'NOTE',
+				title: 'La atencion es superficie de entrenamiento',
+				description: 'Un modelo breve sobre atencion, practica y restricciones productivas.',
+				path: '/notes',
+			},
+			{
+				type: 'DOCUMENT',
+				title: 'Notas operativas del workbench',
+				description: 'Un artefacto estructurado sobre como se esta ensamblando este sitio.',
+				path: '/documents',
+			},
+			{
+				type: 'PROJECT',
+				title: 'Covenant',
+				description: 'Un RPG de productividad donde tareas reales se convierten en mana para misiones tacticas.',
+				path: '/projects',
+			},
+		],
+		areasLabel: 'AREAS',
+		areas: [
+			{
+				title: 'Ingenieria',
+				description: 'Sistemas, arquitectura, oficio, presion y criterio de implementacion.',
+				icon: 'engineering',
+				path: '/writing',
+			},
+			{
+				title: 'Sistemas de producto',
+				description: 'Bucles, incentivos, interfaces, tradeoffs y estrategia de producto.',
+				icon: 'product',
+				path: '/projects',
+			},
+			{
+				title: 'Artes marciales y combate',
+				description: 'Notas de entrenamiento sobre disciplina, atencion, presion y practica encarnada.',
+				icon: 'combat',
+				path: '/notes',
+			},
+			{
+				title: 'Frameworks',
+				description: 'Modelos reutilizables para productividad, filosofia, decision y estudio.',
+				icon: 'frameworks',
+				path: '/documents',
+			},
+		],
+		openQuestionsLabel: 'PREGUNTAS ABIERTAS',
+		openQuestions: [
+			'Que hace util a un sitio personal antes de estar completo?',
+			'Como convertir notas de ingenieria en frameworks reutilizables?',
+			'Donde afina el combate el criterio de producto e ingenieria?',
+			'Como mantener Covenant visible sin que tome toda la identidad?',
+		],
 	},
 };
 

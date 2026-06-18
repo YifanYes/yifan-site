@@ -45,6 +45,18 @@ Keywords:
 
 The site may borrow some intensity from Covenant, but Covenant must not dominate the whole visual language.
 
+### Logo
+
+Use the black-hole mark from `src/assets/Black Hole Logo.svg` for the site mark and browser icon. Public runtime copies live at `public/logo.svg` and `public/favicon.svg`.
+
+Rules:
+
+- Keep the supplied black-hole silhouette as the source of truth.
+- Use it as a compact identity mark, especially in the sidebar rail and favicon.
+- Favicons need a light paper backing and dark border so the mark remains visible in dark and light browser chrome.
+- Do not add gradients, shadows, rounded badge containers, or extra decoration around it.
+- If a larger wordmark is needed later, pair the mark with a mono `YIFAN` label rather than a soft display treatment.
+
 ## Content Priorities
 
 The site is centered on:
@@ -71,6 +83,19 @@ Covenant is a major project, not the site's main identity.
 - Module labels, archive layouts, grid/list indexes, hard separators, dark close-up blocks, sober taxonomy chips, related content, and technical rectangular buttons are core visual patterns.
 - Light motion, if any. Motion should clarify state or navigation.
 - No decorative blobs, gradient orbs, generic SVG hero art, or stock-like visuals.
+
+## Typography
+
+Core stacks:
+
+```text
+Body:        Atkinson Hyperlegible, Inter, Source Sans 3, system-ui
+Display:     Arial Narrow, Inter Tight, Arial
+Mono:        IBM Plex Mono, SFMono-Regular, Consolas
+Typewriter:  IBM Plex Mono, Courier Prime, Courier New
+```
+
+Use the typewriter stack for compact editorial support copy, page header descriptions, artifact notes, and field-note style annotations. Keep it sober: normal casing, generous line-height, and no faux distressed effects.
 
 ## Core Design Patterns
 

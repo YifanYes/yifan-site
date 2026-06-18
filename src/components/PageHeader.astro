@@ -7,12 +7,13 @@ type Props = {
 	description?: string;
 	kicker?: string;
 	headingId?: string;
+	titleScale?: 'default' | 'compact';
 };
 
-const { moduleLabel, title, description, kicker, headingId } = Astro.props;
+const { moduleLabel, title, description, kicker, headingId, titleScale = 'default' } = Astro.props;
 ---
 
-<header class="page-header">
+<header class:list={['page-header', `page-header--${titleScale}`]}>
 	<div class="page-header__main">
 		<ModuleLabel label={moduleLabel} tone="green" />
 		{kicker && <p class="page-header__kicker">{kicker}</p>}
@@ -56,10 +57,17 @@ const { moduleLabel, title, description, kicker, headingId } = Astro.props;
 		text-transform: uppercase;
 	}
 
+	.page-header--compact h1 {
+		max-width: 780px;
+		font-size: clamp(2.9rem, 5.7vw, 5.5rem);
+		line-height: 0.96;
+	}
+
 	.page-header__description {
 		max-width: 340px;
 		color: #4f4840;
-		font-size: 1.05rem;
+		font-family: var(--font-typewriter);
+		font-size: 0.95rem;
 		line-height: 1.65;
 	}
 
