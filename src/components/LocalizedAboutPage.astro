@@ -1,0 +1,40 @@
+---
+import ArchiveSpecPanel from './ArchiveSpecPanel.astro';
+import PageHeader from './PageHeader.astro';
+import SiteShell from './SiteShell.astro';
+import type { Locale } from '../lib/i18n';
+import { ABOUT_COPY } from '../lib/ui';
+
+type Props = {
+	locale: Locale;
+};
+
+const { locale } = Astro.props;
+const copy = ABOUT_COPY[locale];
+---
+
+<SiteShell locale={locale}>
+	<main class="about-page">
+		<PageHeader
+			moduleLabel={copy.moduleLabel}
+			kicker={copy.kicker}
+			title={copy.title}
+			description={copy.lede}
+		/>
+
+		<section class="about-page__spec" aria-label={copy.specLabel.replace(' //', '')}>
+			<ArchiveSpecPanel label={copy.specLabel} specs={copy.specs} />
+		</section>
+	</main>
+</SiteShell>
+
+<style>
+	.about-page {
+		padding-bottom: clamp(48px, 8vw, 96px);
+	}
+
+	.about-page__spec {
+		max-width: 620px;
+		margin-top: clamp(32px, 6vw, 64px);
+	}
+</style>

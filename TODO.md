@@ -24,27 +24,27 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 
 ## Phase 3: Design System
 
-- [ ] Turn the `workbench` prototype into reusable layout primitives.
-- [ ] Create `SiteShell` with responsive navigation.
-- [ ] Create `PageHeader` with module label, title, and right-side description.
-- [ ] Create `ModuleLabel` for `ARTICLE.014 //`, `NOTE.032 //`, etc.
-- [ ] Create `TaxonomyChip` for areas, content types, source, and status.
-- [ ] Create `TechnicalButton` for rectangular mono actions.
-- [ ] Create `CloseUpBlock` for dark artifact sections.
-- [ ] Create `RelatedContent` for page endings.
-- [ ] Create `ArchiveSpecPanel` for project/document metadata.
-- [ ] Preserve the Systems Workbench direction from `DESIGN.md`.
+- [x] Turn the `workbench` prototype into reusable layout primitives.
+- [x] Create `SiteShell` with responsive navigation.
+- [x] Create `PageHeader` with module label, title, and right-side description.
+- [x] Create `ModuleLabel` for `ARTICLE.014 //`, `NOTE.032 //`, etc.
+- [x] Create `TaxonomyChip` for areas, content types, source, and status.
+- [x] Create `TechnicalButton` for rectangular mono actions.
+- [x] Create `CloseUpBlock` for dark artifact sections.
+- [x] Create `RelatedContent` for page endings.
+- [x] Create `ArchiveSpecPanel` for project/document metadata.
+- [x] Preserve the Systems Workbench direction from `DESIGN.md`.
 
 ## Phase 4: Core Pages
 
-- [ ] Replace the Astro starter homepage.
-- [ ] Build localized home pages for English and Spanish.
-- [ ] Build `/[locale]/now`.
-- [ ] Build `/[locale]/writing` index.
-- [ ] Build `/[locale]/notes` index.
-- [ ] Build `/[locale]/documents` index.
-- [ ] Build `/[locale]/projects` index.
-- [ ] Build `/[locale]/about`.
+- [x] Replace the Astro starter homepage.
+- [x] Build localized home pages for English and Spanish.
+- [x] Build `/[locale]/now`.
+- [x] Build `/[locale]/writing` index.
+- [x] Build `/[locale]/notes` index.
+- [x] Build `/[locale]/documents` index.
+- [x] Build `/[locale]/projects` index.
+- [x] Build `/[locale]/about`.
 - [ ] Build Covenant as a project/case-study page, not the center of the site.
 
 ## Phase 5: Index Patterns

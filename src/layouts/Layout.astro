@@ -7,6 +7,7 @@ import {
 	type Locale,
 } from '../lib/i18n';
 import { SITE_COPY } from '../lib/ui';
+import '../styles/workbench.css';
 
 type Props = {
 	title: string;
@@ -52,32 +53,3 @@ const alternateLinks = getAlternateLinks(canonicalPath);
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		min-height: 100%;
-	}
-
-	body {
-		background: #f8f7f2;
-		color: #171512;
-		font-family:
-			Atkinson Hyperlegible,
-			Inter,
-			Source Sans 3,
-			system-ui,
-			-apple-system,
-			BlinkMacSystemFont,
-			'Segoe UI',
-			sans-serif;
-	}
-
-	:global(*),
-	:global(*::before),
-	:global(*::after) {
-		box-sizing: border-box;
-	}
-</style>

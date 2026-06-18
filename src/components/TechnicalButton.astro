@@ -1,0 +1,69 @@
+---
+type Variant = 'default' | 'dark' | 'quiet';
+
+type Props = {
+	label?: string;
+	href?: string;
+	variant?: Variant;
+	type?: 'button' | 'submit' | 'reset';
+};
+
+const { label, href, variant = 'default', type = 'button' } = Astro.props;
+const className = `technical-button technical-button--${variant}`;
+---
+
+{
+	href ? (
+		<a class={className} href={href}>
+			<slot>{label}</slot>
+		</a>
+	) : (
+		<button class={className} type={type}>
+			<slot>{label}</slot>
+		</button>
+	)
+}
+
+<style>
+	.technical-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 40px;
+		border: 1px solid var(--color-ink);
+		border-radius: 2px;
+		padding: 11px 14px;
+		background: transparent;
+		color: var(--color-ink);
+		cursor: pointer;
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		font-weight: 700;
+		line-height: 1;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	.technical-button:hover,
+	.technical-button:focus-visible {
+		background: var(--color-ink);
+		color: var(--color-paper);
+	}
+
+	.technical-button--dark {
+		border-color: var(--color-paper);
+		background: var(--color-paper);
+		color: var(--color-ink);
+	}
+
+	.technical-button--dark:hover,
+	.technical-button--dark:focus-visible {
+		background: transparent;
+		color: var(--color-paper);
+	}
+
+	.technical-button--quiet {
+		border-color: var(--color-line);
+		color: var(--color-muted);
+	}
+</style>

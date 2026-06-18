@@ -1,0 +1,12 @@
+---
+import LocalizedAboutPage from '../../../components/LocalizedAboutPage.astro';
+import Layout from '../../../layouts/Layout.astro';
+import { ABOUT_COPY } from '../../../lib/ui';
+
+const locale = 'en';
+const copy = ABOUT_COPY[locale];
+---
+
+<Layout title={copy.metaTitle} description={copy.description} locale={locale} path="/en/about/">
+	<LocalizedAboutPage locale={locale} />
+</Layout>

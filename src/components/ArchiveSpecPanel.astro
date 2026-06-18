@@ -1,0 +1,93 @@
+---
+import ModuleLabel from './ModuleLabel.astro';
+
+type SpecValue = string | number | string[];
+
+type Spec = {
+	label: string;
+	value: SpecValue;
+};
+
+type Props = {
+	label?: string;
+	title?: string;
+	specs?: Spec[];
+};
+
+const { label = 'SPEC //', title, specs = [] } = Astro.props;
+---
+
+<aside class="archive-spec-panel">
+	<ModuleLabel label={label} tone="red" />
+	{title && <h2>{title}</h2>}
+	{specs.length > 0 && (
+		<dl>
+			{specs.map((spec) => (
+				<div class="archive-spec-panel__row">
+					<dt>{spec.label}</dt>
+					<dd>
+						{Array.isArray(spec.value)
+							? spec.value.map((value) => <span>{value}</span>)
+							: spec.value}
+					</dd>
+				</div>
+			))}
+		</dl>
+	)}
+	<slot />
+</aside>
+
+<style>
+	.archive-spec-panel {
+		border-top: 1px solid var(--color-ink);
+		min-width: 0;
+		padding-top: 18px;
+	}
+
+	h2 {
+		margin-top: 18px;
+		font-family: var(--font-display);
+		font-size: 1.8rem;
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	dl {
+		margin: 18px 0 0;
+		border-bottom: 1px solid var(--color-line);
+	}
+
+	.archive-spec-panel__row {
+		display: grid;
+		grid-template-columns: 86px minmax(0, 1fr);
+		gap: 16px;
+		border-top: 1px solid var(--color-line);
+		padding: 14px 0;
+	}
+
+	dt,
+	dd {
+		margin: 0;
+		font-family: var(--font-mono);
+		font-size: 0.78rem;
+		line-height: 1.45;
+		text-transform: uppercase;
+	}
+
+	dt {
+		color: var(--color-muted);
+	}
+
+	dd {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px 10px;
+		color: var(--color-ink);
+	}
+
+	dd span + span::before {
+		color: var(--color-muted);
+		content: '/';
+		margin-right: 10px;
+	}
+</style>

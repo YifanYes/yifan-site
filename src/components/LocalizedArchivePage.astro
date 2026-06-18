@@ -1,0 +1,156 @@
+---
+import type { Locale } from '../lib/i18n';
+import ModuleLabel from './ModuleLabel.astro';
+import PageHeader from './PageHeader.astro';
+import SiteShell from './SiteShell.astro';
+import TaxonomyChip from './TaxonomyChip.astro';
+
+type ArchiveItem = {
+	title: string;
+	description: string;
+	date: Date;
+	area: string;
+	status?: string;
+	tags: string[];
+};
+
+type Props = {
+	locale: Locale;
+	moduleLabel: string;
+	kicker: string;
+	title: string;
+	description: string;
+	listLabel: string;
+	empty: string;
+	items: ArchiveItem[];
+};
+
+const { locale, moduleLabel, kicker, title, description, listLabel, empty, items } = Astro.props;
+const dateFormatter = new Intl.DateTimeFormat(locale, {
+	year: 'numeric',
+	month: 'short',
+	day: '2-digit',
+});
+
+const formatLabel = (value: string) => value.replaceAll('-', ' ');
+---
+
+<SiteShell locale={locale}>
+	<main class="archive-page">
+		<PageHeader
+			moduleLabel={moduleLabel}
+			kicker={kicker}
+			title={title}
+			description={description}
+		/>
+
+		<section class="archive-page__list" aria-label={listLabel.replace(' //', '')}>
+			<ModuleLabel label={listLabel} />
+
+			{items.length > 0 ? (
+				<div class="archive-page__rows">
+					{items.map((item) => (
+						<article class="archive-page__row">
+							<div class="archive-page__meta">
+								<span>{dateFormatter.format(item.date)}</span>
+								<span>{formatLabel(item.area)}</span>
+							</div>
+
+							<div class="archive-page__body">
+								<h2>{item.title}</h2>
+								<p>{item.description}</p>
+								<div class="archive-page__chips" aria-label={item.title}>
+									{item.status && <TaxonomyChip label={formatLabel(item.status)} />}
+									{item.tags.slice(0, 4).map((tag) => <TaxonomyChip label={formatLabel(tag)} />)}
+								</div>
+							</div>
+						</article>
+					))}
+				</div>
+			) : (
+				<p class="archive-page__empty">{empty}</p>
+			)}
+		</section>
+	</main>
+</SiteShell>
+
+<style>
+	.archive-page {
+		padding-bottom: clamp(48px, 8vw, 96px);
+	}
+
+	.archive-page__list {
+		margin-top: clamp(32px, 6vw, 64px);
+	}
+
+	.archive-page__rows {
+		margin-top: 18px;
+		border-top: 1px solid var(--color-ink);
+	}
+
+	.archive-page__row {
+		display: grid;
+		grid-template-columns: minmax(140px, 0.24fr) minmax(0, 1fr);
+		gap: clamp(20px, 5vw, 64px);
+		border-bottom: 1px solid var(--color-line);
+		padding: 24px 0;
+	}
+
+	.archive-page__meta {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		color: var(--color-muted);
+		font-family: var(--font-mono);
+		font-size: 0.76rem;
+		font-weight: 700;
+		line-height: 1.35;
+		text-transform: uppercase;
+	}
+
+	.archive-page__body {
+		min-width: 0;
+	}
+
+	h2 {
+		font-family: var(--font-display);
+		font-size: clamp(2rem, 4vw, 3.8rem);
+		line-height: 0.95;
+		text-transform: uppercase;
+	}
+
+	.archive-page__body p {
+		max-width: 680px;
+		margin-top: 12px;
+		color: var(--color-muted);
+		font-size: 1rem;
+		line-height: 1.6;
+	}
+
+	.archive-page__chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		margin-top: 18px;
+	}
+
+	.archive-page__empty {
+		margin-top: 18px;
+		border-top: 1px solid var(--color-line);
+		border-bottom: 1px solid var(--color-line);
+		padding: 24px 0;
+		color: var(--color-muted);
+	}
+
+	@media (max-width: 760px) {
+		.archive-page__row {
+			grid-template-columns: 1fr;
+			gap: 16px;
+		}
+
+		.archive-page__meta {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	}
+</style>

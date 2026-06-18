@@ -1,0 +1,49 @@
+---
+type Props = {
+	label?: string;
+	href?: string;
+	selected?: boolean;
+};
+
+const { label, href, selected = false } = Astro.props;
+const className = `taxonomy-chip${selected ? ' taxonomy-chip--selected' : ''}`;
+---
+
+{
+	href ? (
+		<a class={className} href={href} aria-current={selected ? 'true' : undefined}>
+			<slot>{label}</slot>
+		</a>
+	) : (
+		<span class={className}>
+			<slot>{label}</slot>
+		</span>
+	)
+}
+
+<style>
+	.taxonomy-chip {
+		display: inline-flex;
+		align-items: center;
+		min-height: 28px;
+		border: 1px solid var(--color-line);
+		border-radius: 2px;
+		padding: 5px 8px;
+		background: transparent;
+		color: var(--color-ink);
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		font-weight: 700;
+		line-height: 1;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	.taxonomy-chip:hover,
+	.taxonomy-chip:focus-visible,
+	.taxonomy-chip--selected {
+		border-color: var(--color-ink);
+		background: var(--color-ink);
+		color: var(--color-paper);
+	}
+</style>

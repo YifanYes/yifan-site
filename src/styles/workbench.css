@@ -1,0 +1,86 @@
+:root {
+	color-scheme: light;
+	--color-bg: #f8f7f2;
+	--color-paper: #f4f0e8;
+	--color-paper-deep: #e7dfd2;
+	--color-ink: #171512;
+	--color-muted: #6b6258;
+	--color-line: rgba(23, 21, 18, 0.16);
+	--color-line-strong: #171512;
+	--color-green: #2f6b4f;
+	--color-red: #a33a2b;
+	--color-gold: #b8872d;
+	--color-dark: #171512;
+	--font-body: Atkinson Hyperlegible, Inter, Source Sans 3, system-ui, -apple-system,
+		BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	--font-display: 'Arial Narrow', 'Inter Tight', Arial, sans-serif;
+	--font-mono: 'IBM Plex Mono', SFMono-Regular, Consolas, monospace;
+	--surface-width: 1180px;
+	--article-width: 720px;
+}
+
+html,
+body {
+	margin: 0;
+	width: 100%;
+	min-height: 100%;
+}
+
+html {
+	background: var(--color-bg);
+	color: var(--color-ink);
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+	background: var(--color-bg);
+	color: var(--color-ink);
+	font-family: var(--font-body);
+	letter-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+::selection {
+	background: var(--color-ink);
+	color: var(--color-paper);
+}
+
+a {
+	color: inherit;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.22em;
+}
+
+a:focus-visible,
+button:focus-visible {
+	outline: 2px solid var(--color-green);
+	outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+p {
+	margin: 0;
+}
+
+img,
+svg {
+	max-width: 100%;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	clip-path: inset(50%);
+}

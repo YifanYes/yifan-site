@@ -1,0 +1,171 @@
+---
+import { getAlternateLinks, getLocalizedPath, stripLocalePrefix, type Locale } from '../lib/i18n';
+import { NAV_COPY } from '../lib/ui';
+
+type Props = {
+	locale: Locale;
+	currentPath?: string;
+};
+
+const { locale, currentPath = Astro.url.pathname } = Astro.props;
+const copy = NAV_COPY[locale];
+const normalizedCurrentPath = stripLocalePrefix(currentPath).replace(/\/$/, '') || '/';
+const languageLinks = getAlternateLinks(currentPath).filter((link) => link.locale !== 'x-default');
+const isActive = (path: string) => {
+	const normalizedPath = path.replace(/\/$/, '') || '/';
+	return normalizedPath === '/'
+		? normalizedCurrentPath === '/'
+		: normalizedCurrentPath === normalizedPath || normalizedCurrentPath.startsWith(`${normalizedPath}/`);
+};
+---
+
+<div class="site-shell">
+	<a class="site-shell__skip" href="#main-content">{copy.skipLabel}</a>
+
+	<aside class="site-shell__rail" aria-label={copy.primaryLabel}>
+		<a class="site-shell__mark" href={`/${locale}/`} aria-label={copy.homeLabel}>YF</a>
+
+		<nav class="site-shell__nav" aria-label={copy.primaryLabel}>
+			{copy.links.map((link) => (
+				<a
+					href={getLocalizedPath(locale, link.path)}
+					aria-current={isActive(link.path) ? 'page' : undefined}
+				>
+					{link.label}
+				</a>
+			))}
+		</nav>
+
+		<nav class="site-shell__languages" aria-label={copy.languageLabel}>
+			{languageLinks.map((link) => (
+				<a href={link.path} aria-current={link.locale === locale ? 'page' : undefined}>
+					{link.label}
+				</a>
+			))}
+		</nav>
+	</aside>
+
+	<div class="site-shell__content" id="main-content">
+		<slot />
+	</div>
+</div>
+
+<style>
+	.site-shell {
+		display: grid;
+		grid-template-columns: minmax(148px, 180px) minmax(0, 1fr);
+		gap: 28px;
+		min-height: 100vh;
+		border-top: 1px solid var(--color-ink);
+		padding: 28px;
+	}
+
+	.site-shell__skip {
+		position: fixed;
+		z-index: 20;
+		top: 12px;
+		left: 12px;
+		padding: 10px 12px;
+		background: var(--color-ink);
+		color: var(--color-paper);
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		transform: translateY(-160%);
+	}
+
+	.site-shell__skip:focus {
+		transform: translateY(0);
+	}
+
+	.site-shell__rail {
+		position: sticky;
+		top: 28px;
+		display: flex;
+		flex-direction: column;
+		gap: 22px;
+		height: calc(100vh - 56px);
+		border-right: 1px solid var(--color-line);
+		padding: 0 28px 0 0;
+		color: var(--color-muted);
+		font-family: var(--font-mono);
+		font-size: 0.76rem;
+		font-weight: 700;
+		line-height: 1.3;
+		text-transform: uppercase;
+	}
+
+	.site-shell__mark {
+		display: grid;
+		width: 48px;
+		height: 48px;
+		margin-bottom: 26px;
+		place-items: center;
+		border: 1px solid var(--color-ink);
+		color: var(--color-ink);
+		text-decoration: none;
+	}
+
+	.site-shell__nav,
+	.site-shell__languages {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.site-shell__languages {
+		margin-top: auto;
+		padding-top: 22px;
+		border-top: 1px solid var(--color-line);
+	}
+
+	.site-shell__rail a {
+		text-decoration: none;
+	}
+
+	.site-shell__rail a:hover,
+	.site-shell__rail a:focus-visible,
+	.site-shell__rail a[aria-current='page'] {
+		color: var(--color-green);
+	}
+
+	.site-shell__content {
+		min-width: 0;
+		width: min(100%, var(--surface-width));
+	}
+
+	@media (max-width: 920px) {
+		.site-shell {
+			grid-template-columns: 1fr;
+			gap: 24px;
+			padding: 20px;
+		}
+
+		.site-shell__rail {
+			position: static;
+			display: grid;
+			grid-template-columns: auto minmax(0, 1fr);
+			height: auto;
+			border-right: 0;
+			border-bottom: 1px solid var(--color-line);
+			padding: 0 0 18px;
+		}
+
+		.site-shell__mark {
+			margin: 0;
+		}
+
+		.site-shell__nav,
+		.site-shell__languages {
+			flex-flow: row wrap;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 10px 16px;
+		}
+
+		.site-shell__languages {
+			grid-column: 1 / -1;
+			margin-top: 0;
+		}
+	}
+</style>
