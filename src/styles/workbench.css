@@ -163,3 +163,95 @@ svg {
 	white-space: nowrap;
 	clip-path: inset(50%);
 }
+
+.workbench-prose :where(code) {
+	border: 1px solid var(--color-line);
+	background: var(--color-paper-deep);
+	padding: 0.12em 0.34em;
+	font-family: var(--font-mono);
+	font-size: 0.88em;
+}
+
+.workbench-prose :where(pre) {
+	position: relative;
+	overflow-x: auto;
+	margin: 2em 0;
+	border-top: 4px solid var(--color-red);
+	background: var(--color-dark);
+	color: var(--color-close-up-text);
+	padding: 3.4rem clamp(1rem, 3vw, 1.4rem) clamp(1rem, 3vw, 1.4rem);
+	font-family: var(--font-mono);
+	font-size: 0.88rem;
+	line-height: 1.7;
+	white-space: pre;
+}
+
+.workbench-prose :where(pre)::before {
+	position: absolute;
+	top: 1rem;
+	left: clamp(1rem, 3vw, 1.4rem);
+	color: var(--color-close-up-muted);
+	content: 'CODE //';
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	font-weight: 700;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.workbench-prose :where(pre code) {
+	border: 0;
+	background: transparent;
+	padding: 0;
+	color: inherit;
+	font-size: inherit;
+}
+
+.workbench-prose :where(figure) {
+	margin: clamp(28px, 5vw, 48px) 0;
+	border-top: 3px solid var(--color-ink);
+	border-bottom: 1px solid var(--color-line);
+	padding: 18px 0;
+}
+
+.workbench-prose :where(figure img),
+.workbench-prose :where(figure video) {
+	display: block;
+	width: 100%;
+	border: 1px solid var(--color-line);
+}
+
+.workbench-prose :where(figcaption) {
+	margin-top: 12px;
+	color: var(--color-muted);
+	font-family: var(--font-typewriter);
+	font-size: 0.82rem;
+	line-height: 1.55;
+}
+
+.workbench-prose :where(img) {
+	height: auto;
+}
+
+.workbench-prose :where(table) {
+	display: block;
+	overflow-x: auto;
+	width: 100%;
+	margin: 1.8em 0;
+	border-collapse: collapse;
+	font-size: 0.95rem;
+}
+
+.workbench-prose :where(th, td) {
+	border: 1px solid var(--color-line);
+	padding: 0.65rem 0.8rem;
+	text-align: left;
+	vertical-align: top;
+}
+
+.workbench-prose :where(th) {
+	background: var(--color-paper-deep);
+	font-family: var(--font-mono);
+	font-size: 0.76rem;
+	text-transform: uppercase;
+}

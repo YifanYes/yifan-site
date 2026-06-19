@@ -1,4 +1,4 @@
-# Summarize Changes
+# Commit Changes
 
 Analyze the current git changes to propose a conventional-commits message.
 

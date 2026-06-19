@@ -1,0 +1,84 @@
+---
+import ModuleLabel from './ModuleLabel.astro';
+
+type Props = {
+	label?: string;
+	title?: string;
+	caption?: string;
+	tone?: 'paper' | 'dark';
+};
+
+const { label = 'ARTIFACT //', title, caption, tone = 'paper' } = Astro.props;
+---
+
+<figure class:list={['artifact-figure', `artifact-figure--${tone}`]}>
+	<div class="artifact-figure__header">
+		<ModuleLabel label={label} tone={tone === 'dark' ? 'light' : 'default'} />
+		{title && <p class="artifact-figure__title">{title}</p>}
+	</div>
+
+	<div class="artifact-figure__body">
+		<slot />
+	</div>
+
+	{caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+	.artifact-figure {
+		margin: clamp(28px, 5vw, 48px) 0;
+		border-top: 3px solid var(--color-ink);
+		border-bottom: 1px solid var(--color-line);
+		background: var(--color-paper);
+		padding: clamp(18px, 4vw, 28px) 0 18px;
+	}
+
+	.artifact-figure--dark {
+		border-top-color: var(--color-red);
+		border-bottom-color: var(--color-close-up-line);
+		background: var(--color-dark);
+		color: var(--color-close-up-text);
+		padding-right: clamp(18px, 4vw, 28px);
+		padding-left: clamp(18px, 4vw, 28px);
+	}
+
+	.artifact-figure__header {
+		display: grid;
+		gap: 12px;
+	}
+
+	.artifact-figure__title {
+		font-family: var(--font-display);
+		font-size: clamp(1.5rem, 3vw, 2.4rem);
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	.artifact-figure__body {
+		margin-top: 18px;
+	}
+
+	.artifact-figure__body :global(img),
+	.artifact-figure__body :global(video) {
+		display: block;
+		width: 100%;
+		border: 1px solid var(--color-line);
+	}
+
+	.artifact-figure--dark .artifact-figure__body :global(img),
+	.artifact-figure--dark .artifact-figure__body :global(video) {
+		border-color: var(--color-close-up-line);
+	}
+
+	figcaption {
+		margin-top: 14px;
+		color: var(--color-muted);
+		font-family: var(--font-typewriter);
+		font-size: 0.82rem;
+		line-height: 1.55;
+	}
+
+	.artifact-figure--dark figcaption {
+		color: var(--color-close-up-muted);
+	}
+</style>

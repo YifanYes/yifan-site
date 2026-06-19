@@ -67,20 +67,20 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Create note detail layout.
 - [x] Create project detail layout.
 - [x] Create recommendation detail layout.
-- [ ] Create document detail layout.
 - [x] Add metadata rail: area, date, source/status/tags/language where relevant.
 - [x] Add related content section for article, note, project, and recommendation pages.
-- [ ] Add optional table of contents for long articles/documents.
-- [ ] Add support for code blocks and artifact figures.
-- [ ] Add bilingual navigation between translations when both exist.
+- [x] Add optional table of contents for long articles and long notes.
+- [x] Add support for code blocks and artifact figures.
+- [x] Add bilingual navigation between article, note, project, and recommendation translations.
+- [x] Replace duplicated article/note alternate-link logic with the shared content alternate helper.
 
 ## Phase 7: Obsidian Publishing
 
 - [ ] Decide where curated Obsidian exports live.
-- [ ] Create import/curation guidelines in `docs/` or `src/content/README.md`.
+- [ ] Expand import/curation guidelines in `docs/` or `src/content/README.md`.
 - [ ] Define how to handle internal links, backlinks, embeds, images, and PDFs.
 - [ ] Add one curated Obsidian note as a pilot.
-- [ ] Add one longer Obsidian document as a pilot.
+- [ ] Add one longer curated note or reference artifact as a pilot.
 - [ ] Verify private context is removed before publishing.
 
 ## Phase 8: Content Seed
@@ -89,8 +89,9 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Write initial minimalist homepage copy in Spanish.
 - [ ] Add first engineering article.
 - [ ] Add first product article.
-- [ ] Add first philosophy article or note.
-- [ ] Add first productivity article or note.
+- [x] Add first philosophy article or note.
+- [x] Add first productivity article or note.
+- [x] Add first faith article.
 - [ ] Add first martial arts article or note.
 - [ ] Add first finance note or recommendation.
 - [ ] Add first curated recommendation.
@@ -102,12 +103,14 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 
 ## Phase 9: Quality
 
-- [ ] Run `pnpm build`.
-- [ ] Add `pnpm astro check` if not already wired into scripts.
+- [x] Run `pnpm build`.
+- [x] Run `pnpm astro check`.
+- [ ] Add a package script for Astro checks.
 - [ ] Check desktop layout.
 - [ ] Check mobile layout.
 - [ ] Check English and Spanish navigation.
-- [ ] Check `hreflang` and canonical metadata.
+- [x] Check project detail `hreflang` and canonical metadata.
+- [ ] Check `hreflang` and canonical metadata across all public page types.
 - [ ] Check that no page visually drifts into generic SaaS/card-grid style.
 - [ ] Check that Covenant is visible but not dominant.
 

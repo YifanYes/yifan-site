@@ -1,0 +1,72 @@
+---
+import type { MarkdownHeading } from 'astro';
+import ModuleLabel from './ModuleLabel.astro';
+
+type Props = {
+	headings?: MarkdownHeading[];
+	label?: string;
+	ariaLabel?: string;
+	minimumItems?: number;
+};
+
+const {
+	headings = [],
+	label = 'ON THIS PAGE //',
+	ariaLabel = 'Table of contents',
+	minimumItems = 3,
+} = Astro.props;
+const tocItems = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+const showToc = tocItems.length >= minimumItems;
+---
+
+{showToc && (
+	<nav class="table-of-contents" aria-label={ariaLabel}>
+		<ModuleLabel label={label} tone="muted" />
+		<ol>
+			{tocItems.map((heading) => (
+				<li class:list={['table-of-contents__item', `table-of-contents__item--depth-${heading.depth}`]}>
+					<a href={`#${heading.slug}`}>{heading.text}</a>
+				</li>
+			))}
+		</ol>
+	</nav>
+)}
+
+<style>
+	.table-of-contents {
+		margin-top: 22px;
+		border-top: 1px solid var(--color-line);
+		padding-top: 18px;
+	}
+
+	.table-of-contents ol {
+		display: grid;
+		gap: 10px;
+		margin: 14px 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.table-of-contents__item {
+		font-family: var(--font-mono);
+		font-size: 0.76rem;
+		line-height: 1.45;
+		text-transform: uppercase;
+	}
+
+	.table-of-contents__item--depth-3 {
+		padding-left: 14px;
+		color: var(--color-muted);
+		font-size: 0.7rem;
+	}
+
+	.table-of-contents a {
+		text-decoration: none;
+	}
+
+	.table-of-contents a:hover,
+	.table-of-contents a:focus-visible {
+		text-decoration: underline;
+		text-underline-offset: 0.24em;
+	}
+</style>

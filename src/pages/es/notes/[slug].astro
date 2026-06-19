@@ -2,42 +2,9 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import NotePage from '../../../components/NotePage.astro';
 import Layout from '../../../layouts/Layout.astro';
-import { LOCALE_LABELS, type AlternateLink } from '../../../lib/i18n';
+import { getContentAlternates, getContentPath } from '../../../lib/content-alternates';
 
 type NoteEntry = CollectionEntry<'notes'>;
-
-const getNotePath = (entry: NoteEntry) => {
-	const slug = entry.id.split('/').slice(1).join('/');
-
-	return `/${entry.data.locale}/notes/${slug}/`;
-};
-
-const getNoteAlternates = (entry: NoteEntry, notes: NoteEntry[]): AlternateLink[] => {
-	const currentRef = `notes/${entry.id}`;
-	const sourceRef = entry.data.translationOf ?? currentRef;
-	const translations = notes.filter((note) => {
-		const ref = `notes/${note.id}`;
-
-		return ref === sourceRef || note.data.translationOf === sourceRef;
-	});
-	const links = translations.map((note) => ({
-		locale: note.data.locale,
-		label: LOCALE_LABELS[note.data.locale],
-		hreflang: note.data.locale,
-		path: getNotePath(note),
-	}));
-	const defaultNote = translations.find((note) => note.data.locale === 'en') ?? entry;
-
-	return [
-		...links,
-		{
-			locale: 'x-default',
-			label: LOCALE_LABELS[defaultNote.data.locale],
-			hreflang: 'x-default',
-			path: getNotePath(defaultNote),
-		},
-	];
-};
 
 export async function getStaticPaths() {
 	const entries = await getCollection('notes', ({ data }) => data.locale === 'es' && !data.draft);
@@ -49,10 +16,10 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props as { entry: NoteEntry };
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 const notes = await getCollection('notes');
-const path = getNotePath(entry);
-const alternateLinks = getNoteAlternates(entry, notes);
+const path = getContentPath(entry, 'notes');
+const alternateLinks = getContentAlternates(entry, notes, 'notes');
 ---
 
 <Layout
@@ -62,5 +29,5 @@ const alternateLinks = getNoteAlternates(entry, notes);
 	path={path}
 	alternateLinks={alternateLinks}
 >
-	<NotePage entry={entry} content={Content} alternateLinks={alternateLinks} />
+	<NotePage entry={entry} content={Content} headings={headings} alternateLinks={alternateLinks} />
 </Layout>

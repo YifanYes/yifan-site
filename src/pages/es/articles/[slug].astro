@@ -2,42 +2,9 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import ArticlePage from '../../../components/ArticlePage.astro';
 import Layout from '../../../layouts/Layout.astro';
-import { LOCALE_LABELS, type AlternateLink } from '../../../lib/i18n';
+import { getContentAlternates, getContentPath } from '../../../lib/content-alternates';
 
 type ArticleEntry = CollectionEntry<'articles'>;
-
-const getArticlePath = (entry: ArticleEntry) => {
-	const slug = entry.id.split('/').slice(1).join('/');
-
-	return `/${entry.data.locale}/articles/${slug}/`;
-};
-
-const getArticleAlternates = (entry: ArticleEntry, articles: ArticleEntry[]): AlternateLink[] => {
-	const currentRef = `articles/${entry.id}`;
-	const sourceRef = entry.data.translationOf ?? currentRef;
-	const translations = articles.filter((article) => {
-		const ref = `articles/${article.id}`;
-
-		return ref === sourceRef || article.data.translationOf === sourceRef;
-	});
-	const links = translations.map((article) => ({
-		locale: article.data.locale,
-		label: LOCALE_LABELS[article.data.locale],
-		hreflang: article.data.locale,
-		path: getArticlePath(article),
-	}));
-	const defaultArticle = translations.find((article) => article.data.locale === 'en') ?? entry;
-
-	return [
-		...links,
-		{
-			locale: 'x-default',
-			label: LOCALE_LABELS[defaultArticle.data.locale],
-			hreflang: 'x-default',
-			path: getArticlePath(defaultArticle),
-		},
-	];
-};
 
 export async function getStaticPaths() {
 	const entries = await getCollection('articles', ({ data }) => data.locale === 'es' && !data.draft);
@@ -49,10 +16,10 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props as { entry: ArticleEntry };
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
 const articles = await getCollection('articles');
-const path = getArticlePath(entry);
-const alternateLinks = getArticleAlternates(entry, articles);
+const path = getContentPath(entry, 'articles');
+const alternateLinks = getContentAlternates(entry, articles, 'articles');
 ---
 
 <Layout
@@ -62,5 +29,5 @@ const alternateLinks = getArticleAlternates(entry, articles);
 	path={path}
 	alternateLinks={alternateLinks}
 >
-	<ArticlePage entry={entry} content={Content} alternateLinks={alternateLinks} />
+	<ArticlePage entry={entry} content={Content} headings={headings} alternateLinks={alternateLinks} />
 </Layout>

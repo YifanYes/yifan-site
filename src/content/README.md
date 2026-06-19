@@ -81,6 +81,20 @@ locale: "en"
 related: ["notes/en/example-book-notes"]
 ```
 
+## Detail Body Features
+
+Long article and note pages automatically show a table of contents when the body has at least three `h2` or `h3` headings.
+
+Fenced Markdown code blocks are styled as dark workbench code artifacts. For richer MDX artifacts, import the shared figure primitive:
+
+```mdx
+import ArtifactFigure from '../../../components/ArtifactFigure.astro';
+
+<ArtifactFigure label="ARTIFACT //" title="Loop sketch" caption="A public artifact from the project notes.">
+	<img src="/path/to/image.png" alt="Describe the artifact." />
+</ArtifactFigure>
+```
+
 ## Slug Strategy
 
 Translated content uses one file per locale, grouped by locale directory:

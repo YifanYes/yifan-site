@@ -1,20 +1,25 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
+import type { MarkdownHeading } from 'astro';
 import type { AlternateLink } from '../lib/i18n';
+import { DETAIL_COPY } from '../lib/ui';
 import ModuleLabel from './ModuleLabel.astro';
 import RelatedContent from './RelatedContent.astro';
 import SiteShell from './SiteShell.astro';
+import TableOfContents from './TableOfContents.astro';
 import TaxonomyChip from './TaxonomyChip.astro';
 import TechnicalButton from './TechnicalButton.astro';
 
 type Props = {
 	entry: CollectionEntry<'articles'>;
 	content: any;
+	headings?: MarkdownHeading[];
 	alternateLinks: AlternateLink[];
 };
 
-const { entry, content: Content, alternateLinks } = Astro.props;
+const { entry, content: Content, headings = [], alternateLinks } = Astro.props;
 const { data } = entry;
+const copy = DETAIL_COPY[data.locale];
 const slug = entry.id.split('/').slice(1).join('/');
 const articlePath = `/${data.locale}/articles/${slug}/`;
 const dateFormatter = new Intl.DateTimeFormat(data.locale, {
@@ -100,6 +105,11 @@ const relatedItems = (data.related ?? [])
 				{data.originalUrl && (
 					<TechnicalButton href={data.originalUrl} label={sourceLabel} variant="quiet" />
 				)}
+					<TableOfContents
+						headings={headings}
+						label={copy.tableOfContentsLabel}
+						ariaLabel={copy.tableOfContentsAriaLabel}
+					/>
 			</aside>
 		</header>
 
@@ -109,7 +119,7 @@ const relatedItems = (data.related ?? [])
 			</figure>
 		)}
 
-		<div class="article-page__body">
+		<div class="article-page__body workbench-prose">
 			<Content />
 		</div>
 

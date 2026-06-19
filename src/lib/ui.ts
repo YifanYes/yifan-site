@@ -90,6 +90,23 @@ export const NAV_COPY: Record<
 	},
 };
 
+export const DETAIL_COPY: Record<
+	Locale,
+	{
+		tableOfContentsLabel: string;
+		tableOfContentsAriaLabel: string;
+	}
+> = {
+	en: {
+		tableOfContentsLabel: 'ON THIS PAGE //',
+		tableOfContentsAriaLabel: 'Table of contents',
+	},
+	es: {
+		tableOfContentsLabel: 'CONTENIDO //',
+		tableOfContentsAriaLabel: 'Tabla de contenido',
+	},
+};
+
 export const HOME_COPY: Record<
 	Locale,
 	{
