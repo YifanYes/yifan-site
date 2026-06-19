@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import LocalizedArchivePage from '../../../components/LocalizedArchivePage.astro';
+import Layout from '../../../layouts/Layout.astro';
+import { byNewestEntry, toArchiveItem } from '../../../lib/archive-items';
+import { ARCHIVE_COPY } from '../../../lib/ui';
+
+const locale = 'en';
+const copy = ARCHIVE_COPY[locale].articles;
+const allEntries = await getCollection('articles', ({ data }) => !data.draft);
+const entries = allEntries.filter(({ data }) => data.locale === locale);
+const entryRefs = new Set(entries.map((entry) => `articles/${entry.id}`));
+const hasLocaleVersion = (entry) => {
+	const sourceRef = entry.data.translationOf ?? `articles/${entry.id}`;
+
+	return entries.some((localeEntry) => {
+		const localeRef = `articles/${localeEntry.id}`;
+
+		return localeRef === sourceRef || localeEntry.data.translationOf === sourceRef;
+	});
+};
+const otherLanguageEntries = allEntries.filter(
+	(entry) => entry.data.locale !== locale && !entryRefs.has(`articles/${entry.id}`) && !hasLocaleVersion(entry),
+);
+const items = entries.sort(byNewestEntry).map(toArchiveItem);
+const secondaryItems = otherLanguageEntries.sort(byNewestEntry).map(toArchiveItem);
+---
+
+<Layout title={copy.metaTitle} description={copy.description} locale={locale} path="/en/articles/">
+	<LocalizedArchivePage
+		locale={locale}
+		{...copy}
+		items={items}
+		secondaryListLabel="AVAILABLE IN OTHER LANGUAGES //"
+		secondaryEmpty="No untranslated articles are published in other languages yet."
+		secondaryItems={secondaryItems}
+	/>
+</Layout>

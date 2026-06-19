@@ -1,16 +1,3 @@
 ---
-import { getCollection } from 'astro:content';
-import LocalizedArchivePage from '../../../components/LocalizedArchivePage.astro';
-import Layout from '../../../layouts/Layout.astro';
-import { byNewestEntry, toArchiveItem } from '../../../lib/archive-items';
-import { ARCHIVE_COPY } from '../../../lib/ui';
-
-const locale = 'en';
-const copy = ARCHIVE_COPY[locale].writing;
-const entries = await getCollection('writing', ({ data }) => data.locale === locale && !data.draft);
-const items = entries.sort(byNewestEntry).map(toArchiveItem);
+return Astro.redirect('/en/articles/', 308);
 ---
-
-<Layout title={copy.metaTitle} description={copy.description} locale={locale} path="/en/writing/">
-	<LocalizedArchivePage locale={locale} {...copy} items={items} />
-</Layout>

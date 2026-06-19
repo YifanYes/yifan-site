@@ -31,7 +31,7 @@ Before changing structure, content models, routes, visual design, CSS, or page l
 - Use Astro for the personal website.
 - Use TypeScript where project code needs types.
 - Use MDX when content needs embedded components.
-- Use Astro Content Collections for writing, notes, documents, projects, and now entries.
+- Use Astro Content Collections for articles, notes, documents, projects, and now entries.
 - Use React only for interactive islands.
 - Use Tailwind CSS only if utility CSS becomes useful; default to custom, simple CSS.
 - Prefer pnpm for package management.
@@ -56,7 +56,7 @@ The chosen direction is based on the `workbench` prototype at:
 Core visual patterns to preserve:
 
 - Module system: `ARTICLE.014 //`, `NOTE.032 //`, `DOC.007 //`, `PROJECT.003 //`.
-- Indexes with `GRID` / `LIST` modes for writing, notes, documents, and projects when content volume justifies it.
+- Indexes with `GRID` / `LIST` modes for articles, notes, documents, and projects when content volume justifies it.
 - Hard separators and archive layouts instead of soft card-heavy surfaces.
 - Dark `CLOSE-UP //` blocks for code, diagrams, document previews, screenshots, and important artifacts.
 - Sober taxonomy chips for area, type, source, and status.
@@ -73,12 +73,12 @@ Planned localized routes use English and Spanish prefixes from the start. The ro
 
 /en
 /es
-  Homepage: identity, current work, latest writing, selected notes, and selected projects.
+  Homepage: identity, current work, latest articles, selected notes, and selected projects.
 
 /{locale}/now
   What I am building, studying, training, and thinking about right now.
 
-/{locale}/writing
+/{locale}/articles
   Long-form articles and essays.
 
 /{locale}/notes
@@ -118,7 +118,7 @@ Use Astro Content Collections for typed content.
 Suggested collections:
 
 ```text
-src/content/writing/
+src/content/articles/
   Long-form articles and essays.
 
 src/content/notes/
@@ -134,7 +134,7 @@ src/content/now/
   Current status entries if the /now page becomes archival.
 ```
 
-Suggested frontmatter for writing:
+Suggested frontmatter for articles:
 
 ```yaml
 title: "Engineering as Discipline"
@@ -177,9 +177,9 @@ notes
 
 ## Page Intent
 
-- Home: personal thesis, current focus, latest writing, selected notes/documents, selected projects, areas of interest, and contact/follow links.
+- Home: personal thesis, current focus, latest articles, selected notes/documents, selected projects, areas of interest, and contact/follow links.
 - Now: current building, studying, training, active questions, and useful conversations.
-- Writing: long-form authority around engineering, product, philosophy, productivity, martial arts, and Covenant.
+- Articles: long-form authority around engineering, product, philosophy, productivity, martial arts, and Covenant.
 - Notes: shorter artifacts such as working definitions, reading notes, Obsidian exports, training reflections, product observations, mental models, and useful resources.
 - Documents: longer or more artifact-like materials such as polished Obsidian documents, study notes, PDFs, reference guides, and research summaries.
 - Projects: systems and judgment, not only polished products. Include problem, decision, tradeoff, result or learning, and artifact when available.

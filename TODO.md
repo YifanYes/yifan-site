@@ -5,7 +5,7 @@
 The site should support English and Spanish from the beginning. Do not hardcode final user-facing copy without deciding where translations live.
 
 - [x] Decide i18n routing strategy: `/en/...` and `/es/...`, with `/` redirecting to `/en/`.
-- [x] Choose source locale: English for public writing structure, Spanish allowed as first draft language when easier.
+- [x] Choose source locale: English for public article structure, Spanish allowed as first draft language when easier.
 - [x] Add Astro i18n configuration plus a small locale helper layer.
 - [x] Define supported locales: `en` and `es`.
 - [x] Create shared constants for locale labels, default locale, route prefixes, and alternate links.
@@ -15,7 +15,7 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 ## Phase 2: Content Architecture
 
 - [x] Add Astro Content Collections.
-- [x] Define schemas for `writing`, `notes`, `documents`, `projects`, and optional `now`.
+- [x] Define schemas for `articles`, `notes`, `documents`, `projects`, and optional `now`.
 - [x] Include locale-aware fields in content schemas.
 - [x] Add required frontmatter: `title`, `description`, `date`, `type`, `area`, `tags`, `draft`, `locale`.
 - [x] Add optional frontmatter: `source`, `curated`, `featured`, `status`, `related`, `translationOf`.
@@ -40,7 +40,7 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Replace the Astro starter homepage.
 - [x] Build localized home pages for English and Spanish.
 - [x] Build `/[locale]/now`.
-- [x] Build `/[locale]/writing` index.
+- [x] Build `/[locale]/articles` index.
 - [x] Build `/[locale]/notes` index.
 - [x] Build `/[locale]/documents` index.
 - [x] Build `/[locale]/projects` index.
@@ -57,7 +57,7 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 
 ## Phase 6: Article And Note Templates
 
-- [ ] Create article detail layout.
+- [x] Create article detail layout.
 - [ ] Create note detail layout.
 - [ ] Create document detail layout.
 - [ ] Add metadata rail: area, date, source, status, tags, language.

@@ -1,0 +1,64 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticlePage from '../../../components/ArticlePage.astro';
+import Layout from '../../../layouts/Layout.astro';
+import { LOCALE_LABELS, type AlternateLink } from '../../../lib/i18n';
+
+const getArticlePath = (entry) => {
+	const slug = entry.id.split('/').slice(1).join('/');
+
+	return `/${entry.data.locale}/articles/${slug}/`;
+};
+
+const getArticleAlternates = (entry, articles): AlternateLink[] => {
+	const currentRef = `articles/${entry.id}`;
+	const sourceRef = entry.data.translationOf ?? currentRef;
+	const translations = articles.filter((article) => {
+		const ref = `articles/${article.id}`;
+
+		return ref === sourceRef || article.data.translationOf === sourceRef;
+	});
+	const links = translations.map((article) => ({
+		locale: article.data.locale,
+		label: LOCALE_LABELS[article.data.locale],
+		hreflang: article.data.locale,
+		path: getArticlePath(article),
+	}));
+	const defaultArticle = translations.find((article) => article.data.locale === 'en') ?? entry;
+
+	return [
+		...links,
+		{
+			locale: 'x-default',
+			label: LOCALE_LABELS[defaultArticle.data.locale],
+			hreflang: 'x-default',
+			path: getArticlePath(defaultArticle),
+		},
+	];
+};
+
+export async function getStaticPaths() {
+	const entries = await getCollection('articles', ({ data }) => data.locale === 'en' && !data.draft);
+
+	return entries.map((entry) => ({
+		params: { slug: entry.id.split('/').slice(1).join('/') },
+		props: { entry },
+	}));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const articles = await getCollection('articles');
+const path = getArticlePath(entry);
+const alternateLinks = getArticleAlternates(entry, articles);
+---
+
+<Layout
+	title={entry.data.title}
+	description={entry.data.description}
+	locale="en"
+	path={path}
+	alternateLinks={alternateLinks}
+>
+	<ArticlePage entry={entry} content={Content} alternateLinks={alternateLinks} />
+</Layout>

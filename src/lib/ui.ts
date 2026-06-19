@@ -18,6 +18,12 @@ export const NAV_COPY: Record<
 		languageLabel: string;
 		homeLabel: string;
 		skipLabel: string;
+		sidebar: {
+			collapseLabel: string;
+			expandLabel: string;
+			collapseText: string;
+			expandText: string;
+		};
 		themeLabel: string;
 		theme: {
 			light: string;
@@ -33,6 +39,12 @@ export const NAV_COPY: Record<
 		languageLabel: 'Language',
 		homeLabel: 'Yifan home',
 		skipLabel: 'Skip to content',
+		sidebar: {
+			collapseLabel: 'Collapse sidebar',
+			expandLabel: 'Expand sidebar',
+			collapseText: 'Collapse',
+			expandText: 'Expand',
+		},
 		themeLabel: 'Theme',
 		theme: {
 			light: 'Light',
@@ -42,7 +54,7 @@ export const NAV_COPY: Record<
 		},
 		links: [
 			{ label: 'Now', path: '/now' },
-			{ label: 'Writing', path: '/writing' },
+			{ label: 'Articles', path: '/articles' },
 			{ label: 'Notes', path: '/notes' },
 			{ label: 'Documents', path: '/documents' },
 			{ label: 'Projects', path: '/projects' },
@@ -54,6 +66,12 @@ export const NAV_COPY: Record<
 		languageLabel: 'Idioma',
 		homeLabel: 'Inicio de Yifan',
 		skipLabel: 'Saltar al contenido',
+		sidebar: {
+			collapseLabel: 'Colapsar barra lateral',
+			expandLabel: 'Expandir barra lateral',
+			collapseText: 'Colapsar',
+			expandText: 'Expandir',
+		},
 		themeLabel: 'Tema',
 		theme: {
 			light: 'Claro',
@@ -63,7 +81,7 @@ export const NAV_COPY: Record<
 		},
 		links: [
 			{ label: 'Ahora', path: '/now' },
-			{ label: 'Escritura', path: '/writing' },
+			{ label: 'Artículos', path: '/articles' },
 			{ label: 'Notas', path: '/notes' },
 			{ label: 'Documentos', path: '/documents' },
 			{ label: 'Proyectos', path: '/projects' },
@@ -104,7 +122,7 @@ export const HOME_COPY: Record<
 		currentThreads: [
 			{
 				title: 'Building the workbench',
-				description: 'Shaping the site as a public surface for writing, notes, documents, and selected projects.',
+				description: 'Shaping the site as a public surface for articles, notes, documents, and selected projects.',
 				path: '/now',
 			},
 			{
@@ -123,8 +141,8 @@ export const HOME_COPY: Record<
 			{
 				type: 'ARTICLE',
 				title: 'Engineering as Discipline',
-				description: 'Long-form writing on craft, pressure, systems, and judgment.',
-				path: '/writing',
+				description: 'Long-form articles on craft, pressure, systems, and judgment.',
+				path: '/articles',
 			},
 			{
 				type: 'NOTE',
@@ -151,7 +169,7 @@ export const HOME_COPY: Record<
 				title: 'Engineering',
 				description: 'Systems, architecture, craft, pressure, and implementation judgment.',
 				icon: 'engineering',
-				path: '/writing',
+				path: '/articles',
 			},
 			{
 				title: 'Product Systems',
@@ -212,8 +230,8 @@ export const HOME_COPY: Record<
 			{
 				type: 'ARTICLE',
 				title: 'Ingenieria como disciplina',
-				description: 'Escritura larga sobre oficio, presion, sistemas y criterio.',
-				path: '/writing',
+				description: 'Artículos largos sobre oficio, presion, sistemas y criterio.',
+				path: '/articles',
 			},
 			{
 				type: 'NOTE',
@@ -240,7 +258,7 @@ export const HOME_COPY: Record<
 				title: 'Ingenieria',
 				description: 'Sistemas, arquitectura, oficio, presion y criterio de implementacion.',
 				icon: 'engineering',
-				path: '/writing',
+				path: '/articles',
 			},
 			{
 				title: 'Sistemas de producto',
@@ -271,7 +289,7 @@ export const HOME_COPY: Record<
 	},
 };
 
-type ArchivePage = 'now' | 'writing' | 'notes' | 'documents' | 'projects';
+type ArchivePage = 'now' | 'articles' | 'notes' | 'documents' | 'projects';
 
 type ArchivePageCopy = {
 	metaTitle: string;
@@ -294,9 +312,9 @@ export const ARCHIVE_COPY: Record<Locale, Record<ArchivePage, ArchivePageCopy>> 
 			listLabel: 'CURRENT ENTRIES //',
 			empty: 'No current entries are published yet.',
 		},
-		writing: {
-			metaTitle: 'Writing',
-			description: 'Long-form articles and essays on engineering, product, philosophy, productivity, and practice.',
+		articles: {
+			metaTitle: 'Articles',
+			description: 'Long-form articles and essays on engineering, product, philosophy, faith, productivity, and practice.',
 			moduleLabel: 'ARTICLE.INDEX //',
 			kicker: 'LONG-FORM ARCHIVE',
 			title: 'Articles and essays.',
@@ -341,9 +359,9 @@ export const ARCHIVE_COPY: Record<Locale, Record<ArchivePage, ArchivePageCopy>> 
 			listLabel: 'ENTRADAS ACTUALES //',
 			empty: 'Todavía no hay entradas actuales publicadas.',
 		},
-		writing: {
-			metaTitle: 'Escritura',
-			description: 'Artículos y ensayos sobre ingeniería, producto, filosofía, productividad y práctica.',
+		articles: {
+			metaTitle: 'Artículos',
+			description: 'Artículos y ensayos sobre ingeniería, producto, filosofía, fe, productividad y práctica.',
 			moduleLabel: 'ARTICLE.INDEX //',
 			kicker: 'ARCHIVO LARGO',
 			title: 'Artículos y ensayos.',
@@ -405,7 +423,7 @@ export const ABOUT_COPY: Record<
 		specs: [
 			{ label: '01', value: 'Engineering and product systems' },
 			{ label: '02', value: 'Philosophy, productivity, and disciplined practice' },
-			{ label: '03', value: ['Covenant', 'Writing', 'Curated notes'] },
+			{ label: '03', value: ['Covenant', 'Articles', 'Curated notes'] },
 		],
 	},
 	es: {
@@ -420,7 +438,7 @@ export const ABOUT_COPY: Record<
 		specs: [
 			{ label: '01', value: 'Ingeniería y sistemas de producto' },
 			{ label: '02', value: 'Filosofía, productividad y práctica disciplinada' },
-			{ label: '03', value: ['Covenant', 'Escritura', 'Notas curadas'] },
+			{ label: '03', value: ['Covenant', 'Artículos', 'Notas curadas'] },
 		],
 	},
 };

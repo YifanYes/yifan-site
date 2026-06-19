@@ -10,7 +10,7 @@ source: "obsidian"
 curated: true
 status: "published"
 locale: "en"
-related: ["writing/en/engineering-as-discipline", "documents/en/workbench-operating-notes"]
+related: ["articles/en/decide-who-you-want-to-be-and-then-do-what-you-must", "documents/en/workbench-operating-notes"]
 ---
 
 Attention is easier to train when it has a visible surface.

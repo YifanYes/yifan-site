@@ -11,7 +11,7 @@ curated: true
 status: "published"
 locale: "es"
 translationOf: "notes/en/attention-is-a-training-surface"
-related: ["writing/es/ingenieria-como-disciplina", "documents/es/notas-operativas-del-workbench"]
+related: ["articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer", "documents/es/notas-operativas-del-workbench"]
 ---
 
 La atención es más fácil de entrenar cuando tiene una superficie visible.

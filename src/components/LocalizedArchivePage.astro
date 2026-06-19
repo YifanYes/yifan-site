@@ -12,6 +12,8 @@ type ArchiveItem = {
 	area: string;
 	status?: string;
 	tags: string[];
+	href: string;
+	locale?: string;
 };
 
 type Props = {
@@ -23,9 +25,24 @@ type Props = {
 	listLabel: string;
 	empty: string;
 	items: ArchiveItem[];
+	secondaryListLabel?: string;
+	secondaryEmpty?: string;
+	secondaryItems?: ArchiveItem[];
 };
 
-const { locale, moduleLabel, kicker, title, description, listLabel, empty, items } = Astro.props;
+const {
+	locale,
+	moduleLabel,
+	kicker,
+	title,
+	description,
+	listLabel,
+	empty,
+	items,
+	secondaryListLabel,
+	secondaryEmpty,
+	secondaryItems = [],
+} = Astro.props;
 const dateFormatter = new Intl.DateTimeFormat(locale, {
 	year: 'numeric',
 	month: 'short',
@@ -33,6 +50,8 @@ const dateFormatter = new Intl.DateTimeFormat(locale, {
 });
 
 const formatLabel = (value: string) => value.replaceAll('-', ' ');
+const formatTitleLabel = (value: string) =>
+	formatLabel(value).replace(/\b\w/g, (letter) => letter.toUpperCase());
 ---
 
 <SiteShell locale={locale}>
@@ -50,10 +69,10 @@ const formatLabel = (value: string) => value.replaceAll('-', ' ');
 			{items.length > 0 ? (
 				<div class="archive-page__rows">
 					{items.map((item) => (
-						<article class="archive-page__row">
+						<a class="archive-page__row" href={item.href}>
 							<div class="archive-page__meta">
 								<span>{dateFormatter.format(item.date)}</span>
-								<span>{formatLabel(item.area)}</span>
+								<span>{formatTitleLabel(item.area)}</span>
 							</div>
 
 							<div class="archive-page__body">
@@ -64,13 +83,44 @@ const formatLabel = (value: string) => value.replaceAll('-', ' ');
 									{item.tags.slice(0, 4).map((tag) => <TaxonomyChip label={formatLabel(tag)} />)}
 								</div>
 							</div>
-						</article>
+						</a>
 					))}
 				</div>
 			) : (
 				<p class="archive-page__empty">{empty}</p>
 			)}
 		</section>
+
+		{secondaryListLabel && (
+			<section class="archive-page__list" aria-label={secondaryListLabel.replace(' //', '')}>
+				<ModuleLabel label={secondaryListLabel} />
+
+				{secondaryItems.length > 0 ? (
+					<div class="archive-page__rows">
+						{secondaryItems.map((item) => (
+							<a class="archive-page__row" href={item.href}>
+								<div class="archive-page__meta">
+									<span>{dateFormatter.format(item.date)}</span>
+								<span>{formatTitleLabel(item.area)}</span>
+								</div>
+
+								<div class="archive-page__body">
+									<h2>{item.title}</h2>
+									<p>{item.description}</p>
+									<div class="archive-page__chips" aria-label={item.title}>
+										{item.locale && <TaxonomyChip label={formatLabel(item.locale)} />}
+										{item.status && <TaxonomyChip label={formatLabel(item.status)} />}
+										{item.tags.slice(0, 4).map((tag) => <TaxonomyChip label={formatLabel(tag)} />)}
+									</div>
+								</div>
+							</a>
+						))}
+					</div>
+				) : (
+					<p class="archive-page__empty">{secondaryEmpty}</p>
+				)}
+			</section>
+		)}
 	</main>
 </SiteShell>
 
@@ -94,6 +144,12 @@ const formatLabel = (value: string) => value.replaceAll('-', ' ');
 		gap: clamp(20px, 5vw, 64px);
 		border-bottom: 1px solid var(--color-line);
 		padding: 24px 0;
+		text-decoration: none;
+	}
+
+	.archive-page__row:hover h2,
+	.archive-page__row:focus-visible h2 {
+		color: var(--color-green);
 	}
 
 	.archive-page__meta {

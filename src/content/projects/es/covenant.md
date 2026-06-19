@@ -10,7 +10,7 @@ featured: true
 status: "active"
 locale: "es"
 translationOf: "projects/en/covenant"
-related: ["writing/es/ingenieria-como-disciplina", "documents/es/notas-operativas-del-workbench"]
+related: ["articles/es/naval-ravikant-y-el-budismo-racional", "documents/es/notas-operativas-del-workbench"]
 ---
 
 Covenant es un proyecto importante dentro del cuerpo de trabajo, no toda la identidad del sitio.

@@ -64,6 +64,7 @@ The site is centered on:
 - Engineering.
 - Product.
 - Philosophy.
+- Faith.
 - Productivity.
 - Martial arts.
 - Curated Obsidian notes and documents.
@@ -127,7 +128,7 @@ Rules:
 
 ### Grid/List Indexes
 
-Indexes for writing, notes, documents, and projects should support two browsing modes when content volume justifies it.
+Indexes for articles, notes, documents, and projects should support two browsing modes when content volume justifies it.
 
 Use:
 
@@ -182,7 +183,7 @@ Taxonomy chips should feel like archive filters, not colorful badges.
 
 Use them for:
 
-- Areas: `Engineering`, `Product`, `Philosophy`, `Productivity`, `Martial Arts`, `Covenant`.
+- Areas: `Engineering`, `Product`, `Philosophy`, `Faith`, `Productivity`, `Martial Arts`, `Covenant`.
 - Content types: `Article`, `Note`, `Document`, `Project`.
 - Source/status: `Obsidian`, `Curated`, `Draft`, `Published`, `Updated`.
 
@@ -334,7 +335,7 @@ ArticleHeader
 ArticleBody
 AreaIndex
 IndexViewToggle
-WritingList
+ArticleList
 NoteRow
 DocumentRow
 ProjectEntry
@@ -368,7 +369,7 @@ Primary navigation should make the content model obvious:
 
 ```text
 Now
-Writing
+Articles
 Notes
 Documents
 Projects
@@ -387,12 +388,12 @@ It should include:
 
 - A direct identity statement.
 - Current focus.
-- Latest writing.
+- Latest articles.
 - Selected notes/documents.
 - Selected projects.
 - Areas of interest.
 
-### Writing
+### Articles
 
 Use a strong index with filters by area.
 
@@ -492,7 +493,7 @@ The site should be mostly static.
 
 Use interactivity for:
 
-- Filtering writing by area.
+- Filtering articles by area.
 - Search.
 - Table of contents.
 - Expanding references.

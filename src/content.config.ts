@@ -9,6 +9,7 @@ const areaSchema = z.enum([
 	'engineering',
 	'product',
 	'philosophy',
+	'faith',
 	'productivity',
 	'martial-arts',
 	'covenant',
@@ -29,6 +30,8 @@ const baseContentSchema = {
 	curated: z.boolean().optional(),
 	featured: z.boolean().optional(),
 	status: statusSchema.optional(),
+	coverImage: z.string().url().optional(),
+	originalUrl: z.string().url().optional(),
 	related: z.array(z.string().min(1)).optional(),
 	translationOf: z.string().min(1).optional(),
 };
@@ -39,8 +42,8 @@ const contentLoader = (collection: string) =>
 		pattern: '**/*.{md,mdx}',
 	});
 
-const writing = defineCollection({
-	loader: contentLoader('writing'),
+const articles = defineCollection({
+	loader: contentLoader('articles'),
 	schema: z.object({
 		...baseContentSchema,
 		type: z.literal('article'),
@@ -80,7 +83,7 @@ const now = defineCollection({
 });
 
 export const collections = {
-	writing,
+	articles,
 	notes,
 	documents,
 	projects,

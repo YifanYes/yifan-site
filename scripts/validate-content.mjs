@@ -3,7 +3,7 @@ import path from 'node:path';
 import process from 'node:process';
 
 const contentRoot = path.join(process.cwd(), 'src', 'content');
-const collectionNames = ['writing', 'notes', 'documents', 'projects', 'now'];
+const collectionNames = ['articles', 'notes', 'documents', 'projects', 'now'];
 const collections = new Set(collectionNames);
 const locales = new Set(['en', 'es']);
 const contentExtensions = new Set(['.md', '.mdx']);

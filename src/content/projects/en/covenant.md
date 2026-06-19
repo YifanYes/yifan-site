@@ -9,7 +9,7 @@ draft: false
 featured: true
 status: "active"
 locale: "en"
-related: ["writing/en/engineering-as-discipline", "documents/en/workbench-operating-notes"]
+related: ["articles/en/naval-ravikant-and-rational-buddhism", "documents/en/workbench-operating-notes"]
 ---
 
 Covenant is a major project in the body of work, not the whole identity of the site.

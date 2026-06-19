@@ -4,7 +4,7 @@ This directory contains the public content model for the site.
 
 ## Collections
 
-- `writing`: long-form articles and essays.
+- `articles`: long-form articles and essays.
 - `notes`: shorter curated notes, working models, references, and Obsidian exports.
 - `documents`: longer documents, study notes, PDFs, and polished artifacts.
 - `projects`: case studies, experiments, tools, prototypes, and systems.
@@ -23,6 +23,19 @@ draft: false
 locale: "en"
 ```
 
+Current area values:
+
+```text
+engineering
+product
+philosophy
+faith
+productivity
+martial-arts
+covenant
+notes
+```
+
 Optional fields:
 
 ```yaml
@@ -31,7 +44,7 @@ curated: true
 featured: false
 status: "published"
 related: ["notes/en/attention-is-a-training-surface"]
-translationOf: "writing/en/engineering-as-discipline"
+translationOf: "articles/en/decide-who-you-want-to-be-and-then-do-what-you-must"
 ```
 
 ## Slug Strategy
@@ -39,16 +52,16 @@ translationOf: "writing/en/engineering-as-discipline"
 Translated content uses one file per locale, grouped by locale directory:
 
 ```text
-src/content/writing/en/engineering-as-discipline.md
-src/content/writing/es/ingenieria-como-disciplina.md
+src/content/articles/en/decide-who-you-want-to-be-and-then-do-what-you-must.md
+src/content/articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer.md
 ```
 
-The content entry ID is the locale-prefixed file path without the extension, such as `en/engineering-as-discipline` or `es/ingenieria-como-disciplina`.
+The content entry ID is the locale-prefixed file path without the extension, such as `en/decide-who-you-want-to-be-and-then-do-what-you-must` or `es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer`.
 
 English is the source locale. Spanish entries may use Spanish slugs. A translated entry points back to its source entry with `translationOf`, using the collection and source entry ID:
 
 ```yaml
-translationOf: "writing/en/engineering-as-discipline"
+translationOf: "articles/en/decide-who-you-want-to-be-and-then-do-what-you-must"
 ```
 
 This keeps public URLs readable in each language while preserving an explicit translation link for future alternate navigation.
