@@ -3,7 +3,7 @@ title: "Covenant"
 description: "A productivity RPG where real tasks become mana for tactical quests."
 date: 2026-06-17
 type: "project"
-area: "covenant"
+area: "product"
 tags: ["covenant", "productivity", "rpg", "product"]
 draft: false
 featured: true

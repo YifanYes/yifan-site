@@ -1,8 +1,8 @@
 ---
 title: "Software Engineering"
-description: "A curated reference note on reducing complexity, preserving clarity, and building dependable software systems."
+description: "A curated area guide on reducing complexity, preserving clarity, and building dependable software systems."
 date: 2026-06-19
-type: "note"
+type: "area"
 area: "engineering"
 tags: ["software", "engineering", "architecture", "complexity"]
 draft: false

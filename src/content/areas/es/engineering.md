@@ -1,8 +1,8 @@
 ---
 title: "Ingeniería De Software"
-description: "Una nota de referencia curada sobre reducir complejidad, preservar claridad y construir sistemas de software fiables."
+description: "Una guía de área curada sobre reducir complejidad, preservar claridad y construir sistemas de software fiables."
 date: 2026-06-19
-type: "note"
+type: "area"
 area: "engineering"
 tags: ["software", "ingeniería", "arquitectura", "complejidad"]
 draft: false
@@ -10,7 +10,7 @@ source: "obsidian"
 curated: true
 status: "evergreen"
 locale: "es"
-translationOf: "notes/en/software-engineering"
+translationOf: "areas/en/engineering"
 related: ["notes/es/la-atencion-es-superficie-de-entrenamiento", "documents/es/notas-operativas-del-workbench"]
 ---
 

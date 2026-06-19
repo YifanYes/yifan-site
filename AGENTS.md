@@ -2,19 +2,19 @@
 
 ## Project
 
-`yifan-site` is Yifan's personal website: a content-first workbench for engineering, product, philosophy, productivity, martial arts, curated Obsidian notes, documents, and selected projects.
+`yifan-site` is Yifan's personal website: a minimalist personal profile and content-first workbench for articles, topic areas, study notes, curated recommendations, projects, and a professional CV.
 
 The site should answer five questions quickly:
 
 - Who is Yifan?
 - What does he think about engineering, product, productivity, philosophy, and disciplined practice?
-- What is he building, studying, and testing now?
-- What articles, notes, and documents are worth reading?
+- What is he building, studying, and testing?
+- What articles, notes, recommendations, and projects are worth reading?
 - How does Covenant fit into the larger body of work?
 
 Core thesis:
 
-> I write and build at the intersection of engineering, product systems, philosophy, productivity, and disciplined practice.
+> I write, build, and study across software engineering, product systems, philosophy, martial arts, finance, and disciplined practice.
 
 Covenant belongs here as a major project and case study, not as the whole identity.
 
@@ -31,7 +31,7 @@ Before changing structure, content models, routes, visual design, CSS, or page l
 - Use Astro for the personal website.
 - Use TypeScript where project code needs types.
 - Use MDX when content needs embedded components.
-- Use Astro Content Collections for articles, notes, documents, projects, and now entries.
+- Use Astro Content Collections for articles, notes, recommendations, projects, documents, and now entries.
 - Use React only for interactive islands.
 - Use Tailwind CSS only if utility CSS becomes useful; default to custom, simple CSS.
 - Prefer pnpm for package management.
@@ -56,11 +56,11 @@ The chosen direction is based on the `workbench` prototype at:
 Core visual patterns to preserve:
 
 - Module system: `ARTICLE.014 //`, `NOTE.032 //`, `DOC.007 //`, `PROJECT.003 //`.
-- Indexes with `GRID` / `LIST` modes for articles, notes, documents, and projects when content volume justifies it.
+- Indexes with `GRID` / `LIST` modes for articles, notes, recommendations, projects, and documents when content volume justifies it.
 - Hard separators and archive layouts instead of soft card-heavy surfaces.
 - Dark `CLOSE-UP //` blocks for code, diagrams, document previews, screenshots, and important artifacts.
 - Sober taxonomy chips for area, type, source, and status.
-- Related content sections at the end of articles, notes, documents, and projects.
+- Related content sections at the end of articles, notes, recommendations, documents, and projects.
 - Technical rectangular buttons with mono labels and strong borders.
 
 ## Site Structure
@@ -73,28 +73,42 @@ Planned localized routes use English and Spanish prefixes from the start. The ro
 
 /en
 /es
-  Homepage: identity, current work, latest articles, selected notes, and selected projects.
-
-/{locale}/now
-  What I am building, studying, training, and thinking about right now.
+  Homepage: minimalist personal profile, Signe role, social links, current projects, currently studying topics, and short guide to the site.
 
 /{locale}/articles
   Long-form articles and essays.
 
+/{locale}/areas
+  Broad topic hubs such as software engineering, philosophy, martial arts, finance, product, productivity, and faith.
+
+/{locale}/areas/{area}
+  Area hub linking related articles, notes, recommendations, and projects.
+
 /{locale}/notes
-  Curated shorter notes, working models, references, and Obsidian exports.
+  Study notes from books, courses, resources, Obsidian exports, and active learning.
+
+/{locale}/recommendations
+  Curated favorite books, courses, movies, anime, manga, video games, tools, and other resources, with why Yifan recommends them.
 
 /{locale}/documents
-  Longer imported documents, study notes, PDFs, or polished Obsidian artifacts.
+  Longer imported documents, PDFs, polished Obsidian artifacts, or reference material. This route may stay secondary or legacy while Notes and Recommendations carry the main study/recommendation model.
 
 /{locale}/projects
-  Covenant plus other experiments, tools, prototypes, and systems.
+  Covenant plus other experiments, tools, prototypes, systems, and active writing projects.
 
 /{locale}/projects/covenant
   A personal case study for Covenant, distinct from the official product landing page.
 
+/{locale}/projects/philosophy-book
+/{locale}/projects/martial-arts-book
+  Generic public pages for the two active book projects until final titles are stable.
+
+/{locale}/cv
+  Practical professional profile and recruiter-friendly surface.
+
+/{locale}/now
 /{locale}/about
-  Bio, areas of interest, taste, contact links, and collaboration surface.
+  Secondary or legacy routes. Keep them usable if present, but do not treat them as the main public structure unless the strategy changes.
 ```
 
 ## Internationalization
@@ -121,14 +135,20 @@ Suggested collections:
 src/content/articles/
   Long-form articles and essays.
 
+src/content/areas/
+  Body content for broad topic hubs such as software engineering, philosophy, martial arts, finance, product, productivity, and faith.
+
 src/content/notes/
-  Short notes, working models, reference notes, and curated Obsidian exports.
+  Study notes from books, courses, resources, Obsidian exports, and active learning.
+
+src/content/recommendations/
+  Curated favorite books, courses, movies, anime, manga, video games, tools, and other resources.
 
 src/content/documents/
   Longer documents, study notes, PDFs, and structured artifacts.
 
 src/content/projects/
-  Project pages and case studies.
+  Project pages, case studies, experiments, and active writing projects.
 
 src/content/now/
   Current status entries if the /now page becomes archival.
@@ -163,6 +183,22 @@ curated: true
 locale: "en"
 ```
 
+Suggested frontmatter for recommendations:
+
+```yaml
+title: "Meditations"
+description: "Why this book is worth returning to."
+date: 2026-06-17
+type: "recommendation"
+medium: "book"
+area: "philosophy"
+tags: ["stoicism", "character", "practice"]
+draft: false
+curated: true
+locale: "en"
+related: ["notes/en/notes-on-meditations"]
+```
+
 Suggested `area` values:
 
 ```text
@@ -171,20 +207,23 @@ product
 philosophy
 productivity
 martial-arts
-covenant
+finance
 notes
 ```
 
 ## Page Intent
 
-- Home: personal thesis, current focus, latest articles, selected notes/documents, selected projects, areas of interest, and contact/follow links.
-- Now: current building, studying, training, active questions, and useful conversations.
+- Home: minimalist personal profile, current role at Signe, social links, current projects, currently studying topics, and a short guide to the site.
 - Articles: long-form authority around engineering, product, philosophy, productivity, martial arts, and Covenant.
-- Notes: shorter artifacts such as working definitions, reading notes, Obsidian exports, training reflections, product observations, mental models, and useful resources.
-- Documents: longer or more artifact-like materials such as polished Obsidian documents, study notes, PDFs, reference guides, and research summaries.
-- Projects: systems and judgment, not only polished products. Include problem, decision, tradeoff, result or learning, and artifact when available.
+- Areas: broad topic hubs that connect articles, notes, recommendations, and projects by interest area.
+- Notes: study notes from books, courses, resources, Obsidian exports, and active learning. Notes contain the extracted ideas; recommendations explain why something is worth consuming.
+- Recommendations: curated favorites only. Include books, courses, movies, anime, manga, video games, tools, and other media/resources, with a concise reason for the recommendation and links to notes when available.
+- Projects: systems and judgment, not only polished products. Include Covenant, software experiments, the personal website, and the two generic active book projects while final titles may change.
+- CV: practical professional profile for recruiters and collaborators. Keep it direct, skimmable, and visible in the main navigation.
+- Documents: secondary archive for longer PDFs, polished artifacts, or reference material if needed.
+- Now: secondary current-status route if kept; the homepage carries the main current-work summary.
 - Covenant: personal case study, not a duplicate of the official product landing page.
-- About: memorable bio, areas of interest, current work, influences and taste, contact links, and a clear invitation.
+- About: secondary or legacy route unless a deeper biography becomes useful beyond Home and CV.
 
 ## Obsidian Publishing
 

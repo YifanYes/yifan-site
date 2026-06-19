@@ -1,0 +1,245 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { AreaDefinition } from '../lib/areas';
+import type { Locale } from '../lib/i18n';
+import { AREAS_COPY, ARCHIVE_FILTER_COPY } from '../lib/ui';
+import ModuleLabel from './ModuleLabel.astro';
+import PageHeader from './PageHeader.astro';
+import SiteShell from './SiteShell.astro';
+import TaxonomyChip from './TaxonomyChip.astro';
+
+type AreaEntry =
+	| CollectionEntry<'articles'>
+	| CollectionEntry<'notes'>
+	| CollectionEntry<'projects'>
+	| CollectionEntry<'recommendations'>;
+
+type Props = {
+	locale: Locale;
+	area: AreaDefinition;
+	content?: any;
+	items: {
+		articles: AreaEntry[];
+		notes: AreaEntry[];
+		recommendations: AreaEntry[];
+		projects: AreaEntry[];
+	};
+};
+
+const { locale, area, content: AreaContent, items } = Astro.props;
+const copy = AREAS_COPY[locale];
+const filterCopy = ARCHIVE_FILTER_COPY[locale];
+const routeSegments: Record<AreaEntry['collection'], string> = {
+	articles: 'articles',
+	notes: 'notes',
+	projects: 'projects',
+	recommendations: 'recommendations',
+};
+const dateFormatter = new Intl.DateTimeFormat(locale, {
+	year: 'numeric',
+	month: 'short',
+	day: '2-digit',
+});
+const formatLabel = (value: string) => value.replaceAll('-', ' ');
+const sectionEntries = [
+	{ label: copy.sections.articles, entries: items.articles },
+	{ label: copy.sections.notes, entries: items.notes },
+	{ label: copy.sections.recommendations, entries: items.recommendations },
+	{ label: copy.sections.projects, entries: items.projects },
+];
+const hasItems = sectionEntries.some((section) => section.entries.length > 0);
+const getEntryHref = (entry: AreaEntry) => {
+	const slug = entry.id.split('/').slice(1).join('/');
+
+	return `/${entry.data.locale}/${routeSegments[entry.collection]}/${slug}/`;
+};
+---
+
+<SiteShell locale={locale} currentPath={`/${locale}/areas/${area.slug}/`}>
+	<main class="area-page">
+		<PageHeader
+			moduleLabel={`AREA.${area.slug.toUpperCase()} //`}
+			kicker={copy.kicker}
+			title={area.title[locale]}
+			description={area.description[locale]}
+		/>
+
+		<section class="area-page__focus" aria-label={copy.focusLabel.replace(' //', '')}>
+			<ModuleLabel label={copy.focusLabel} tone="green" />
+			<div>
+				{area.focus[locale].map((focus) => <TaxonomyChip label={focus} />)}
+			</div>
+		</section>
+
+		{AreaContent && (
+			<section class="area-page__body" aria-label={area.title[locale]}>
+				<AreaContent />
+			</section>
+		)}
+
+		{hasItems ? (
+			sectionEntries.map((section) => (
+				<section class="area-page__section" aria-label={section.label.replace(' //', '')}>
+					<ModuleLabel label={section.label} />
+					{section.entries.length > 0 ? (
+						<div class="area-page__rows">
+							{section.entries.map((entry) => (
+								<a class="area-page__row" href={getEntryHref(entry)}>
+									<div class="area-page__meta">
+										<span>{dateFormatter.format(entry.data.date)}</span>
+										<span>{filterCopy.types[entry.data.type] ?? formatLabel(entry.data.type)}</span>
+									</div>
+									<div>
+										<h2>{entry.data.title}</h2>
+										<p>{entry.data.description}</p>
+									</div>
+								</a>
+							))}
+						</div>
+					) : (
+						<p class="area-page__empty">{copy.emptyLabel}</p>
+					)}
+				</section>
+			))
+		) : (
+			<p class="area-page__empty area-page__empty--all">{copy.emptyLabel}</p>
+		)}
+	</main>
+</SiteShell>
+
+<style>
+	.area-page {
+		padding-bottom: clamp(48px, 8vw, 96px);
+	}
+
+	.area-page__focus {
+		display: grid;
+		gap: 12px;
+		margin-top: clamp(28px, 5vw, 48px);
+		border-top: 1px solid var(--color-ink);
+		border-bottom: 1px solid var(--color-line);
+		padding: 18px 0;
+	}
+
+	.area-page__focus > div {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	.area-page__section {
+		margin-top: clamp(32px, 6vw, 64px);
+	}
+
+	.area-page__body {
+		max-width: var(--article-width);
+		margin: clamp(36px, 6vw, 72px) auto;
+		font-size: clamp(1.02rem, 1.4vw, 1.14rem);
+		line-height: 1.8;
+	}
+
+	.area-page__body :global(*) {
+		overflow-wrap: anywhere;
+	}
+
+	.area-page__body :global(p),
+	.area-page__body :global(ul),
+	.area-page__body :global(ol),
+	.area-page__body :global(blockquote) {
+		margin: 0 0 1.25em;
+	}
+
+	.area-page__body :global(h2),
+	.area-page__body :global(h3) {
+		margin: 2.2em 0 0.7em;
+		font-family: var(--font-display);
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	.area-page__body :global(h2) {
+		border-top: 2px solid var(--color-ink);
+		padding-top: 16px;
+		font-size: clamp(2rem, 4vw, 3.4rem);
+	}
+
+	.area-page__body :global(h3) {
+		font-size: clamp(1.45rem, 3vw, 2.15rem);
+	}
+
+	.area-page__body :global(blockquote) {
+		border-left: 3px solid var(--color-ink);
+		padding: 0.1em 0 0.1em 1em;
+		color: var(--color-muted);
+		font-family: var(--font-typewriter);
+	}
+
+	.area-page__body :global(li + li) {
+		margin-top: 0.45em;
+	}
+
+	.area-page__body :global(img) {
+		display: block;
+		max-width: 100%;
+		margin: 1.5em auto;
+		border: 1px solid var(--color-line);
+	}
+
+	.area-page__rows {
+		margin-top: 18px;
+		border-top: 1px solid var(--color-ink);
+	}
+
+	.area-page__row {
+		display: grid;
+		grid-template-columns: minmax(140px, 0.22fr) minmax(0, 1fr);
+		gap: clamp(20px, 5vw, 64px);
+		border-bottom: 1px solid var(--color-line);
+		padding: 22px 0;
+		text-decoration: none;
+	}
+
+	.area-page__row:hover h2,
+	.area-page__row:focus-visible h2 {
+		color: var(--color-green);
+	}
+
+	.area-page__meta {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		color: var(--color-muted);
+		font-family: var(--font-mono);
+		font-size: 0.76rem;
+		font-weight: 700;
+		line-height: 1.35;
+		text-transform: uppercase;
+	}
+
+	.area-page__row h2 {
+		font-family: var(--font-display);
+		font-size: clamp(1.8rem, 3.4vw, 3rem);
+		line-height: 0.98;
+		text-transform: uppercase;
+	}
+
+	.area-page__row p,
+	.area-page__empty {
+		max-width: 68ch;
+		margin-top: 8px;
+		color: var(--color-muted);
+		line-height: 1.6;
+	}
+
+	.area-page__empty--all {
+		margin-top: clamp(32px, 6vw, 64px);
+		border-top: 1px solid var(--color-ink);
+		padding-top: 18px;
+	}
+
+	@media (max-width: 760px) {
+		.area-page__row {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

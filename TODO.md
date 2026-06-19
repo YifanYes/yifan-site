@@ -15,12 +15,14 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 ## Phase 2: Content Architecture
 
 - [x] Add Astro Content Collections.
-- [x] Define schemas for `articles`, `notes`, `documents`, `projects`, and optional `now`.
+- [x] Define schemas for `articles`, `notes`, `recommendations`, `documents`, `projects`, and optional `now`.
 - [x] Include locale-aware fields in content schemas.
 - [x] Add required frontmatter: `title`, `description`, `date`, `type`, `area`, `tags`, `draft`, `locale`.
 - [x] Add optional frontmatter: `source`, `curated`, `featured`, `status`, `related`, `translationOf`.
 - [x] Decide slug strategy for translated content.
-- [x] Create sample English and Spanish entries for each content type.
+- [x] Create sample English and Spanish entries for initial content types.
+- [x] Add generic active project entries for the philosophy book and martial arts book.
+- [ ] Add first curated recommendation entries once Yifan chooses the favorites to publish.
 
 ## Phase 3: Design System
 
@@ -41,9 +43,14 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Build localized home pages for English and Spanish.
 - [x] Build `/[locale]/now`.
 - [x] Build `/[locale]/articles` index.
+- [x] Build `/[locale]/areas` index and area detail pages.
 - [x] Build `/[locale]/notes` index.
+- [x] Build `/[locale]/recommendations` index.
 - [x] Build `/[locale]/documents` index.
 - [x] Build `/[locale]/projects` index.
+- [x] Build `/[locale]/projects/[slug]` detail pages.
+- [x] Build `/[locale]/recommendations/[slug]` detail pages.
+- [x] Build `/[locale]/cv`.
 - [x] Build `/[locale]/about`.
 
 ## Phase 5: Index Patterns
@@ -54,13 +61,15 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Make index URLs shareable if filters or modes are interactive.
 - [x] Ensure indexes work without client JavaScript where possible.
 
-## Phase 6: Article And Note Templates
+## Phase 6: Detail Templates
 
 - [x] Create article detail layout.
-- [ ] Create note detail layout.
+- [x] Create note detail layout.
+- [x] Create project detail layout.
+- [x] Create recommendation detail layout.
 - [ ] Create document detail layout.
-- [ ] Add metadata rail: area, date, source, status, tags, language.
-- [ ] Add related content section.
+- [x] Add metadata rail: area, date, source/status/tags/language where relevant.
+- [x] Add related content section for article, note, project, and recommendation pages.
 - [ ] Add optional table of contents for long articles/documents.
 - [ ] Add support for code blocks and artifact figures.
 - [ ] Add bilingual navigation between translations when both exist.
@@ -76,15 +85,20 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 
 ## Phase 8: Content Seed
 
-- [ ] Write initial homepage copy in English.
-- [ ] Write initial homepage copy in Spanish.
+- [x] Write initial minimalist homepage copy in English.
+- [x] Write initial minimalist homepage copy in Spanish.
 - [ ] Add first engineering article.
 - [ ] Add first product article.
 - [ ] Add first philosophy article or note.
 - [ ] Add first productivity article or note.
 - [ ] Add first martial arts article or note.
-- [ ] Add Covenant project/case-study entry.
-- [ ] Add About page in English and Spanish.
+- [ ] Add first finance note or recommendation.
+- [ ] Add first curated recommendation.
+- [x] Add Covenant project/case-study entry.
+- [x] Add generic philosophy book project.
+- [x] Add generic martial arts book project.
+- [x] Add CV page in English and Spanish.
+- [x] Add About page in English and Spanish.
 
 ## Phase 9: Quality
 

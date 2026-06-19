@@ -1,0 +1,12 @@
+---
+import LocalizedCvPage from '../../../components/LocalizedCvPage.astro';
+import Layout from '../../../layouts/Layout.astro';
+import { CV_COPY } from '../../../lib/ui';
+
+const locale = 'es';
+const copy = CV_COPY[locale];
+---
+
+<Layout title={copy.metaTitle} description={copy.description} locale={locale} path="/es/cv/">
+	<LocalizedCvPage locale={locale} />
+</Layout>

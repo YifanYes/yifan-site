@@ -53,12 +53,12 @@ export const NAV_COPY: Record<
 			switchToDark: 'Switch to dark theme',
 		},
 		links: [
-			{ label: 'Now', path: '/now' },
 			{ label: 'Articles', path: '/articles' },
+			{ label: 'Areas', path: '/areas' },
 			{ label: 'Notes', path: '/notes' },
-			{ label: 'Documents', path: '/documents' },
+			{ label: 'Recommendations', path: '/recommendations' },
 			{ label: 'Projects', path: '/projects' },
-			{ label: 'About', path: '/about' },
+			{ label: 'CV', path: '/cv' },
 		],
 	},
 	es: {
@@ -80,12 +80,12 @@ export const NAV_COPY: Record<
 			switchToDark: 'Cambiar al tema oscuro',
 		},
 		links: [
-			{ label: 'Ahora', path: '/now' },
 			{ label: 'Artículos', path: '/articles' },
+			{ label: 'Áreas', path: '/areas' },
 			{ label: 'Notas', path: '/notes' },
-			{ label: 'Documentos', path: '/documents' },
+			{ label: 'Recomendaciones', path: '/recommendations' },
 			{ label: 'Proyectos', path: '/projects' },
-			{ label: 'Acerca', path: '/about' },
+			{ label: 'CV', path: '/cv' },
 		],
 	},
 };
@@ -99,197 +99,133 @@ export const HOME_COPY: Record<
 		eyebrow: string;
 		title: string;
 		lede: string;
-		currentThreadsLabel: string;
-		currentThreads: { title: string; description: string; path: string }[];
-		selectedArtifactsLabel: string;
-		selectedArtifacts: { type: string; title: string; description: string; path: string }[];
-		areasLabel: string;
-		areas: { title: string; description: string; icon: 'engineering' | 'product' | 'combat' | 'frameworks'; path: string }[];
-		openQuestionsLabel: string;
-		openQuestions: string[];
+		statusLabel: string;
+		status: { label: string; value: string | string[] }[];
+		socialLabel: string;
+		socialLinks: { label: string; href: string }[];
+		projectsLabel: string;
+		projects: { title: string; description: string; path?: string; href?: string }[];
+		studyingLabel: string;
+		studying: string[];
+		guideLabel: string;
+		guide: { title: string; description: string; path: string }[];
 	}
 > = {
 	en: {
-		metaTitle: "Yifan's Field Notes",
+		metaTitle: 'Yifan',
 		description:
-			'Engineering, product systems, philosophy, productivity, martial arts, curated notes, and selected projects from Yifan.',
-		moduleLabel: 'WORKBENCH.001 //',
-		eyebrow: 'PUBLIC WORKING SURFACE',
-		title: "Yifan's Field Notes",
+			'Personal website for Yifan: writing, study notes, recommendations, projects, and a professional CV.',
+		moduleLabel: 'PROFILE.001 //',
+		eyebrow: 'PERSONAL WEBSITE',
+		title: 'Yifan Ye Zhang',
 		lede:
-			'A collection of notes, guides, articles and resources for engineering, product thinking, philosophy, productivity, martial arts, and personal projects.',
-		currentThreadsLabel: 'CURRENT THREADS',
-		currentThreads: [
-			{
-				title: 'Building the workbench',
-				description: 'Shaping the site as a public surface for articles, notes, documents, and selected projects.',
-				path: '/now',
-			},
-			{
-				title: 'Testing product systems',
-				description: 'Turning Covenant and related experiments into case studies about judgment, loops, and tradeoffs.',
-				path: '/projects',
-			},
-			{
-				title: 'Training attention',
-				description: 'Using martial arts, combat practice, and disciplined repetition as a lens for better work.',
-				path: '/notes',
-			},
+			'I write, build, and study across software engineering, product systems, philosophy, martial arts, finance, and disciplined practice.',
+		statusLabel: 'CURRENTLY //',
+		status: [
+			{ label: 'Work', value: 'Software engineer at Signe' },
+			{ label: 'Building', value: ['Covenant', 'Spanish Advanced Drones', 'Philosophy book', 'Martial arts book'] },
+			{ label: 'Studying', value: ['Designing Data-Intensive Applications', 'Code Simplicity', 'UX'] },
 		],
-		selectedArtifactsLabel: 'SELECTED ARTIFACTS',
-		selectedArtifacts: [
+		socialLabel: 'SOCIAL //',
+		socialLinks: [
+			{ label: 'X', href: 'https://x.com/yifan_yz' },
+			{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/yifan-ye-zhang/' },
+			{ label: 'GitHub', href: 'https://github.com/YifanYes' },
+		],
+		projectsLabel: 'CURRENT PROJECTS //',
+		projects: [
 			{
-				type: 'ARTICLE',
-				title: 'Engineering as Discipline',
-				description: 'Long-form articles on craft, pressure, systems, and judgment.',
-				path: '/articles',
-			},
-			{
-				type: 'NOTE',
-				title: 'Attention Is A Training Surface',
-				description: 'A shorter model for attention, practice, and productive constraint.',
-				path: '/notes',
-			},
-			{
-				type: 'DOCUMENT',
-				title: 'Workbench Operating Notes',
-				description: 'A structured artifact for how this site is being assembled.',
-				path: '/documents',
-			},
-			{
-				type: 'PROJECT',
 				title: 'Covenant',
 				description: 'A productivity RPG where real tasks become mana for tactical quests.',
-				path: '/projects',
+				href: 'https://covenantrpg.com/',
+			},
+			{
+				title: 'Spanish Advanced Drones',
+				description: 'Drone work and advanced aerial services in Spain.',
+				href: 'https://www.spanish-advanced-drones.com/',
+			},
+			{
+				title: 'Philosophy book',
+				description: 'An early writing project about philosophy, character, discipline, and how to live.',
+				path: '/projects/philosophy-book',
+			},
+			{
+				title: 'Martial arts book',
+				description: 'An early writing project about martial arts, training, pressure, and practice.',
+				path: '/projects/martial-arts-book',
 			},
 		],
-		areasLabel: 'AREAS',
-		areas: [
-			{
-				title: 'Engineering',
-				description: 'Systems, architecture, craft, pressure, and implementation judgment.',
-				icon: 'engineering',
-				path: '/articles',
-			},
-			{
-				title: 'Product Systems',
-				description: 'Loops, incentives, interfaces, tradeoffs, and product strategy.',
-				icon: 'product',
-				path: '/projects',
-			},
-			{
-				title: 'Martial Arts And Combat',
-				description: 'Training notes on discipline, attention, pressure, and embodied practice.',
-				icon: 'combat',
-				path: '/notes',
-			},
-			{
-				title: 'Frameworks',
-				description: 'Reusable models for productivity, philosophy, decision-making, and study.',
-				icon: 'frameworks',
-				path: '/documents',
-			},
-		],
-		openQuestionsLabel: 'OPEN QUESTIONS',
-		openQuestions: [
-			'What makes a personal site useful before it is complete?',
-			'How should engineering notes become reusable frameworks instead of loose observations?',
-			'Where does combat practice sharpen product and engineering judgment?',
-			'How can Covenant stay visible without taking over the whole identity?',
+		studyingLabel: 'CURRENTLY STUDYING //',
+		studying: ['Designing Data-Intensive Applications', 'Code Simplicity', 'UX'],
+		guideLabel: 'SITE MAP //',
+		guide: [
+			{ title: 'Articles', description: 'Polished long-form writing and developed arguments.', path: '/articles' },
+			{ title: 'Areas', description: 'Topic hubs that connect writing, notes, recommendations, and projects.', path: '/areas' },
+			{ title: 'Notes', description: 'Study notes from books, courses, resources, and active learning.', path: '/notes' },
+			{ title: 'Recommendations', description: 'Curated favorite books, media, courses, tools, and games.', path: '/recommendations' },
+			{ title: 'Projects', description: 'Things I am building, attempting, testing, or writing.', path: '/projects' },
+			{ title: 'CV', description: 'A practical professional profile for recruiters and collaborators.', path: '/cv' },
 		],
 	},
 	es: {
-		metaTitle: 'Notas de campo de Yifan',
+		metaTitle: 'Yifan',
 		description:
-			'Ingeniería, sistemas de producto, filosofía, productividad, artes marciales, notas curadas y proyectos seleccionados de Yifan.',
-		moduleLabel: 'WORKBENCH.001 //',
-		eyebrow: 'SUPERFICIE PUBLICA DE TRABAJO',
-		title: 'Notas de campo de Yifan',
+			'Sitio personal de Yifan: artículos, notas de estudio, recomendaciones, proyectos y CV profesional.',
+		moduleLabel: 'PROFILE.001 //',
+		eyebrow: 'SITIO PERSONAL',
+		title: 'Yifan Ye Zhang',
 		lede:
-			'Una colección de notas, guías, artículos y recursos sobre ingeniería, pensamiento de producto, filosofía, productividad, artes marciales y proyectos personales.',
-		currentThreadsLabel: 'HILOS ACTUALES',
-		currentThreads: [
-			{
-				title: 'Construyendo el workbench',
-				description: 'Dando forma al sitio como superficie publica para escritura, notas, documentos y proyectos seleccionados.',
-				path: '/now',
-			},
-			{
-				title: 'Probando sistemas de producto',
-				description: 'Convirtiendo Covenant y otros experimentos en casos sobre criterio, bucles y tradeoffs.',
-				path: '/projects',
-			},
-			{
-				title: 'Entrenando atencion',
-				description: 'Usando artes marciales, combate y repeticion disciplinada como lente para trabajar mejor.',
-				path: '/notes',
-			},
+			'Escribo, construyo y estudio entre ingeniería de software, sistemas de producto, filosofía, artes marciales, finanzas y práctica disciplinada.',
+		statusLabel: 'AHORA //',
+		status: [
+			{ label: 'Trabajo', value: 'Software engineer en Signe' },
+			{ label: 'Construyendo', value: ['Covenant', 'Spanish Advanced Drones', 'Libro de filosofía', 'Libro de artes marciales'] },
+			{ label: 'Estudiando', value: ['Designing Data-Intensive Applications', 'Code Simplicity', 'UX'] },
 		],
-		selectedArtifactsLabel: 'ARTEFACTOS SELECCIONADOS',
-		selectedArtifacts: [
+		socialLabel: 'SOCIAL //',
+		socialLinks: [
+			{ label: 'X', href: 'https://x.com/yifan_yz' },
+			{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/yifan-ye-zhang/' },
+			{ label: 'GitHub', href: 'https://github.com/YifanYes' },
+		],
+		projectsLabel: 'PROYECTOS ACTUALES //',
+		projects: [
 			{
-				type: 'ARTICLE',
-				title: 'Ingenieria como disciplina',
-				description: 'Artículos largos sobre oficio, presion, sistemas y criterio.',
-				path: '/articles',
-			},
-			{
-				type: 'NOTE',
-				title: 'La atencion es superficie de entrenamiento',
-				description: 'Un modelo breve sobre atencion, practica y restricciones productivas.',
-				path: '/notes',
-			},
-			{
-				type: 'DOCUMENT',
-				title: 'Notas operativas del workbench',
-				description: 'Un artefacto estructurado sobre como se esta ensamblando este sitio.',
-				path: '/documents',
-			},
-			{
-				type: 'PROJECT',
 				title: 'Covenant',
-				description: 'Un RPG de productividad donde tareas reales se convierten en mana para misiones tacticas.',
-				path: '/projects',
+				description: 'Un RPG de productividad donde tareas reales se convierten en maná para misiones tácticas.',
+				href: 'https://covenantrpg.com/',
+			},
+			{
+				title: 'Spanish Advanced Drones',
+				description: 'Trabajo con drones y servicios aéreos avanzados en España.',
+				href: 'https://www.spanish-advanced-drones.com/',
+			},
+			{
+				title: 'Libro de filosofía',
+				description: 'Un proyecto temprano de escritura sobre filosofía, carácter, disciplina y cómo vivir.',
+				path: '/projects/libro-de-filosofia',
+			},
+			{
+				title: 'Libro de artes marciales',
+				description: 'Un proyecto temprano de escritura sobre artes marciales, entrenamiento, presión y práctica.',
+				path: '/projects/libro-de-artes-marciales',
 			},
 		],
-		areasLabel: 'AREAS',
-		areas: [
-			{
-				title: 'Ingenieria',
-				description: 'Sistemas, arquitectura, oficio, presion y criterio de implementacion.',
-				icon: 'engineering',
-				path: '/articles',
-			},
-			{
-				title: 'Sistemas de producto',
-				description: 'Bucles, incentivos, interfaces, tradeoffs y estrategia de producto.',
-				icon: 'product',
-				path: '/projects',
-			},
-			{
-				title: 'Artes marciales y combate',
-				description: 'Notas de entrenamiento sobre disciplina, atencion, presion y practica encarnada.',
-				icon: 'combat',
-				path: '/notes',
-			},
-			{
-				title: 'Frameworks',
-				description: 'Modelos reutilizables para productividad, filosofia, decision y estudio.',
-				icon: 'frameworks',
-				path: '/documents',
-			},
-		],
-		openQuestionsLabel: 'PREGUNTAS ABIERTAS',
-		openQuestions: [
-			'Que hace util a un sitio personal antes de estar completo?',
-			'Como convertir notas de ingenieria en frameworks reutilizables?',
-			'Donde afina el combate el criterio de producto e ingenieria?',
-			'Como mantener Covenant visible sin que tome toda la identidad?',
+		studyingLabel: 'ESTUDIANDO //',
+		studying: ['Designing Data-Intensive Applications', 'Code Simplicity', 'UX'],
+		guideLabel: 'MAPA DEL SITIO //',
+		guide: [
+			{ title: 'Artículos', description: 'Escritura larga y argumentos desarrollados.', path: '/articles' },
+			{ title: 'Áreas', description: 'Hubs temáticos que conectan artículos, notas, recomendaciones y proyectos.', path: '/areas' },
+			{ title: 'Notas', description: 'Notas de estudio de libros, cursos, recursos y aprendizaje activo.', path: '/notes' },
+			{ title: 'Recomendaciones', description: 'Favoritos curados: libros, media, cursos, herramientas y juegos.', path: '/recommendations' },
+			{ title: 'Proyectos', description: 'Cosas que estoy construyendo, intentando, probando o escribiendo.', path: '/projects' },
+			{ title: 'CV', description: 'Perfil profesional práctico para recruiters y colaboradores.', path: '/cv' },
 		],
 	},
 };
 
-type ArchivePage = 'now' | 'articles' | 'notes' | 'documents' | 'projects';
+type ArchivePage = 'now' | 'articles' | 'notes' | 'documents' | 'projects' | 'recommendations';
 
 type ArchivePageCopy = {
 	metaTitle: string;
@@ -323,10 +259,10 @@ export const ARCHIVE_COPY: Record<Locale, Record<ArchivePage, ArchivePageCopy>> 
 		},
 		notes: {
 			metaTitle: 'Notes',
-			description: 'Curated shorter notes, working models, references, and Obsidian exports.',
+			description: 'Study notes from books, courses, resources, and active learning.',
 			moduleLabel: 'NOTE.INDEX //',
-			kicker: 'CURATED NOTES',
-			title: 'Shorter useful artifacts.',
+			kicker: 'STUDY NOTES',
+			title: 'Notes from study and practice.',
 			listLabel: 'PUBLISHED NOTES //',
 			empty: 'No notes are published yet.',
 		},
@@ -341,12 +277,21 @@ export const ARCHIVE_COPY: Record<Locale, Record<ArchivePage, ArchivePageCopy>> 
 		},
 		projects: {
 			metaTitle: 'Projects',
-			description: 'Selected projects, systems, prototypes, and case studies from Yifan.',
+			description: 'Things Yifan is building, attempting, testing, or writing.',
 			moduleLabel: 'PROJECT.INDEX //',
 			kicker: 'SYSTEMS AND EXPERIMENTS',
 			title: 'Projects and case studies.',
 			listLabel: 'SELECTED PROJECTS //',
 			empty: 'No projects are published yet.',
+		},
+		recommendations: {
+			metaTitle: 'Recommendations',
+			description: 'Curated favorite books, media, courses, tools, games, and resources from Yifan.',
+			moduleLabel: 'RECOMMENDATION.INDEX //',
+			kicker: 'CURATED FAVORITES',
+			title: 'Recommendations worth returning to.',
+			listLabel: 'CURATED RECOMMENDATIONS //',
+			empty: 'No recommendations are published yet.',
 		},
 	},
 	es: {
@@ -370,10 +315,10 @@ export const ARCHIVE_COPY: Record<Locale, Record<ArchivePage, ArchivePageCopy>> 
 		},
 		notes: {
 			metaTitle: 'Notas',
-			description: 'Notas cortas curadas, modelos de trabajo, referencias y exportaciones de Obsidian.',
+			description: 'Notas de estudio de libros, cursos, recursos y aprendizaje activo.',
 			moduleLabel: 'NOTE.INDEX //',
-			kicker: 'NOTAS CURADAS',
-			title: 'Artefactos breves y útiles.',
+			kicker: 'NOTAS DE ESTUDIO',
+			title: 'Notas de estudio y práctica.',
 			listLabel: 'NOTAS PUBLICADAS //',
 			empty: 'Todavía no hay notas publicadas.',
 		},
@@ -388,12 +333,21 @@ export const ARCHIVE_COPY: Record<Locale, Record<ArchivePage, ArchivePageCopy>> 
 		},
 		projects: {
 			metaTitle: 'Proyectos',
-			description: 'Proyectos seleccionados, sistemas, prototipos y casos de estudio de Yifan.',
+			description: 'Cosas que Yifan está construyendo, intentando, probando o escribiendo.',
 			moduleLabel: 'PROJECT.INDEX //',
 			kicker: 'SISTEMAS Y EXPERIMENTOS',
 			title: 'Proyectos y casos de estudio.',
 			listLabel: 'PROYECTOS SELECCIONADOS //',
 			empty: 'Todavía no hay proyectos publicados.',
+		},
+		recommendations: {
+			metaTitle: 'Recomendaciones',
+			description: 'Favoritos curados de Yifan: libros, media, cursos, herramientas, juegos y recursos.',
+			moduleLabel: 'RECOMMENDATION.INDEX //',
+			kicker: 'FAVORITOS CURADOS',
+			title: 'Recomendaciones para volver.',
+			listLabel: 'RECOMENDACIONES CURADAS //',
+			empty: 'Todavía no hay recomendaciones publicadas.',
 		},
 	},
 };
@@ -433,7 +387,7 @@ export const ARCHIVE_FILTER_COPY: Record<
 			faith: 'Faith',
 			productivity: 'Productivity',
 			'martial-arts': 'Martial Arts',
-			covenant: 'Covenant',
+			finance: 'Finance',
 			notes: 'Notes',
 		},
 		types: {
@@ -441,6 +395,7 @@ export const ARCHIVE_FILTER_COPY: Record<
 			note: 'Note',
 			document: 'Document',
 			project: 'Project',
+			recommendation: 'Recommendation',
 			now: 'Now',
 		},
 	},
@@ -462,7 +417,7 @@ export const ARCHIVE_FILTER_COPY: Record<
 			faith: 'Fe',
 			productivity: 'Productividad',
 			'martial-arts': 'Artes marciales',
-			covenant: 'Covenant',
+			finance: 'Finanzas',
 			notes: 'Notas',
 		},
 		types: {
@@ -470,8 +425,123 @@ export const ARCHIVE_FILTER_COPY: Record<
 			note: 'Nota',
 			document: 'Documento',
 			project: 'Proyecto',
+			recommendation: 'Recomendación',
 			now: 'Ahora',
 		},
+	},
+};
+
+export const AREAS_COPY: Record<
+	Locale,
+	{
+		metaTitle: string;
+		description: string;
+		moduleLabel: string;
+		kicker: string;
+		title: string;
+		listLabel: string;
+		focusLabel: string;
+		emptyLabel: string;
+		sections: {
+			articles: string;
+			notes: string;
+			recommendations: string;
+			projects: string;
+		};
+	}
+> = {
+	en: {
+		metaTitle: 'Areas',
+		description: 'Broad topic hubs connecting Yifan’s articles, notes, recommendations, and projects.',
+		moduleLabel: 'AREA.INDEX //',
+		kicker: 'TOPIC HUBS',
+		title: 'Areas of study and work.',
+		listLabel: 'ACTIVE AREAS //',
+		focusLabel: 'FOCUS //',
+		emptyLabel: 'No public artifacts are published in this area yet.',
+		sections: {
+			articles: 'ARTICLES //',
+			notes: 'NOTES //',
+			recommendations: 'RECOMMENDATIONS //',
+			projects: 'PROJECTS //',
+		},
+	},
+	es: {
+		metaTitle: 'Áreas',
+		description: 'Hubs temáticos que conectan artículos, notas, recomendaciones y proyectos de Yifan.',
+		moduleLabel: 'AREA.INDEX //',
+		kicker: 'HUBS TEMÁTICOS',
+		title: 'Áreas de estudio y trabajo.',
+		listLabel: 'ÁREAS ACTIVAS //',
+		focusLabel: 'FOCO //',
+		emptyLabel: 'Todavía no hay artefactos públicos en esta área.',
+		sections: {
+			articles: 'ARTÍCULOS //',
+			notes: 'NOTAS //',
+			recommendations: 'RECOMENDACIONES //',
+			projects: 'PROYECTOS //',
+		},
+	},
+};
+
+export const CV_COPY: Record<
+	Locale,
+	{
+		metaTitle: string;
+		description: string;
+		moduleLabel: string;
+		kicker: string;
+		title: string;
+		lede: string;
+		specLabel: string;
+		specs: { label: string; value: string | string[] }[];
+		linksLabel: string;
+		links: { label: string; href: string }[];
+	}
+> = {
+	en: {
+		metaTitle: 'CV',
+		description: 'Professional CV for Yifan Ye Zhang.',
+		moduleLabel: 'CV.001 //',
+		kicker: 'PROFESSIONAL PROFILE',
+		title: 'Yifan Ye Zhang',
+		lede:
+			'Software engineer at Signe, working across product systems, software engineering, disciplined practice, and selected personal projects.',
+		specLabel: 'PROFILE //',
+		specs: [
+			{ label: 'Current', value: 'Software engineer at Signe' },
+			{ label: 'Focus', value: ['Software engineering', 'Product systems', 'AI-assisted tools', 'Personal productivity systems'] },
+			{ label: 'Projects', value: ['Covenant', 'Personal website', 'Philosophy book', 'Martial arts book'] },
+			{ label: 'Location', value: 'Spain' },
+		],
+		linksLabel: 'LINKS //',
+		links: [
+			{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/yifan-ye-zhang/' },
+			{ label: 'GitHub', href: 'https://github.com/YifanYes' },
+			{ label: 'X', href: 'https://x.com/yifan_yz' },
+		],
+	},
+	es: {
+		metaTitle: 'CV',
+		description: 'CV profesional de Yifan Ye Zhang.',
+		moduleLabel: 'CV.001 //',
+		kicker: 'PERFIL PROFESIONAL',
+		title: 'Yifan Ye Zhang',
+		lede:
+			'Software engineer en Signe, trabajando entre sistemas de producto, ingeniería de software, práctica disciplinada y proyectos personales seleccionados.',
+		specLabel: 'PERFIL //',
+		specs: [
+			{ label: 'Actual', value: 'Software engineer en Signe' },
+			{ label: 'Foco', value: ['Ingeniería de software', 'Sistemas de producto', 'Herramientas con IA', 'Sistemas personales de productividad'] },
+			{ label: 'Proyectos', value: ['Covenant', 'Sitio personal', 'Libro de filosofía', 'Libro de artes marciales'] },
+			{ label: 'Ubicación', value: 'España' },
+		],
+		linksLabel: 'ENLACES //',
+		links: [
+			{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/yifan-ye-zhang/' },
+			{ label: 'GitHub', href: 'https://github.com/YifanYes' },
+			{ label: 'X', href: 'https://x.com/yifan_yz' },
+		],
 	},
 };
 

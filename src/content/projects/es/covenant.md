@@ -3,7 +3,7 @@ title: "Covenant"
 description: "Un RPG de productividad donde las tareas reales se convierten en maná para misiones tácticas."
 date: 2026-06-17
 type: "project"
-area: "covenant"
+area: "product"
 tags: ["covenant", "productividad", "rpg", "producto"]
 draft: false
 featured: true

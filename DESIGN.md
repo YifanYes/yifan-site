@@ -67,8 +67,11 @@ The site is centered on:
 - Faith.
 - Productivity.
 - Martial arts.
+- Finance.
 - Curated Obsidian notes and documents.
+- Curated recommendations across books, courses, media, games, tools, and resources.
 - Projects, including Covenant.
+- A practical CV surface.
 
 Covenant is a major project, not the site's main identity.
 
@@ -81,7 +84,7 @@ Covenant is a major project, not the site's main identity.
 - Custom primitives over imported component libraries.
 - Clear typography over decorative illustration.
 - Visible structure: rules, columns, labels, metadata, timestamps, status markers.
-- Module labels, archive layouts, grid/list indexes, hard separators, dark close-up blocks, sober taxonomy chips, related content, and technical rectangular buttons are core visual patterns.
+- Module labels, archive layouts, topic hubs, grid/list indexes, hard separators, dark close-up blocks, sober taxonomy chips, related content, and technical rectangular buttons are core visual patterns.
 - Light motion, if any. Motion should clarify state or navigation.
 - No decorative blobs, gradient orbs, generic SVG hero art, or stock-like visuals.
 
@@ -183,8 +186,8 @@ Taxonomy chips should feel like archive filters, not colorful badges.
 
 Use them for:
 
-- Areas: `Engineering`, `Product`, `Philosophy`, `Faith`, `Productivity`, `Martial Arts`, `Covenant`.
-- Content types: `Article`, `Note`, `Document`, `Project`.
+- Areas: `Engineering`, `Product`, `Philosophy`, `Faith`, `Productivity`, `Martial Arts`, `Finance`.
+- Content types: `Article`, `Note`, `Recommendation`, `Document`, `Project`.
 - Source/status: `Obsidian`, `Curated`, `Draft`, `Published`, `Updated`.
 
 Style:
@@ -553,7 +556,6 @@ article
 note
 document
 project
-covenant
 about
 index
 ```

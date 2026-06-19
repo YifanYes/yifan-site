@@ -1,15 +1,16 @@
 # yifan-site
 
-Personal website for Yifan: a content-first workbench for engineering, product thinking, philosophy, productivity, martial arts, curated notes, documents, and selected projects.
+Personal website for Yifan: a minimalist personal profile and content-first workbench for articles, topic areas, study notes, curated recommendations, projects, and a professional CV.
 
-This is not a generic portfolio and it is not a Covenant marketing site. Covenant should be present because it is an important project, but the website should be centered on Yifan's thinking, practice, writing, and systems.
+This is not a generic portfolio and it is not a Covenant marketing site. Covenant should be present because it is an important project, but the website should be centered on Yifan's thinking, practice, writing, study, recommendations, and systems.
 
 ## Project Shape
 
 - Built with Astro.
 - Uses English and Spanish localized routes: `/en/...` and `/es/...`.
 - Root route redirects to `/en/`.
-- Content should be modeled with Astro Content Collections as the site grows.
+- Primary public structure: Home, Articles, Areas, Notes, Recommendations, Projects, and CV.
+- Content is modeled with Astro Content Collections for articles, notes, projects, recommendations, documents, and current-status entries.
 - React should be reserved for interactive islands.
 - Visual work follows the Systems Workbench direction in `DESIGN.md`.
 

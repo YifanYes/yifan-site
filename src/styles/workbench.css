@@ -7,6 +7,8 @@
 	--color-muted: #6b6258;
 	--color-line: rgba(23, 21, 18, 0.16);
 	--color-line-strong: #171512;
+	--color-filled: #171512;
+	--color-filled-text: #f4f0e8;
 	--color-green: #2f6b4f;
 	--color-red: #a33a2b;
 	--color-gold: #b8872d;
@@ -35,6 +37,8 @@
 	--color-muted: #aaa094;
 	--color-line: rgba(244, 240, 232, 0.18);
 	--color-line-strong: rgba(244, 240, 232, 0.82);
+	--color-filled: #f4f0e8;
+	--color-filled-text: #171512;
 	--color-green: #7baa8d;
 	--color-red: #d06a5b;
 	--color-gold: #d3a753;
@@ -122,8 +126,8 @@ body {
 }
 
 ::selection {
-	background: var(--color-ink);
-	color: var(--color-paper);
+	background: var(--color-filled);
+	color: var(--color-filled-text);
 }
 
 a {

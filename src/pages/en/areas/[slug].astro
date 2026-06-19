@@ -1,0 +1,51 @@
+---
+import { getCollection, render } from 'astro:content';
+import LocalizedAreaPage from '../../../components/LocalizedAreaPage.astro';
+import Layout from '../../../layouts/Layout.astro';
+import { AREA_BY_SLUG, AREA_DEFINITIONS } from '../../../lib/areas';
+import { byNewestEntry } from '../../../lib/archive-items';
+
+const locale = 'en';
+
+export async function getStaticPaths() {
+	return AREA_DEFINITIONS.map((area) => ({
+		params: { slug: area.slug },
+	}));
+}
+
+const { slug } = Astro.params;
+const area = AREA_BY_SLUG.get(slug as any);
+
+if (!area) {
+	return Astro.redirect('/en/areas/');
+}
+
+const [areaEntries, articles, notes, recommendations, projects] = await Promise.all([
+	getCollection('areas', ({ data }) => data.locale === locale && data.area === area.slug && !data.draft),
+	getCollection('articles', ({ data }) => data.locale === locale && data.area === area.slug && !data.draft),
+	getCollection('notes', ({ data }) => data.locale === locale && data.area === area.slug && !data.draft),
+	getCollection('recommendations', ({ data }) => data.locale === locale && data.area === area.slug && !data.draft),
+	getCollection('projects', ({ data }) => data.locale === locale && data.area === area.slug && !data.draft),
+]);
+const areaEntry = areaEntries[0];
+const AreaContent = areaEntry ? (await render(areaEntry)).Content : undefined;
+---
+
+<Layout
+	title={`${area.title[locale]} Area`}
+	description={area.description[locale]}
+	locale={locale}
+	path={`/en/areas/${area.slug}/`}
+>
+	<LocalizedAreaPage
+		locale={locale}
+		area={area}
+		content={AreaContent}
+		items={{
+			articles: articles.sort(byNewestEntry),
+			notes: notes.sort(byNewestEntry),
+			recommendations: recommendations.sort(byNewestEntry),
+			projects: projects.sort(byNewestEntry),
+		}}
+	/>
+</Layout>

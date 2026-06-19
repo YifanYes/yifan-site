@@ -1,0 +1,98 @@
+---
+import ArchiveSpecPanel from './ArchiveSpecPanel.astro';
+import ModuleLabel from './ModuleLabel.astro';
+import PageHeader from './PageHeader.astro';
+import SiteShell from './SiteShell.astro';
+import { CV_COPY } from '../lib/ui';
+import type { Locale } from '../lib/i18n';
+
+type Props = {
+	locale: Locale;
+};
+
+const { locale } = Astro.props;
+const copy = CV_COPY[locale];
+---
+
+<SiteShell locale={locale}>
+	<main class="cv-page">
+		<PageHeader
+			moduleLabel={copy.moduleLabel}
+			kicker={copy.kicker}
+			title={copy.title}
+			description={copy.lede}
+		/>
+
+		<section class="cv-page__grid">
+			<div class="cv-page__spec" aria-label={copy.specLabel.replace(' //', '')}>
+				<ArchiveSpecPanel label={copy.specLabel} specs={copy.specs} />
+			</div>
+
+			<aside class="cv-page__links" aria-label={copy.linksLabel.replace(' //', '')}>
+				<ModuleLabel label={copy.linksLabel} tone="green" />
+				<div>
+					{copy.links.map((link) => (
+						<a href={link.href} rel="me noopener noreferrer" target="_blank">
+							{link.label}
+						</a>
+					))}
+				</div>
+			</aside>
+		</section>
+	</main>
+</SiteShell>
+
+<style>
+	.cv-page {
+		padding-bottom: clamp(48px, 8vw, 96px);
+	}
+
+	.cv-page__grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+		gap: clamp(24px, 5vw, 64px);
+		margin-top: clamp(32px, 6vw, 64px);
+		border-top: 1px solid var(--color-ink);
+		padding-top: 18px;
+	}
+
+	.cv-page__spec .archive-spec-panel {
+		padding-top: 0;
+	}
+
+	.cv-page__links {
+		border-left: 1px solid var(--color-line);
+		padding-left: 22px;
+	}
+
+	.cv-page__links div {
+		display: grid;
+		margin-top: 18px;
+		border-top: 1px solid var(--color-line);
+	}
+
+	.cv-page__links a {
+		border-bottom: 1px solid var(--color-line);
+		padding: 12px 0;
+		font-family: var(--font-mono);
+		font-size: 0.82rem;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	.cv-page__links a:hover,
+	.cv-page__links a:focus-visible {
+		color: var(--color-green);
+	}
+
+	@media (max-width: 760px) {
+		.cv-page__grid {
+			grid-template-columns: 1fr;
+		}
+
+		.cv-page__links {
+			border-left: 0;
+			padding-left: 0;
+		}
+	}
+</style>
