@@ -1,0 +1,64 @@
+---
+import { getCollection, render } from 'astro:content';
+import NotePage from '../../../components/NotePage.astro';
+import Layout from '../../../layouts/Layout.astro';
+import { LOCALE_LABELS, type AlternateLink } from '../../../lib/i18n';
+
+const getNotePath = (entry) => {
+	const slug = entry.id.split('/').slice(1).join('/');
+
+	return `/${entry.data.locale}/notes/${slug}/`;
+};
+
+const getNoteAlternates = (entry, notes): AlternateLink[] => {
+	const currentRef = `notes/${entry.id}`;
+	const sourceRef = entry.data.translationOf ?? currentRef;
+	const translations = notes.filter((note) => {
+		const ref = `notes/${note.id}`;
+
+		return ref === sourceRef || note.data.translationOf === sourceRef;
+	});
+	const links = translations.map((note) => ({
+		locale: note.data.locale,
+		label: LOCALE_LABELS[note.data.locale],
+		hreflang: note.data.locale,
+		path: getNotePath(note),
+	}));
+	const defaultNote = translations.find((note) => note.data.locale === 'en') ?? entry;
+
+	return [
+		...links,
+		{
+			locale: 'x-default',
+			label: LOCALE_LABELS[defaultNote.data.locale],
+			hreflang: 'x-default',
+			path: getNotePath(defaultNote),
+		},
+	];
+};
+
+export async function getStaticPaths() {
+	const entries = await getCollection('notes', ({ data }) => data.locale === 'es' && !data.draft);
+
+	return entries.map((entry) => ({
+		params: { slug: entry.id.split('/').slice(1).join('/') },
+		props: { entry },
+	}));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const notes = await getCollection('notes');
+const path = getNotePath(entry);
+const alternateLinks = getNoteAlternates(entry, notes);
+---
+
+<Layout
+	title={entry.data.title}
+	description={entry.data.description}
+	locale="es"
+	path={path}
+	alternateLinks={alternateLinks}
+>
+	<NotePage entry={entry} content={Content} alternateLinks={alternateLinks} />
+</Layout>

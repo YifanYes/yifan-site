@@ -45,7 +45,6 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Build `/[locale]/documents` index.
 - [x] Build `/[locale]/projects` index.
 - [x] Build `/[locale]/about`.
-- [ ] Build Covenant as a project/case-study page, not the center of the site.
 
 ## Phase 5: Index Patterns
 
