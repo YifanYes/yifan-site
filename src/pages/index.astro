@@ -1,5 +1,11 @@
 ---
 import { DEFAULT_LOCALE, getLocalizedPath } from '../lib/i18n';
 
-return Astro.redirect(getLocalizedPath(DEFAULT_LOCALE), 302);
+const redirectPath = getLocalizedPath(DEFAULT_LOCALE);
+
+if (!redirectPath) {
+	throw new Error('Missing localized redirect path.');
+}
+
+return Astro.redirect(redirectPath, 302);
 ---

@@ -398,6 +398,83 @@ export const ARCHIVE_COPY: Record<Locale, Record<ArchivePage, ArchivePageCopy>> 
 	},
 };
 
+export const ARCHIVE_FILTER_COPY: Record<
+	Locale,
+	{
+		controlsLabel: string;
+		areasLabel: string;
+		typesLabel: string;
+		viewLabel: string;
+		allAreasLabel: string;
+		allTypesLabel: string;
+		gridLabel: string;
+		listLabel: string;
+		noMatches: string;
+		curatedLabel: string;
+		areas: Record<string, string>;
+		types: Record<string, string>;
+	}
+> = {
+	en: {
+		controlsLabel: 'Archive controls',
+		areasLabel: 'AREA FILTER',
+		typesLabel: 'TYPE FILTER',
+		viewLabel: 'VIEW MODE',
+		allAreasLabel: 'All areas',
+		allTypesLabel: 'All types',
+		gridLabel: 'GRID',
+		listLabel: 'LIST',
+		noMatches: 'No entries match the selected archive filters.',
+		curatedLabel: 'Curated',
+		areas: {
+			engineering: 'Engineering',
+			product: 'Product',
+			philosophy: 'Philosophy',
+			faith: 'Faith',
+			productivity: 'Productivity',
+			'martial-arts': 'Martial Arts',
+			covenant: 'Covenant',
+			notes: 'Notes',
+		},
+		types: {
+			article: 'Article',
+			note: 'Note',
+			document: 'Document',
+			project: 'Project',
+			now: 'Now',
+		},
+	},
+	es: {
+		controlsLabel: 'Controles del archivo',
+		areasLabel: 'FILTRO DE ÁREA',
+		typesLabel: 'FILTRO DE TIPO',
+		viewLabel: 'MODO DE VISTA',
+		allAreasLabel: 'Todas las áreas',
+		allTypesLabel: 'Todos los tipos',
+		gridLabel: 'GRID',
+		listLabel: 'LIST',
+		noMatches: 'Ninguna entrada coincide con los filtros seleccionados.',
+		curatedLabel: 'Curada',
+		areas: {
+			engineering: 'Ingeniería',
+			product: 'Producto',
+			philosophy: 'Filosofía',
+			faith: 'Fe',
+			productivity: 'Productividad',
+			'martial-arts': 'Artes marciales',
+			covenant: 'Covenant',
+			notes: 'Notas',
+		},
+		types: {
+			article: 'Artículo',
+			note: 'Nota',
+			document: 'Documento',
+			project: 'Proyecto',
+			now: 'Ahora',
+		},
+	},
+};
+
 export const ABOUT_COPY: Record<
 	Locale,
 	{

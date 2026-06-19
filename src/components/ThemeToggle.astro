@@ -54,8 +54,8 @@ const { label, lightLabel, darkLabel, switchToLightLabel, switchToDarkLabel } = 
 		window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
 	const getCurrentTheme = () => {
-		const activeTheme = root.dataset.theme;
-		return isTheme(activeTheme ?? null) ? activeTheme : getStoredTheme() ?? getSystemTheme();
+		const activeTheme = root.dataset.theme ?? null;
+		return isTheme(activeTheme) ? activeTheme : getStoredTheme() ?? getSystemTheme();
 	};
 
 	const persistTheme = (theme: 'light' | 'dark') => {

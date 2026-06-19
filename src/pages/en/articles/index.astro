@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import LocalizedArchivePage from '../../../components/LocalizedArchivePage.astro';
 import Layout from '../../../layouts/Layout.astro';
 import { byNewestEntry, toArchiveItem } from '../../../lib/archive-items';
@@ -7,10 +7,11 @@ import { ARCHIVE_COPY } from '../../../lib/ui';
 
 const locale = 'en';
 const copy = ARCHIVE_COPY[locale].articles;
+type ArticleEntry = CollectionEntry<'articles'>;
 const allEntries = await getCollection('articles', ({ data }) => !data.draft);
 const entries = allEntries.filter(({ data }) => data.locale === locale);
 const entryRefs = new Set(entries.map((entry) => `articles/${entry.id}`));
-const hasLocaleVersion = (entry) => {
+const hasLocaleVersion = (entry: ArticleEntry) => {
 	const sourceRef = entry.data.translationOf ?? `articles/${entry.id}`;
 
 	return entries.some((localeEntry) => {

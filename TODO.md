@@ -48,11 +48,11 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 
 ## Phase 5: Index Patterns
 
-- [ ] Add sober taxonomy filters by area.
-- [ ] Add content type filters where useful.
-- [ ] Add `GRID` / `LIST` visual mode for indexes once there is enough content.
-- [ ] Make index URLs shareable if filters or modes are interactive.
-- [ ] Ensure indexes work without client JavaScript where possible.
+- [x] Add sober taxonomy filters by area.
+- [x] Add content type filters where useful.
+- [x] Add `GRID` / `LIST` visual mode for indexes once there is enough content.
+- [x] Make index URLs shareable if filters or modes are interactive.
+- [x] Ensure indexes work without client JavaScript where possible.
 
 ## Phase 6: Article And Note Templates
 

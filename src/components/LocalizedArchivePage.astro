@@ -1,5 +1,6 @@
 ---
 import type { Locale } from '../lib/i18n';
+import { ARCHIVE_FILTER_COPY } from '../lib/ui';
 import ModuleLabel from './ModuleLabel.astro';
 import PageHeader from './PageHeader.astro';
 import SiteShell from './SiteShell.astro';
@@ -9,7 +10,10 @@ type ArchiveItem = {
 	title: string;
 	description: string;
 	date: Date;
+	type: string;
 	area: string;
+	source?: string;
+	curated?: boolean;
 	status?: string;
 	tags: string[];
 	href: string;
@@ -43,6 +47,7 @@ const {
 	secondaryEmpty,
 	secondaryItems = [],
 } = Astro.props;
+const filterCopy = ARCHIVE_FILTER_COPY[locale];
 const dateFormatter = new Intl.DateTimeFormat(locale, {
 	year: 'numeric',
 	month: 'short',
@@ -52,10 +57,60 @@ const dateFormatter = new Intl.DateTimeFormat(locale, {
 const formatLabel = (value: string) => value.replaceAll('-', ' ');
 const formatTitleLabel = (value: string) =>
 	formatLabel(value).replace(/\b\w/g, (letter) => letter.toUpperCase());
+const areaLabel = (value: string) => filterCopy.areas[value] ?? formatTitleLabel(value);
+const typeLabel = (value: string) => filterCopy.types[value] ?? formatTitleLabel(value);
+const allItems = [...items, ...secondaryItems];
+const areaOptions = [...new Set(allItems.map((item) => item.area))].sort((left, right) =>
+	areaLabel(left).localeCompare(areaLabel(right), locale),
+);
+const typeOptions = [...new Set(allItems.map((item) => item.type))].sort((left, right) =>
+	typeLabel(left).localeCompare(typeLabel(right), locale),
+);
+const showControls = allItems.length > 1 && (areaOptions.length > 1 || typeOptions.length > 1);
+const showTypeFilters = typeOptions.length > 1;
+const archivePath = Astro.url.pathname;
+const isArchiveView = (value: string | null): value is 'grid' | 'list' =>
+	value === 'grid' || value === 'list';
+const requestedArea = Astro.url.searchParams.get('area');
+const requestedType = Astro.url.searchParams.get('type');
+const requestedView = Astro.url.searchParams.get('view');
+const selectedArea = requestedArea && areaOptions.includes(requestedArea) ? requestedArea : 'all';
+const selectedType = requestedType && typeOptions.includes(requestedType) ? requestedType : 'all';
+const selectedView = isArchiveView(requestedView) ? requestedView : 'list';
+const filterHref = (key: 'area' | 'type' | 'view', value: string) => {
+	const params = new URLSearchParams();
+	const area = key === 'area' ? value : selectedArea;
+	const type = key === 'type' ? value : selectedType;
+	const view = key === 'view' ? value : selectedView;
+
+	if (area !== 'all') {
+		params.set('area', area);
+	}
+
+	if (type !== 'all') {
+		params.set('type', type);
+	}
+
+	if (view !== 'list') {
+		params.set('view', view);
+	}
+
+	const query = params.toString();
+
+	return query ? `${archivePath}?${query}` : archivePath;
+};
+const itemMatchesFilters = (item: ArchiveItem) => {
+	const areaMatches = selectedArea === 'all' || item.area === selectedArea;
+	const typeMatches = selectedType === 'all' || item.type === selectedType;
+
+	return areaMatches && typeMatches;
+};
+const visiblePrimaryCount = items.filter(itemMatchesFilters).length;
+const visibleSecondaryCount = secondaryItems.filter(itemMatchesFilters).length;
 ---
 
 <SiteShell locale={locale}>
-	<main class="archive-page">
+	<main class="archive-page" data-archive-page data-archive-view={selectedView}>
 		<PageHeader
 			moduleLabel={moduleLabel}
 			kicker={kicker}
@@ -63,22 +118,110 @@ const formatTitleLabel = (value: string) =>
 			description={description}
 		/>
 
-		<section class="archive-page__list" aria-label={listLabel.replace(' //', '')}>
+		{showControls && (
+			<section
+				class="archive-page__controls"
+				aria-label={filterCopy.controlsLabel}
+				data-archive-controls
+			>
+				<div class="archive-page__control-group">
+					<p>{filterCopy.areasLabel}</p>
+					<div class="archive-page__control-options">
+						<TaxonomyChip
+							label={filterCopy.allAreasLabel}
+							href={filterHref('area', 'all')}
+							selected={selectedArea === 'all'}
+							data-archive-filter="area"
+							data-archive-value="all"
+						/>
+						{areaOptions.map((area) => (
+							<TaxonomyChip
+								label={areaLabel(area)}
+								href={filterHref('area', area)}
+								selected={selectedArea === area}
+								data-archive-filter="area"
+								data-archive-value={area}
+							/>
+						))}
+					</div>
+				</div>
+
+				{showTypeFilters && (
+					<div class="archive-page__control-group">
+						<p>{filterCopy.typesLabel}</p>
+						<div class="archive-page__control-options">
+							<TaxonomyChip
+								label={filterCopy.allTypesLabel}
+								href={filterHref('type', 'all')}
+								selected={selectedType === 'all'}
+								data-archive-filter="type"
+								data-archive-value="all"
+							/>
+							{typeOptions.map((type) => (
+								<TaxonomyChip
+									label={typeLabel(type)}
+									href={filterHref('type', type)}
+									selected={selectedType === type}
+									data-archive-filter="type"
+									data-archive-value={type}
+								/>
+							))}
+						</div>
+					</div>
+				)}
+
+				<div class="archive-page__control-group archive-page__control-group--view">
+					<p>{filterCopy.viewLabel}</p>
+					<div class="archive-page__view-options">
+						<a
+							class={`archive-page__view-link${selectedView === 'grid' ? ' archive-page__view-link--selected' : ''}`}
+							href={filterHref('view', 'grid')}
+							aria-current={selectedView === 'grid' ? 'true' : undefined}
+							data-archive-view-link
+							data-archive-value="grid"
+						>
+							{filterCopy.gridLabel}
+						</a>
+						<a
+							class={`archive-page__view-link${selectedView === 'list' ? ' archive-page__view-link--selected' : ''}`}
+							href={filterHref('view', 'list')}
+							aria-current={selectedView === 'list' ? 'true' : undefined}
+							data-archive-view-link
+							data-archive-value="list"
+						>
+							{filterCopy.listLabel}
+						</a>
+					</div>
+				</div>
+			</section>
+		)}
+
+		<section class="archive-page__list" aria-label={listLabel.replace(' //', '')} data-archive-section>
 			<ModuleLabel label={listLabel} />
 
 			{items.length > 0 ? (
-				<div class="archive-page__rows">
+				<div class="archive-page__rows" data-archive-rows hidden={visiblePrimaryCount === 0}>
 					{items.map((item) => (
-						<a class="archive-page__row" href={item.href}>
+						<a
+							class="archive-page__row"
+							href={item.href}
+							hidden={!itemMatchesFilters(item)}
+							data-archive-item
+							data-archive-area={item.area}
+							data-archive-type={item.type}
+						>
 							<div class="archive-page__meta">
 								<span>{dateFormatter.format(item.date)}</span>
-								<span>{formatTitleLabel(item.area)}</span>
+								<span>{areaLabel(item.area)}</span>
+								<span>{typeLabel(item.type)}</span>
 							</div>
 
 							<div class="archive-page__body">
 								<h2>{item.title}</h2>
 								<p>{item.description}</p>
 								<div class="archive-page__chips" aria-label={item.title}>
+									{item.source && <TaxonomyChip label={formatLabel(item.source)} />}
+									{item.curated && <TaxonomyChip label={filterCopy.curatedLabel} />}
 									{item.status && <TaxonomyChip label={formatLabel(item.status)} />}
 									{item.tags.slice(0, 4).map((tag) => <TaxonomyChip label={formatLabel(tag)} />)}
 								</div>
@@ -89,19 +232,38 @@ const formatTitleLabel = (value: string) =>
 			) : (
 				<p class="archive-page__empty">{empty}</p>
 			)}
+			<p
+				class="archive-page__empty archive-page__no-results"
+				data-archive-no-results
+				hidden={visiblePrimaryCount > 0 || items.length === 0}
+			>
+				{filterCopy.noMatches}
+			</p>
 		</section>
 
 		{secondaryListLabel && (
-			<section class="archive-page__list" aria-label={secondaryListLabel.replace(' //', '')}>
+			<section
+				class="archive-page__list"
+				aria-label={secondaryListLabel.replace(' //', '')}
+				data-archive-section
+			>
 				<ModuleLabel label={secondaryListLabel} />
 
 				{secondaryItems.length > 0 ? (
-					<div class="archive-page__rows">
+					<div class="archive-page__rows" data-archive-rows hidden={visibleSecondaryCount === 0}>
 						{secondaryItems.map((item) => (
-							<a class="archive-page__row" href={item.href}>
+							<a
+								class="archive-page__row"
+								href={item.href}
+								hidden={!itemMatchesFilters(item)}
+								data-archive-item
+								data-archive-area={item.area}
+								data-archive-type={item.type}
+							>
 								<div class="archive-page__meta">
 									<span>{dateFormatter.format(item.date)}</span>
-								<span>{formatTitleLabel(item.area)}</span>
+									<span>{areaLabel(item.area)}</span>
+									<span>{typeLabel(item.type)}</span>
 								</div>
 
 								<div class="archive-page__body">
@@ -109,6 +271,8 @@ const formatTitleLabel = (value: string) =>
 									<p>{item.description}</p>
 									<div class="archive-page__chips" aria-label={item.title}>
 										{item.locale && <TaxonomyChip label={formatLabel(item.locale)} />}
+										{item.source && <TaxonomyChip label={formatLabel(item.source)} />}
+										{item.curated && <TaxonomyChip label={filterCopy.curatedLabel} />}
 										{item.status && <TaxonomyChip label={formatLabel(item.status)} />}
 										{item.tags.slice(0, 4).map((tag) => <TaxonomyChip label={formatLabel(tag)} />)}
 									</div>
@@ -119,14 +283,195 @@ const formatTitleLabel = (value: string) =>
 				) : (
 					<p class="archive-page__empty">{secondaryEmpty}</p>
 				)}
+				<p
+					class="archive-page__empty archive-page__no-results"
+					data-archive-no-results
+					hidden={visibleSecondaryCount > 0 || secondaryItems.length === 0}
+				>
+					{filterCopy.noMatches}
+				</p>
 			</section>
 		)}
 	</main>
 </SiteShell>
 
+<script>
+	const archivePages = document.querySelectorAll<HTMLElement>('[data-archive-page]');
+
+	const isArchiveView = (value: string | null): value is 'grid' | 'list' =>
+		value === 'grid' || value === 'list';
+
+	archivePages.forEach((page) => {
+		const controls = page.querySelector<HTMLElement>('[data-archive-controls]');
+		const areaLinks = [
+			...page.querySelectorAll<HTMLAnchorElement>('[data-archive-filter="area"]'),
+		];
+		const typeLinks = [
+			...page.querySelectorAll<HTMLAnchorElement>('[data-archive-filter="type"]'),
+		];
+		const viewLinks = [...page.querySelectorAll<HTMLAnchorElement>('[data-archive-view-link]')];
+		const itemAreas = new Set(
+			[...page.querySelectorAll<HTMLElement>('[data-archive-item]')]
+				.map((item) => item.dataset.archiveArea)
+				.filter(Boolean),
+		);
+		const itemTypes = new Set(
+			[...page.querySelectorAll<HTMLElement>('[data-archive-item]')]
+				.map((item) => item.dataset.archiveType)
+				.filter(Boolean),
+		);
+		const params = new URLSearchParams(window.location.search);
+		const requestedArea = params.get('area');
+		const requestedType = params.get('type');
+		const requestedView = params.get('view');
+		const selectedArea = requestedArea && itemAreas.has(requestedArea) ? requestedArea : 'all';
+		const selectedType = requestedType && itemTypes.has(requestedType) ? requestedType : 'all';
+		const selectedView = isArchiveView(requestedView) ? requestedView : 'list';
+
+		if (controls) {
+			controls.hidden = false;
+		}
+
+		page.dataset.archiveView = selectedView;
+
+		const updateHref = (link: HTMLAnchorElement, key: 'area' | 'type' | 'view', value: string) => {
+			const nextParams = new URLSearchParams(window.location.search);
+
+			if (value === 'all' || (key === 'view' && value === 'list')) {
+				nextParams.delete(key);
+			} else {
+				nextParams.set(key, value);
+			}
+
+			const query = nextParams.toString();
+			link.href = `${window.location.pathname}${query ? `?${query}` : ''}`;
+		};
+
+		const markSelected = (
+			link: HTMLAnchorElement,
+			isSelected: boolean,
+			key: 'area' | 'type' | 'view',
+		) => {
+			link.classList.toggle('taxonomy-chip--selected', isSelected);
+			link.classList.toggle('archive-page__view-link--selected', isSelected);
+
+			if (isSelected) {
+				link.setAttribute('aria-current', 'true');
+			} else {
+				link.removeAttribute('aria-current');
+			}
+
+			updateHref(link, key, link.dataset.archiveValue ?? 'all');
+		};
+
+		areaLinks.forEach((link) => {
+			markSelected(link, (link.dataset.archiveValue ?? 'all') === selectedArea, 'area');
+		});
+
+		typeLinks.forEach((link) => {
+			markSelected(link, (link.dataset.archiveValue ?? 'all') === selectedType, 'type');
+		});
+
+		viewLinks.forEach((link) => {
+			markSelected(link, (link.dataset.archiveValue ?? 'list') === selectedView, 'view');
+		});
+
+		page.querySelectorAll<HTMLElement>('[data-archive-section]').forEach((section) => {
+			const rows = section.querySelector<HTMLElement>('[data-archive-rows]');
+			const noResults = section.querySelector<HTMLElement>('[data-archive-no-results]');
+			const entries = [...section.querySelectorAll<HTMLElement>('[data-archive-item]')];
+			let visibleCount = 0;
+
+			entries.forEach((entry) => {
+				const areaMatches = selectedArea === 'all' || entry.dataset.archiveArea === selectedArea;
+				const typeMatches = selectedType === 'all' || entry.dataset.archiveType === selectedType;
+				const isVisible = areaMatches && typeMatches;
+
+				entry.hidden = !isVisible;
+
+				if (isVisible) {
+					visibleCount += 1;
+				}
+			});
+
+			if (rows) {
+				rows.hidden = visibleCount === 0 && entries.length > 0;
+			}
+
+			if (noResults) {
+				noResults.hidden = visibleCount > 0 || entries.length === 0;
+			}
+		});
+	});
+</script>
+
 <style>
 	.archive-page {
 		padding-bottom: clamp(48px, 8vw, 96px);
+	}
+
+	.archive-page__controls {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		gap: 18px clamp(24px, 5vw, 56px);
+		margin-top: clamp(28px, 5vw, 48px);
+		border-top: 1px solid var(--color-ink);
+		border-bottom: 1px solid var(--color-line);
+		padding: 18px 0;
+	}
+
+	.archive-page__controls[hidden] {
+		display: none;
+	}
+
+	.archive-page__control-group {
+		display: grid;
+		gap: 10px;
+		align-content: start;
+	}
+
+	.archive-page__control-group--view {
+		min-width: 150px;
+	}
+
+	.archive-page__control-group p {
+		color: var(--color-muted);
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	.archive-page__control-options,
+	.archive-page__view-options {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	.archive-page__view-link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 28px;
+		border: 1px solid var(--color-line);
+		border-radius: 2px;
+		padding: 6px 10px;
+		color: var(--color-ink);
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		font-weight: 700;
+		line-height: 1;
+		text-decoration: none;
+	}
+
+	.archive-page__view-link:hover,
+	.archive-page__view-link:focus-visible,
+	.archive-page__view-link--selected {
+		border-color: var(--color-ink);
+		background: var(--color-ink);
+		color: var(--color-paper);
 	}
 
 	.archive-page__list {
@@ -138,6 +483,10 @@ const formatTitleLabel = (value: string) =>
 		border-top: 1px solid var(--color-ink);
 	}
 
+	.archive-page__rows[hidden] {
+		display: none;
+	}
+
 	.archive-page__row {
 		display: grid;
 		grid-template-columns: minmax(140px, 0.24fr) minmax(0, 1fr);
@@ -145,6 +494,10 @@ const formatTitleLabel = (value: string) =>
 		border-bottom: 1px solid var(--color-line);
 		padding: 24px 0;
 		text-decoration: none;
+	}
+
+	.archive-page__row[hidden] {
+		display: none;
 	}
 
 	.archive-page__row:hover h2,
@@ -198,7 +551,59 @@ const formatTitleLabel = (value: string) =>
 		color: var(--color-muted);
 	}
 
+	.archive-page__no-results[hidden] {
+		display: none;
+	}
+
+	.archive-page[data-archive-view='grid'] .archive-page__rows {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+		border-left: 1px solid var(--color-line);
+	}
+
+	.archive-page[data-archive-view='grid'] .archive-page__row {
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+		min-height: 100%;
+		border-right: 1px solid var(--color-line);
+		padding: 18px;
+	}
+
+	.archive-page[data-archive-view='grid'] .archive-page__rows[hidden],
+	.archive-page[data-archive-view='grid'] .archive-page__row[hidden] {
+		display: none;
+	}
+
+	.archive-page[data-archive-view='grid'] .archive-page__meta {
+		flex-flow: row wrap;
+	}
+
+	.archive-page[data-archive-view='grid'] h2 {
+		font-size: clamp(1.6rem, 3vw, 2.35rem);
+		line-height: 1;
+	}
+
+	.archive-page[data-archive-view='grid'] .archive-page__body {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+	}
+
+	.archive-page[data-archive-view='grid'] .archive-page__chips {
+		margin-top: auto;
+		padding-top: 18px;
+	}
+
 	@media (max-width: 760px) {
+		.archive-page__controls {
+			grid-template-columns: 1fr;
+		}
+
+		.archive-page__control-group--view {
+			min-width: 0;
+		}
+
 		.archive-page__row {
 			grid-template-columns: 1fr;
 			gap: 16px;

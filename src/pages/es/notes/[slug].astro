@@ -1,16 +1,18 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 import NotePage from '../../../components/NotePage.astro';
 import Layout from '../../../layouts/Layout.astro';
 import { LOCALE_LABELS, type AlternateLink } from '../../../lib/i18n';
 
-const getNotePath = (entry) => {
+type NoteEntry = CollectionEntry<'notes'>;
+
+const getNotePath = (entry: NoteEntry) => {
 	const slug = entry.id.split('/').slice(1).join('/');
 
 	return `/${entry.data.locale}/notes/${slug}/`;
 };
 
-const getNoteAlternates = (entry, notes): AlternateLink[] => {
+const getNoteAlternates = (entry: NoteEntry, notes: NoteEntry[]): AlternateLink[] => {
 	const currentRef = `notes/${entry.id}`;
 	const sourceRef = entry.data.translationOf ?? currentRef;
 	const translations = notes.filter((note) => {
@@ -46,7 +48,7 @@ export async function getStaticPaths() {
 	}));
 }
 
-const { entry } = Astro.props;
+const { entry } = Astro.props as { entry: NoteEntry };
 const { Content } = await render(entry);
 const notes = await getCollection('notes');
 const path = getNotePath(entry);

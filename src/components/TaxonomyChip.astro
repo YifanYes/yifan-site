@@ -5,17 +5,17 @@ type Props = {
 	selected?: boolean;
 };
 
-const { label, href, selected = false } = Astro.props;
+const { label, href, selected = false, ...attributes } = Astro.props;
 const className = `taxonomy-chip${selected ? ' taxonomy-chip--selected' : ''}`;
 ---
 
 {
 	href ? (
-		<a class={className} href={href} aria-current={selected ? 'true' : undefined}>
+		<a class={className} href={href} aria-current={selected ? 'true' : undefined} {...attributes}>
 			<slot>{label}</slot>
 		</a>
 	) : (
-		<span class={className}>
+		<span class={className} {...attributes}>
 			<slot>{label}</slot>
 		</span>
 	)

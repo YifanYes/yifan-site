@@ -30,8 +30,8 @@ const baseContentSchema = {
 	curated: z.boolean().optional(),
 	featured: z.boolean().optional(),
 	status: statusSchema.optional(),
-	coverImage: z.string().url().optional(),
-	originalUrl: z.string().url().optional(),
+	coverImage: z.url().optional(),
+	originalUrl: z.url().optional(),
 	related: z.array(z.string().min(1)).optional(),
 	translationOf: z.string().min(1).optional(),
 };
