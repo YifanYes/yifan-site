@@ -11,6 +11,7 @@ This directory contains the public content model for the site.
 - `documents`: longer documents, study notes, PDFs, and polished artifacts.
 - `projects`: case studies, experiments, tools, prototypes, systems, and active writing projects.
 - `now`: current-status entries if `/now` becomes archival.
+- `cv`: localized professional CV entries rendered by `/en/cv` and `/es/cv`.
 
 Each collection is configured in `src/content.config.ts` and requires:
 

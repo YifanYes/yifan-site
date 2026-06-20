@@ -4,14 +4,18 @@ import ModuleLabel from './ModuleLabel.astro';
 import PageHeader from './PageHeader.astro';
 import SiteShell from './SiteShell.astro';
 import { CV_COPY } from '../lib/ui';
+import type { CollectionEntry } from 'astro:content';
 import type { Locale } from '../lib/i18n';
 
 type Props = {
 	locale: Locale;
+	entry: CollectionEntry<'cv'>;
+	content: any;
 };
 
-const { locale } = Astro.props;
+const { locale, entry, content: Content } = Astro.props;
 const copy = CV_COPY[locale];
+const { data } = entry;
 ---
 
 <SiteShell locale={locale}>
@@ -19,11 +23,11 @@ const copy = CV_COPY[locale];
 		<PageHeader
 			moduleLabel={copy.moduleLabel}
 			kicker={copy.kicker}
-			title={copy.title}
-			description={copy.lede}
+			title={data.title}
+			description={data.description}
 		/>
 
-		<section class="cv-page__grid">
+		<section class="cv-page__profile">
 			<div class="cv-page__spec" aria-label={copy.specLabel.replace(' //', '')}>
 				<ArchiveSpecPanel label={copy.specLabel} specs={copy.specs} />
 			</div>
@@ -39,6 +43,12 @@ const copy = CV_COPY[locale];
 				</div>
 			</aside>
 		</section>
+
+		<section class="cv-page__content" aria-label={copy.contentLabel}>
+			<div class="cv-page__body workbench-prose">
+				<Content />
+			</div>
+		</section>
 	</main>
 </SiteShell>
 
@@ -47,13 +57,14 @@ const copy = CV_COPY[locale];
 		padding-bottom: clamp(48px, 8vw, 96px);
 	}
 
-	.cv-page__grid {
+	.cv-page__profile {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
-		gap: clamp(24px, 5vw, 64px);
+		gap: clamp(28px, 6vw, 80px);
 		margin-top: clamp(32px, 6vw, 64px);
-		border-top: 1px solid var(--color-ink);
-		padding-top: 18px;
+		border-top: 2px solid var(--color-ink);
+		border-bottom: 1px solid var(--color-line);
+		padding: 18px 0;
 	}
 
 	.cv-page__spec .archive-spec-panel {
@@ -85,8 +96,62 @@ const copy = CV_COPY[locale];
 		color: var(--color-green);
 	}
 
-	@media (max-width: 760px) {
-		.cv-page__grid {
+	.cv-page__content {
+		max-width: var(--article-width);
+		margin: clamp(36px, 6vw, 72px) auto 0;
+	}
+
+	.cv-page__body {
+		font-size: clamp(1.02rem, 1.4vw, 1.14rem);
+		line-height: 1.8;
+	}
+
+	.cv-page__body :global(*) {
+		overflow-wrap: anywhere;
+	}
+
+	.cv-page__body :global(p),
+	.cv-page__body :global(ul),
+	.cv-page__body :global(ol),
+	.cv-page__body :global(blockquote) {
+		margin: 0 0 1.25em;
+	}
+
+	.cv-page__body :global(h2),
+	.cv-page__body :global(h3) {
+		margin: 2.2em 0 0.7em;
+		font-family: var(--font-display);
+		line-height: 1;
+		text-transform: uppercase;
+	}
+
+	.cv-page__body :global(h2) {
+		border-top: 2px solid var(--color-ink);
+		padding-top: 16px;
+		font-size: clamp(2rem, 4vw, 3.4rem);
+	}
+
+	.cv-page__body :global(h2:first-child) {
+		margin-top: 0;
+	}
+
+	.cv-page__body :global(h3) {
+		font-size: clamp(1.45rem, 3vw, 2.15rem);
+	}
+
+	.cv-page__body :global(blockquote) {
+		border-left: 3px solid var(--color-ink);
+		padding: 0.1em 0 0.1em 1em;
+		color: var(--color-muted);
+		font-family: var(--font-typewriter);
+	}
+
+	.cv-page__body :global(li + li) {
+		margin-top: 0.45em;
+	}
+
+	@media (max-width: 860px) {
+		.cv-page__profile {
 			grid-template-columns: 1fr;
 		}
 

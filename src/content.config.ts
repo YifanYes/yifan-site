@@ -113,6 +113,14 @@ const now = defineCollection({
 	}),
 });
 
+const cv = defineCollection({
+	loader: contentLoader('cv'),
+	schema: z.object({
+		...baseContentSchema,
+		type: z.literal('cv'),
+	}),
+});
+
 export const collections = {
 	articles,
 	areas,
@@ -121,4 +129,5 @@ export const collections = {
 	projects,
 	recommendations,
 	now,
+	cv,
 };

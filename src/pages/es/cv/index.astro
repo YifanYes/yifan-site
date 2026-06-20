@@ -1,12 +1,20 @@
 ---
+import { getCollection, render } from 'astro:content';
 import LocalizedCvPage from '../../../components/LocalizedCvPage.astro';
 import Layout from '../../../layouts/Layout.astro';
 import { CV_COPY } from '../../../lib/ui';
 
 const locale = 'es';
 const copy = CV_COPY[locale];
+const [entry] = await getCollection('cv', ({ data }) => data.locale === locale && !data.draft);
+
+if (!entry) {
+	throw new Error('Missing Spanish CV content entry.');
+}
+
+const { Content } = await render(entry);
 ---
 
-<Layout title={copy.metaTitle} description={copy.description} locale={locale} path="/es/cv/">
-	<LocalizedCvPage locale={locale} />
+<Layout title={copy.metaTitle} description={entry.data.description} locale={locale} path="/es/cv/">
+	<LocalizedCvPage locale={locale} entry={entry} content={Content} />
 </Layout>

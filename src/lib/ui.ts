@@ -514,6 +514,7 @@ export const CV_COPY: Record<
 		specs: { label: string; value: string | string[] }[];
 		linksLabel: string;
 		links: { label: string; href: string }[];
+		contentLabel: string;
 	}
 > = {
 	en: {
@@ -523,20 +524,23 @@ export const CV_COPY: Record<
 		kicker: 'PROFESSIONAL PROFILE',
 		title: 'Yifan Ye Zhang',
 		lede:
-			'Software engineer at Signe, working across product systems, software engineering, disciplined practice, and selected personal projects.',
+			'Senior Software Engineer focused on product engineering, cloud systems, TypeScript, Next.js, Node.js, AWS, and Covenant.',
 		specLabel: 'PROFILE //',
 		specs: [
-			{ label: 'Current', value: 'Software engineer at Signe' },
-			{ label: 'Focus', value: ['Software engineering', 'Product systems', 'AI-assisted tools', 'Personal productivity systems'] },
-			{ label: 'Projects', value: ['Covenant', 'Personal website', 'Philosophy book', 'Martial arts book'] },
-			{ label: 'Location', value: 'Spain' },
+			{ label: 'Current', value: 'Software Engineer at SIGNE' },
+			{ label: 'Focus', value: ['Product engineering', 'Cloud systems', 'Traceability', 'Document processing'] },
+			{ label: 'Stack', value: ['TypeScript', 'Next.js', 'Node.js', 'AWS', 'PostgreSQL'] },
+			{ label: 'Scale', value: ['100k+ SaaS users', '200+ travel agencies', 'EUR 2M+ GMV'] },
+			{ label: 'Location', value: 'Madrid, Spain' },
 		],
 		linksLabel: 'LINKS //',
 		links: [
+			{ label: 'Email', href: 'mailto:yifanyemontpe@gmail.com' },
 			{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/yifan-ye-zhang/' },
 			{ label: 'GitHub', href: 'https://github.com/YifanYes' },
 			{ label: 'X', href: 'https://x.com/yifan_yz' },
 		],
+		contentLabel: 'CV content',
 	},
 	es: {
 		metaTitle: 'CV',
@@ -545,20 +549,23 @@ export const CV_COPY: Record<
 		kicker: 'PERFIL PROFESIONAL',
 		title: 'Yifan Ye Zhang',
 		lede:
-			'Software engineer en Signe, trabajando entre sistemas de producto, ingeniería de software, práctica disciplinada y proyectos personales seleccionados.',
+			'Senior Software Engineer especializado en product engineering, sistemas cloud, TypeScript, Next.js, Node.js, AWS y Covenant.',
 		specLabel: 'PERFIL //',
 		specs: [
-			{ label: 'Actual', value: 'Software engineer en Signe' },
-			{ label: 'Foco', value: ['Ingeniería de software', 'Sistemas de producto', 'Herramientas con IA', 'Sistemas personales de productividad'] },
-			{ label: 'Proyectos', value: ['Covenant', 'Sitio personal', 'Libro de filosofía', 'Libro de artes marciales'] },
-			{ label: 'Ubicación', value: 'España' },
+			{ label: 'Actual', value: 'Software Engineer en SIGNE' },
+			{ label: 'Foco', value: ['Product engineering', 'Sistemas cloud', 'Trazabilidad', 'Procesamiento documental'] },
+			{ label: 'Stack', value: ['TypeScript', 'Next.js', 'Node.js', 'AWS', 'PostgreSQL'] },
+			{ label: 'Escala', value: ['100k+ usuarios SaaS', '200+ agencias de viajes', 'EUR 2M+ GMV'] },
+			{ label: 'Ubicacion', value: 'Madrid, Espana' },
 		],
 		linksLabel: 'ENLACES //',
 		links: [
+			{ label: 'Email', href: 'mailto:yifanyemontpe@gmail.com' },
 			{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/yifan-ye-zhang/' },
 			{ label: 'GitHub', href: 'https://github.com/YifanYes' },
 			{ label: 'X', href: 'https://x.com/yifan_yz' },
 		],
+		contentLabel: 'Contenido del CV',
 	},
 };
 
