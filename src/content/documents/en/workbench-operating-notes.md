@@ -10,7 +10,7 @@ source: "manual"
 curated: true
 status: "active"
 locale: "en"
-related: ["notes/en/attention-is-a-training-surface", "projects/en/covenant"]
+related: ["notes/en/attention-is-a-training-surface"]
 ---
 
 The workbench should make artifacts easier to inspect.

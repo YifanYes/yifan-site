@@ -9,7 +9,7 @@ draft: false
 status: "active"
 locale: "es"
 translationOf: "now/en/current-workbench"
-related: ["projects/es/covenant", "notes/es/la-atencion-es-superficie-de-entrenamiento"]
+related: ["notes/es/la-atencion-es-superficie-de-entrenamiento"]
 ---
 
 El trabajo actual es convertir el sitio personal en una superficie pública duradera.

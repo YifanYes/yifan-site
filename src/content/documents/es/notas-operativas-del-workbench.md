@@ -11,7 +11,7 @@ curated: true
 status: "active"
 locale: "es"
 translationOf: "documents/en/workbench-operating-notes"
-related: ["notes/es/la-atencion-es-superficie-de-entrenamiento", "projects/es/covenant"]
+related: ["notes/es/la-atencion-es-superficie-de-entrenamiento"]
 ---
 
 El workbench debe hacer que los artefactos sean más fáciles de inspeccionar.

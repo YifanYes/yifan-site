@@ -95,7 +95,6 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [ ] Add first martial arts article or note.
 - [ ] Add first finance note or recommendation.
 - [ ] Add first curated recommendation.
-- [x] Add Covenant project/case-study entry.
 - [x] Add generic philosophy book project.
 - [x] Add generic martial arts book project.
 - [x] Add CV page in English and Spanish.
@@ -112,7 +111,7 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Check project detail `hreflang` and canonical metadata.
 - [ ] Check `hreflang` and canonical metadata across all public page types.
 - [ ] Check that no page visually drifts into generic SaaS/card-grid style.
-- [ ] Check that Covenant is visible but not dominant.
+- [ ] Check that no single project dominates the site.
 
 ## Phase 10: Cleanup
 

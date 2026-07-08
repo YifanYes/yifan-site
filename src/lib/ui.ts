@@ -140,7 +140,7 @@ export const HOME_COPY: Record<
 		statusLabel: 'CURRENTLY //',
 		status: [
 			{ label: 'Work', value: 'Software engineer at Signe' },
-			{ label: 'Building', value: ['Covenant', 'Spanish Advanced Drones', 'Philosophy book', 'Martial arts book'] },
+			{ label: 'Building', value: ['Spanish Advanced Drones', 'Philosophy book', 'Martial arts book'] },
 			{ label: 'Studying', value: ['Designing Data-Intensive Applications', 'Code Simplicity', 'UX'] },
 		],
 		socialLabel: 'SOCIAL //',
@@ -151,11 +151,6 @@ export const HOME_COPY: Record<
 		],
 		projectsLabel: 'CURRENT PROJECTS //',
 		projects: [
-			{
-				title: 'Covenant',
-				description: 'A productivity RPG where real tasks become mana for tactical quests.',
-				href: 'https://covenantrpg.com/',
-			},
 			{
 				title: 'Spanish Advanced Drones',
 				description: 'Drone work and advanced aerial services in Spain.',
@@ -196,7 +191,7 @@ export const HOME_COPY: Record<
 		statusLabel: 'AHORA //',
 		status: [
 			{ label: 'Trabajo', value: 'Software engineer en Signe' },
-			{ label: 'Construyendo', value: ['Covenant', 'Spanish Advanced Drones', 'Libro de filosofía', 'Libro de artes marciales'] },
+			{ label: 'Construyendo', value: ['Spanish Advanced Drones', 'Libro de filosofía', 'Libro de artes marciales'] },
 			{ label: 'Estudiando', value: ['Designing Data-Intensive Applications', 'Code Simplicity', 'UX'] },
 		],
 		socialLabel: 'SOCIAL //',
@@ -207,11 +202,6 @@ export const HOME_COPY: Record<
 		],
 		projectsLabel: 'PROYECTOS ACTUALES //',
 		projects: [
-			{
-				title: 'Covenant',
-				description: 'Un RPG de productividad donde tareas reales se convierten en maná para misiones tácticas.',
-				href: 'https://covenantrpg.com/',
-			},
 			{
 				title: 'Spanish Advanced Drones',
 				description: 'Trabajo con drones y servicios aéreos avanzados en España.',
@@ -524,7 +514,7 @@ export const CV_COPY: Record<
 		kicker: 'PROFESSIONAL PROFILE',
 		title: 'Yifan Ye Zhang',
 		lede:
-			'Senior Software Engineer focused on product engineering, cloud systems, TypeScript, Next.js, Node.js, AWS, and Covenant.',
+			'Senior Software Engineer focused on product engineering, cloud systems, TypeScript, Next.js, Node.js, and AWS.',
 		specLabel: 'PROFILE //',
 		specs: [
 			{ label: 'Current', value: 'Software Engineer at SIGNE' },
@@ -549,7 +539,7 @@ export const CV_COPY: Record<
 		kicker: 'PERFIL PROFESIONAL',
 		title: 'Yifan Ye Zhang',
 		lede:
-			'Senior Software Engineer especializado en product engineering, sistemas cloud, TypeScript, Next.js, Node.js, AWS y Covenant.',
+			'Senior Software Engineer especializado en product engineering, sistemas cloud, TypeScript, Next.js, Node.js y AWS.',
 		specLabel: 'PERFIL //',
 		specs: [
 			{ label: 'Actual', value: 'Software Engineer en SIGNE' },
@@ -594,7 +584,7 @@ export const ABOUT_COPY: Record<
 		specs: [
 			{ label: '01', value: 'Engineering and product systems' },
 			{ label: '02', value: 'Philosophy, productivity, and disciplined practice' },
-			{ label: '03', value: ['Covenant', 'Articles', 'Curated notes'] },
+			{ label: '03', value: ['Articles', 'Curated notes', 'Projects'] },
 		],
 	},
 	es: {
@@ -609,7 +599,7 @@ export const ABOUT_COPY: Record<
 		specs: [
 			{ label: '01', value: 'Ingeniería y sistemas de producto' },
 			{ label: '02', value: 'Filosofía, productividad y práctica disciplinada' },
-			{ label: '03', value: ['Covenant', 'Artículos', 'Notas curadas'] },
+			{ label: '03', value: ['Artículos', 'Notas curadas', 'Proyectos'] },
 		],
 	},
 };

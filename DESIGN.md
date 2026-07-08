@@ -16,7 +16,7 @@ It should not feel like:
 - A generic developer portfolio.
 - A shadcn dashboard.
 - A Material UI documentation site.
-- A fantasy-themed Covenant microsite.
+- A fantasy-themed product microsite.
 - A raw Obsidian publish dump.
 
 Reference prototype:
@@ -43,7 +43,7 @@ Keywords:
 - Product judgment.
 - Engineering discipline.
 
-The site may borrow some intensity from Covenant, but Covenant must not dominate the whole visual language.
+The site may borrow intensity from product work and disciplined practice, but no single project should dominate the visual language.
 
 ### Logo
 
@@ -70,10 +70,8 @@ The site is centered on:
 - Finance.
 - Curated Obsidian notes and documents.
 - Curated recommendations across books, courses, media, games, tools, and resources.
-- Projects, including Covenant.
+- Projects and case studies.
 - A practical CV surface.
-
-Covenant is a major project, not the site's main identity.
 
 ## Visual Principles
 
@@ -169,7 +167,7 @@ Good use cases:
 - PDF/document previews.
 - Product screenshots.
 - Key visual from a project.
-- Covenant-specific moments.
+- Important project-specific moments.
 - Important quoted ideas.
 
 Treatment:
@@ -297,9 +295,9 @@ Usage:
 - Use warm off-white as the main background.
 - Use near-black for text and rules.
 - Use green for systems, metrics, and productive status.
-- Use red sparingly for warnings, emphasis, Covenant, or strong calls.
+- Use red sparingly for warnings, emphasis, or strong calls.
 - Use gold sparingly for highlights and progression.
-- Use dark sections rarely, mostly for Covenant or special artifacts.
+- Use dark sections rarely, mostly for special artifacts.
 
 Avoid one-note palettes. Do not let the site become all beige, all dark, all blue, or all purple.
 
@@ -379,7 +377,7 @@ Projects
 About
 ```
 
-Covenant can appear under Projects or as a selected homepage item. It should not be the only primary CTA across the site.
+Individual projects can appear under Projects or as selected homepage items. They should not become the only primary CTA across the site.
 
 ## Page Guidance
 
@@ -408,7 +406,6 @@ Product
 Philosophy
 Productivity
 Martial Arts
-Covenant
 ```
 
 ### Notes
@@ -442,20 +439,6 @@ Tradeoff
 Learning
 Artifact
 ```
-
-### Covenant
-
-Covenant's page may be visually more intense, but it still belongs inside the broader workbench identity.
-
-Allowed Covenant-specific touches:
-
-- Dark section.
-- Accent red.
-- Gold metric labels.
-- Product screenshots.
-- Product loop diagrams.
-
-Do not turn the whole website into Covenant's fantasy UI.
 
 ## Obsidian Publishing
 
@@ -533,7 +516,7 @@ Rules:
 - Use strong grids and rules.
 - Make metadata useful.
 - Let content density feel intentional.
-- Keep Covenant visible but proportionate.
+- Keep individual projects visible but proportionate.
 - Treat notes and documents as first-class content.
 
 ## Do Not
@@ -542,7 +525,7 @@ Rules:
 - Use generic rounded cards everywhere.
 - Use purple-blue gradients as a primary identity.
 - Build a landing page before building the content experience.
-- Make every CTA about Covenant.
+- Make every CTA about one project.
 - Publish uncurated Obsidian notes.
 - Hide weak content behind visual polish.
 

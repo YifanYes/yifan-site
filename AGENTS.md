@@ -10,13 +10,13 @@ The site should answer five questions quickly:
 - What does he think about engineering, product, productivity, philosophy, and disciplined practice?
 - What is he building, studying, and testing?
 - What articles, notes, recommendations, and projects are worth reading?
-- How does Covenant fit into the larger body of work?
+- How do the projects fit into the larger body of work?
 
 Core thesis:
 
 > I write, build, and study across software engineering, product systems, philosophy, martial arts, finance, and disciplined practice.
 
-Covenant belongs here as a major project and case study, not as the whole identity.
+Projects belong here as case studies and artifacts, not as the whole identity.
 
 ## Required Context
 
@@ -39,13 +39,11 @@ Before changing structure, content models, routes, visual design, CSS, or page l
 - Use Plausible or Umami if privacy-friendly analytics become useful.
 - Use Buttondown or Resend later if a newsletter becomes useful.
 
-Rule of thumb: Astro for the personal website, Next.js for Covenant.
+Rule of thumb: Astro for the personal website, Next.js for product applications.
 
 ## Design Direction
 
-Use the Systems Workbench direction. Do not default to shadcn, Material UI, generic SaaS sections, rounded card grids, or a Covenant-first fantasy theme.
-
-Covenant is an important project and case study, but the website should not revolve around Covenant.
+Use the Systems Workbench direction. Do not default to shadcn, Material UI, generic SaaS sections, rounded card grids, or a fantasy/product-first theme.
 
 The chosen direction is based on the `workbench` prototype at:
 
@@ -94,10 +92,7 @@ Planned localized routes use English and Spanish prefixes from the start. The ro
   Longer imported documents, PDFs, polished Obsidian artifacts, or reference material. This route may stay secondary or legacy while Notes and Recommendations carry the main study/recommendation model.
 
 /{locale}/projects
-  Covenant plus other experiments, tools, prototypes, systems, and active writing projects.
-
-/{locale}/projects/covenant
-  A personal case study for Covenant, distinct from the official product landing page.
+  Experiments, tools, prototypes, systems, client work, and active writing projects.
 
 /{locale}/projects/philosophy-book
 /{locale}/projects/martial-arts-book
@@ -214,15 +209,14 @@ notes
 ## Page Intent
 
 - Home: minimalist personal profile, current role at Signe, social links, current projects, currently studying topics, and a short guide to the site.
-- Articles: long-form authority around engineering, product, philosophy, productivity, martial arts, and Covenant.
+- Articles: long-form authority around engineering, product, philosophy, productivity, and martial arts.
 - Areas: broad topic hubs that connect articles, notes, recommendations, and projects by interest area.
 - Notes: study notes from books, courses, resources, Obsidian exports, and active learning. Notes contain the extracted ideas; recommendations explain why something is worth consuming.
 - Recommendations: curated favorites only. Include books, courses, movies, anime, manga, video games, tools, and other media/resources, with a concise reason for the recommendation and links to notes when available.
-- Projects: systems and judgment, not only polished products. Include Covenant, software experiments, the personal website, and the two generic active book projects while final titles may change.
+- Projects: systems and judgment, not only polished products. Include software experiments, client work, the personal website, and the two generic active book projects while final titles may change.
 - CV: practical professional profile for recruiters and collaborators. Keep it direct, skimmable, and visible in the main navigation.
 - Documents: secondary archive for longer PDFs, polished artifacts, or reference material if needed.
 - Now: secondary current-status route if kept; the homepage carries the main current-work summary.
-- Covenant: personal case study, not a duplicate of the official product landing page.
 - About: secondary or legacy route unless a deeper biography becomes useful beyond Home and CV.
 
 ## Obsidian Publishing
@@ -249,39 +243,8 @@ Obsidian draft -> curated MD/MDX -> src/content/notes or src/content/documents -
 - Prefer concrete decisions over vague lessons.
 - Show the tradeoff, not only the conclusion.
 - Let notes be useful without pretending they are final essays.
-- Keep Covenant updates honest and secondary to the broader body of work.
 - Do not optimize the site around vanity metrics.
 - Make the builder legible through artifacts, not slogans.
-
-## Covenant Context
-
-Covenant remains important, but it is one thread in the site.
-
-The Covenant beta strategy is high-friction recruitment for qualified beta users, not broad marketing.
-
-Important product event:
-
-```text
-loop_closed: the user earns mana from a real action and starts a quest.
-```
-
-The personal site can support Covenant by publishing:
-
-- Product notes.
-- Design decisions.
-- Beta learnings.
-- Screenshots and short demos.
-- A clear route to try or follow the project.
-
-The personal site should not make every page point back to Covenant.
-
-Useful copy:
-
-> Covenant is a productivity RPG where real tasks become mana for tactical quests.
-
-Short version:
-
-> Complete tasks. Kill demons.
 
 ## Editing Principles
 

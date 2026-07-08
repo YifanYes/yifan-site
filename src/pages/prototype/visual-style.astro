@@ -5,24 +5,18 @@
 const shouldShowSwitcher = !import.meta.env.PROD
 
 const notes = [
-  'Why tasks earn mana instead of generic XP.',
-  'Designing a 20-minute beta quest.',
-  'What makes gamified productivity feel consequential?',
+  'Why workflows need visible feedback.',
+  'Designing a 20-minute onboarding test.',
+  'What makes productivity systems feel consequential?',
   'Watching onboarding fail without flinching.'
 ]
 
 const projects = [
   {
-    title: 'Covenant',
-    kicker: 'Flagship project',
-    detail: 'A productivity RPG where real tasks become mana for tactical quests.',
-    metric: 'loop_closed'
-  },
-  {
-    title: 'Beta Quest',
-    kicker: 'Activation experiment',
-    detail: 'Create character, complete real work, earn mana, start a quest.',
-    metric: '20 min'
+    title: 'Spanish Advanced Drones',
+    kicker: 'Field project',
+    detail: 'Drone work and advanced aerial services in Spain.',
+    metric: 'active'
   },
   {
     title: 'Founder Notes',
@@ -67,10 +61,10 @@ const projects = [
           </p>
         </div>
         <aside class="ledger" aria-label="Current status">
-          <p class="ledger-label">CURRENT QUEST</p>
-          <h2>Covenant beta</h2>
-          <p>Recruit 50-100 qualified users who close the core loop: real work -> mana -> quest.</p>
-          <a href="#covenant">Read the case file</a>
+          <p class="ledger-label">CURRENT WORK</p>
+          <h2>Workbench beta</h2>
+          <p>Turn the personal site into a durable public surface for writing, projects, and study notes.</p>
+          <a href="#workbench">Read the case file</a>
         </aside>
       </section>
 
@@ -113,32 +107,32 @@ const projects = [
       <header class="archive-nav">
         <span>YIFAN / ARC-017</span>
         <nav aria-label="Primary">
-          <a href="#covenant">Covenant</a>
+          <a href="#workbench">Workbench</a>
           <a href="#dispatches">Dispatches</a>
           <a href="#signal">Signal</a>
         </nav>
       </header>
 
-      <section class="archive-hero" id="covenant">
+      <section class="archive-hero" id="workbench">
         <div class="archive-copy">
           <p class="eyebrow">ACTIVE CASE STUDY</p>
-          <h1>Complete tasks. Kill demons. Learn what actually makes people return.</h1>
+          <h1>Build the surface. Publish the artifacts. Learn what actually deserves to stay.</h1>
           <p>
-            A darker product journal about Covenant, gameful productivity, activation loops, and the search for rewards
-            that feel earned instead of decorative.
+            A product journal about content architecture, archive design, activation loops, and the search for
+            artifacts that feel earned instead of decorative.
           </p>
           <div class="archive-actions">
             <a href="#dispatches">Read dispatches</a>
-            <a href="#signal">Join the beta signal</a>
+            <a href="#signal">Follow the signal</a>
           </div>
         </div>
-        <div class="ritual-panel" aria-label="Covenant activation loop">
+        <div class="ritual-panel" aria-label="Workbench publishing loop">
           <p>LOOP TRACE</p>
           <ol>
-            <li>Create character</li>
-            <li>Complete real work</li>
-            <li>Earn mana</li>
-            <li>Start quest</li>
+            <li>Capture raw notes</li>
+            <li>Curate public shape</li>
+            <li>Publish artifact</li>
+            <li>Connect thread</li>
           </ol>
           <strong>STATUS: TESTING</strong>
         </div>
@@ -157,7 +151,7 @@ const projects = [
 
       <section class="signal" id="signal">
         <p>TRANSMISSION</p>
-        <h2>Looking for sharp feedback from people who understand RPGs, habit systems, and unfinished tools.</h2>
+        <h2>Looking for sharp feedback from people who understand writing systems, product judgment, and unfinished tools.</h2>
       </section>
     </main>
 
@@ -221,7 +215,7 @@ const projects = [
         <script is:inline>
           const variantLabels = {
             manual: 'Field Manual',
-            archive: 'Covenant Archive',
+            archive: 'Workbench Archive',
             workbench: 'Systems Workbench'
           }
           const variantKeys = Object.keys(variantLabels)

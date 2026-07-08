@@ -1,6 +1,6 @@
 ---
 title: "Yifan Ye Zhang"
-description: "Senior Software Engineer focused on product engineering, cloud systems, TypeScript, Next.js, Node.js, AWS, and Covenant."
+description: "Senior Software Engineer focused on product engineering, cloud systems, TypeScript, Next.js, Node.js, and AWS."
 date: 2026-06-20
 type: "cv"
 area: "engineering"
@@ -25,7 +25,7 @@ Core technologies:
 - Databases: PostgreSQL, MySQL, MongoDB, Supabase.
 - Cloud and infrastructure: AWS, GCP, Docker, Railway, Cloudflare.
 
-I am currently going deeper into distributed systems, data-intensive applications, and user experience while building Covenant, a gamified productivity RPG platform. I also write about engineering, product, philosophy, and technology on Substack.
+I am currently going deeper into distributed systems, data-intensive applications, and user experience. I also write about engineering, product, philosophy, and technology on Substack.
 
 ## Experience
 

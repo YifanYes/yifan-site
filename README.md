@@ -2,7 +2,7 @@
 
 Personal website for Yifan: a minimalist personal profile and content-first workbench for articles, topic areas, study notes, curated recommendations, projects, and a professional CV.
 
-This is not a generic portfolio and it is not a Covenant marketing site. Covenant should be present because it is an important project, but the website should be centered on Yifan's thinking, practice, writing, study, recommendations, and systems.
+This is not a generic portfolio or a product marketing site. The website should be centered on Yifan's thinking, practice, writing, study, recommendations, projects, and systems.
 
 ## Project Shape
 
