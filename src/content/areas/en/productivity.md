@@ -13,220 +13,132 @@ locale: "en"
 related: ["notes/en/attention-is-a-training-surface"]
 ---
 
-Productivity is getting the results you want, as soon as you can, with the least amount of effort.
+If the work does not move you closer to the life you actually want, you're bullshiting yourself. Real productivity is not looking busy. It is not jumping between apps, filling calendars with random meetings, closing tickets in Jira, or performing discipline for other people.
 
-Real productivity is not looking busy. It is not collecting apps, filling calendars, closing tickets, or performing discipline for other people. If the work does not move you closer to the life you actually want, it is motion.
+Productivity is getting the results you want, as soon as you can, with the least amount of effort. Productivity is about working smart, not working hard.
 
-The point is to get what you want from life in the most frictionless way possible, while still being present enough to enjoy the life you are building. No vanity metrics. No worship of exhaustion. No approval-seeking through busyness.
+But if you're starting your journey, you don't know what working smart means. So you must work hard first.
 
-## The Standard
+No vanity metrics. No worship of exhaustion. No approval-seeking through busyness.
 
-The only honest productivity question is:
+## Efficiency vs Effectiveness
 
-> Did this actually move me closer to what I want?
+The most efficient use of your time is to do what you do best and what no one else can do.
 
-Everything else is support material.
+We need to distinguish between efficiency and effectiveness:
 
-I care about productivity because time is finite, attention is fragile, and most people spend their best energy reacting to other people's priorities. A good system protects attention, reduces friction, and makes the next right action obvious.
+- **Effectiveness** – doing the right things, getting the result you intend.
+- **Efficiency** – doing things right, working with minimal waste of time and effort.
 
-Productivity has several components:
+To achieve more, you must be both effective and efficient, but **effectiveness should come first**.
 
-- **Direction** - knowing what you want.
-- **Effectiveness** - doing the right things.
-- **Efficiency** - doing them with less waste.
-- **Presence** - living the moment you are in.
-- **Recovery** - having enough energy to keep going.
-- **Review** - noticing what is working and what is theater.
+In the long-run, prioritization beats efficiency.
 
-## Efficiency Vs Effectiveness
+## Systems for productivity
 
-- **Effectiveness** - Doing the right things and getting the result you intend.
-- **Efficiency** - Doing things right with minimal waste of time and effort.
+I personally use two tools for my productivity:
 
-Effectiveness comes first. There is no prize for doing the wrong thing beautifully.
+### Calendar
 
-> In the long run, prioritization beats efficiency.
+Your calendar is the most honest autobiography you'll ever write.
 
-The most efficient use of your time is to do what you do best and what no one else can do. Everything else should be simplified, delegated, automated, delayed, or deleted.
+It doesn't matter what you say your priorities are. Your calendar reveals the truth. Each block is a decision about what matters, stripped of pretense and rationalization.
 
-## Goals And Objectives
+> Don’t tell me your priorities; show me your calendar.
+> — Shane Parrish
 
-Outcome goals describe the result you want. They are useful because they set direction, but they are not fully under your control.
+Your calendar isn't just recording your time – it's exposing your lies.
 
-Performance goals describe what you will do. They are useful because they turn desire into behavior.
+I save event reminders and lock blocks of time for deep, focused work.
 
-Use both:
+Recording the events I go to in my calendar is useful for monthly and annual reviews.
 
-1. Name the outcome.
-2. Define the behaviors that make it more likely.
-3. Put those behaviors on the calendar.
-4. Review the result without lying to yourself.
+### Obsidian
 
-### Backward Goal Setting
+I apply the Second Brain method from Tiago Forte, with some tweaks.
 
-1. Visualize the end goal clearly.
+It's so powerful to have all your knowledge and notes centralized in one place. Specially since it can be used as contect for AI.
+
+Capture, remember, and benefit from the vast quantities of information around us by building a personal system for knowledge management.
+
+I use the PARA system to organize my Obsidian folders:
+
+- Inbox: the place where you put everything you capture along the day to synthesize and sort later. This sorting task can be automated with AI.
+- Projects: short-term efforts you're working on – anything with a clear end in your personal or professional life. Examples: 2024 taxes, website redesign, quarterly team meeting, etc.
+- Areas: everything you're trying to actively improve or maintain. Current roles and responsibilities. Long-term and open-ended. Examples: finances, philosophy, engineering, etc.
+- Resources: topics you're interested in. Your personal library of references, facts, and inspiration for future projects. Example: "YouTube video thumbnails" notebook with cool thumbnails you can reference later.
+- Archive: inactive items from other categories. Information you don't want to forget but doesn't advance current goals
+
+CODE process
+
+- Capture: keep the ideas and insights that resonate, those you think are truly noteworthy and actionable.
+- Organize: save for actionability, according to the active projects you're working on right now.
+- Distill: find the essence, turn the ideas you capture and organize into your own message.
+- Express: draw on the material you distill and use it to express your own point of view. Highlight the main points of each note, then highlight the main points of _those_ highlights.
+
+> The common trait of people who supposedl have vision is that they spend a lot of time reading and gathering information, and then synthesize it until they come up with an idea. – Fred Smith
+
+## Minimize attention residue
+
+Dr. Leroy defines attention residue as "the persistence of cognitive activity about a task A even though one stopped working on a task A and currently performs a task B."
+
+There's a cognitive switching cost to shifting your attention. When your attention is shifted, there's a "residue" that remains with the prior task and impairs your cognitive performance on the new task.
+
+Multitasking is a lie. Multitasking is doing many things poorly.
+
+If a task takes less than 2 minutes to complete, do it right away.
+
+Eat the frog: tackle your most challenging task first thing in the morning.
+
+## Backward goal-setting
+
+Preparation always beats planning. Planning is based on the expectation of order. Preparation is based on the expectation of chaos.
+
+1. Visualize the end goal in detail.
 2. Set milestones working backward.
-3. Identify the nearest concrete step.
-4. Allocate time, energy, money, and help.
-5. Start with the closest useful action.
-6. Adjust when reality gives you new information.
+3. Identify steps for each milestone.
+4. Allocate necessary resources.
+5. Assign timeframes based on the end goal.
+6. Start with the nearest step.
+7. Be flexible and adjust when needed.
+8. Regularly review the plan for alignment.
 
-## Prioritization
+When reviewing, ask yourself:
 
-You can only have one first priority. If everything is important, you are avoiding the decision.
-
-### ABCDE Method
-
-List the tasks, then categorize them:
-
-- **A** - Must do. Real consequence if ignored.
-- **B** - Important, but not first.
-- **C** - Nice to do.
-- **D** - Delegate.
-- **E** - Eliminate.
-
-Work on A before pretending the rest is strategy.
-
-### One-Three-Five Rule
-
-At the start of the day, identify:
-
-- **1** big thing.
-- **3** medium things.
-- **5** small things.
-
-This prevents the fake productivity of writing a heroic list you were never going to finish.
-
-### Eat The Frog
-
-Do the most important hard thing early. Not because mornings are magic, but because avoidance gets stronger when you feed it.
-
-### Pareto Principle
-
-A small number of actions usually creates most of the result. Find the 20% that matters and stop giving equal dignity to every task.
-
-## Attention Residue
-
-Dr. Sophie Leroy defines attention residue as the persistence of cognitive activity about task A even after one has stopped working on task A and started performing task B.
-
-There is a cognitive switching cost to shifting attention. When your attention shifts, residue remains with the prior task and impairs cognitive performance on the new task.
-
-Protect deep work by reducing context switching:
-
-- Batch shallow tasks.
-- Turn off nonessential notifications.
-- Keep one capture inbox instead of ten.
-- Finish or intentionally park work before switching.
-- Write down the next step before stopping.
+- What do I do that I think is productive but isn't?
+- What do I do that I don't think is productive but actually is?
+- What am I not achieving simply because I haven't asked?
+- What can you do today that wasn't possible six months ago?
 
 ## Techniques
 
-### Two-Minute Rule
+The mind must be given relaxation. It will rise improved and sharper after a good break.
 
-If a task takes less than two minutes, do it now. Do not create a management system for something smaller than the system itself.
+People with high levels of self-control are good at avoiding temptation – not resisting it.
 
-### Five-Second Rule
+Strategy is the prioritization of limited resources versus unlimited options.
 
-Count backward from five to one, then move. This is useful when the problem is hesitation, not planning.
+## The Cult of Done
 
-### Pomodoro Technique
+Stop your addiction on knowledge acquisition. Action over perfection.
 
-Set a timer, focus on one task, rest briefly, repeat. Use this when you need a container for attention.
+1. There are three states of being. Not knowing, action and completion.
+2. Accept that everything is a draft. It helps to get it done.
+3. There is no editing stage.
+4. Pretending you know what you’re doing is almost the same as knowing what you are doing, so just accept that you know what you’re doing even if you don’t and do it.
+5. Banish procrastination. If you wait more than a week to get an idea done, abandon it.
+6. The point of being done is not to finish but to get other things done.
+7. Once you’re done you can throw it away.
+8. Laugh at perfection. It’s boring and keeps you from being done.
+9. People without dirty hands are wrong. Doing something makes you right.
+10. Failure counts as done. So do mistakes.
+11. Destruction is a variant of done.
+12. If you have an idea and publish it on the internet, that counts as a ghost of done.
+13. Done is the engine of more.
 
-### Time Blocking
+How can we translate this manifesto into actionable insights?
 
-Put important work on the calendar before other people's priorities consume the day.
-
-### Task Batching
-
-Group similar work: messages, admin, errands, review, planning. Switching less often is a productivity multiplier.
-
-### Implementation Intentions
-
-Pre-decide the trigger and behavior:
-
-- When it is 8:30, I open the document.
-- When I finish lunch, I walk for ten minutes.
-- When I feel distracted, I write the next action.
-
-### Habit Stacking
-
-Attach a new behavior to an existing one. The less negotiation required, the better.
-
-### Default Design
-
-Make the right action easier than the wrong one. Put the book on the desk. Remove the distracting app. Prepare the gym bag. Design the environment so discipline has less work to do.
-
-### Audit Tasks
-
-Automate, eliminate, delegate. In that order? Not always. Often the best move is deletion.
-
-### The One Question
-
-After meaningful work, ask:
-
-> Did this move me closer to the result I want?
-
-If the answer keeps being no, change the system.
-
-## Tools
-
-Tools are only useful when they reduce friction.
-
-- **Calendar** - Protect focus blocks, appointments, and recovery.
-- **Task list** - Track commitments without pretending everything is equal.
-- **Second brain** - Capture ideas, notes, references, and project material.
-- **Checklists** - Make repeated work boring and reliable.
-- **Templates** - Reduce startup friction for recurring work.
-
-Do not confuse organizing the work with doing the work.
-
-## Presence
-
-Productivity that destroys presence is a bad trade.
-
-The point is not to spend your whole life mentally leaning into the future. You need plans, but you also need the ability to inhabit the day you are actually living.
-
-Stop measuring every day by how productive it felt. Some days are for output. Some are for recovery, connection, maintenance, grief, celebration, and ordinary life. A system should help you return to presence, not turn your mind into a dashboard.
-
-## Making The Most Of Evenings
-
-Your evening affects your morning more than your morning affects your evening.
-
-Structure evenings with intention:
-
-- **Recovery** - Decompress. No heavy decisions. Recharge.
-- **Growth** - Learn, train, read, practice, or build.
-- **Connection** - Spend real attention on family, friends, and community.
-- **Reset** - Prepare the next day so morning starts with less friction.
-
-## Key Insights
-
-> Preparation always beats planning. Planning is based on the expectation of order. Preparation is based on the expectation of chaos.
-
-- `velocity = speed + direction`
-- The mind must be given relaxation. It rises improved and sharper after a good break.
-- People with high levels of self-control are good at avoiding temptation, not merely resisting it.
-- Busy is not productive. Apply effort deliberately.
-- Strategy is the prioritization of limited resources against unlimited options.
-- Just because something is not optimal does not mean it is not beneficial.
-- An unfinished task keeps pulling attention until you close the loop or park it clearly.
-
-## Review Questions
-
-- What do I want that I am not admitting clearly?
-- What am I doing that looks productive but is not?
-- What am I avoiding because it would create a real result?
-- What is the simplest action I can take today that would create forward progress?
-- What can I remove, automate, delegate, or simplify?
-- What am I not achieving simply because I have not asked?
-- What can I do today that was not possible six months ago?
-
-## Related Threads
-
-- Habits - building lasting routines.
-- SMART goals - a goal-setting framework.
-- OKRs - objectives and key results.
-- Pareto principle - the 80/20 rule.
-- The cult of done - shipping over perfection.
-- Career productivity - applying disciplined work to professional growth.
+- Define "done" from the start: what are the core features that constitute a complete project? Write them down and resist the urge to expand this list as you go.
+- Aim for "good enough": "perfect" is the enemy of done.
+- Break larger projects into smaller, time-boxed phases to maintain a sense of progress.
+- Separate ideation from implementation: keep a separate idea log. When new features or project ideas pop up during implementation, jot them down for future consideration instead of immediately acting on them.

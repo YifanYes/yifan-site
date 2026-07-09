@@ -14,220 +14,130 @@ translationOf: "areas/en/productivity"
 related: ["notes/es/la-atencion-es-superficie-de-entrenamiento"]
 ---
 
-La productividad consiste en conseguir los resultados que quieres, lo antes posible y con la menor cantidad de esfuerzo.
+Si el trabajo no te acerca a la vida que realmente quieres, te estás engañando. La productividad real no es parecer ocupado. No es saltar entre apps, llenar calendarios con reuniones aleatorias, cerrar tickets en Jira o representar disciplina para otras personas.
 
-La productividad real no es parecer ocupado. No es coleccionar apps, llenar calendarios, cerrar tickets ni representar disciplina para otras personas. Si el trabajo no te acerca a la vida que realmente quieres, es movimiento.
+La productividad consiste en conseguir los resultados que quieres, lo antes posible y con la menor cantidad de esfuerzo. Consiste en trabajar de forma inteligente, no en trabajar duro.
 
-El objetivo es conseguir lo que quieres de la vida de la forma más fluida posible, sin perder la presencia necesaria para disfrutar la vida que estás construyendo. Sin métricas de vanidad. Sin culto al agotamiento. Sin buscar aprobación pareciendo ocupado.
+Pero si estás empezando el camino, todavía no sabes qué significa trabajar de forma inteligente. Así que primero tienes que trabajar duro.
 
-## El estándar
-
-La única pregunta honesta sobre productividad es:
-
-> ¿Esto me acercó realmente a lo que quiero?
-
-Todo lo demás es material de apoyo.
-
-Me importa la productividad porque el tiempo es finito, la atención es frágil y la mayoría de personas gasta su mejor energía reaccionando a las prioridades de otros. Un buen sistema protege la atención, reduce fricción y hace obvia la siguiente acción correcta.
-
-La productividad tiene varios componentes:
-
-- **Dirección** - saber qué quieres.
-- **Efectividad** - hacer las cosas correctas.
-- **Eficiencia** - hacerlas con menos desperdicio.
-- **Presencia** - vivir el momento en el que estás.
-- **Recuperación** - tener energía suficiente para seguir.
-- **Revisión** - notar qué funciona y qué es teatro.
+Sin métricas de vanidad. Sin culto al agotamiento. Sin buscar aprobación pareciendo ocupado.
 
 ## Eficiencia vs efectividad
+
+El uso más eficiente de tu tiempo es hacer lo que haces mejor y lo que nadie más puede hacer.
+
+Tenemos que distinguir entre eficiencia y efectividad:
 
 - **Efectividad** - hacer las cosas correctas y conseguir el resultado que buscas.
 - **Eficiencia** - hacer las cosas bien con el mínimo desperdicio de tiempo y esfuerzo.
 
-La efectividad va primero. No hay premio por hacer lo equivocado con elegancia.
+Para conseguir más, tienes que ser efectivo y eficiente, pero **la efectividad debería ir primero**.
 
-> A largo plazo, la priorización vence a la eficiencia.
+A largo plazo, la priorización vence a la eficiencia.
 
-El uso más eficiente de tu tiempo es hacer lo que haces mejor y lo que nadie más puede hacer. Todo lo demás debería simplificarse, delegarse, automatizarse, retrasarse o eliminarse.
+## Sistemas para la productividad
 
-## Metas y objetivos
+Yo uso personalmente dos herramientas para mi productividad:
 
-Los objetivos de resultado describen lo que quieres conseguir. Son útiles porque marcan dirección, pero no dependen por completo de ti.
+### Calendario
 
-Los objetivos de rendimiento describen lo que harás. Son útiles porque convierten el deseo en conducta.
+Tu calendario es la autobiografía más honesta que vas a escribir.
 
-Usa ambos:
+No importa cuáles digas que son tus prioridades. Tu calendario revela la verdad. Cada bloque es una decisión sobre lo que importa, sin poses ni racionalizaciones.
 
-1. Nombra el resultado.
-2. Define las conductas que lo hacen más probable.
-3. Pon esas conductas en el calendario.
-4. Revisa el resultado sin mentirte.
+> No me digas tus prioridades; enséñame tu calendario.
+> — Shane Parrish
 
-### Planificación inversa de objetivos
+Tu calendario no solo registra tu tiempo: expone tus mentiras.
+
+Guardo recordatorios de eventos y bloqueo franjas de tiempo para trabajo profundo y enfocado.
+
+Registrar en el calendario los eventos a los que voy es útil para revisiones mensuales y anuales.
+
+### Obsidian
+
+Aplico el método Second Brain de Tiago Forte, con algunos ajustes.
+
+Es muy potente tener todo tu conocimiento y tus notas centralizados en un solo lugar. Especialmente porque pueden usarse como contexto para la IA.
+
+Captura, recuerda y aprovecha las enormes cantidades de información que te rodean construyendo un sistema personal de gestión del conocimiento.
+
+Uso el sistema PARA para organizar mis carpetas de Obsidian:
+
+- Inbox: el lugar donde pones todo lo que capturas durante el día para sintetizarlo y ordenarlo más tarde. Esta tarea de clasificación se puede automatizar con IA.
+- Projects: esfuerzos a corto plazo en los que estás trabajando; cualquier cosa con un final claro en tu vida personal o profesional. Ejemplos: impuestos de 2024, rediseño de la web, reunión trimestral del equipo, etc.
+- Areas: todo lo que intentas mejorar o mantener activamente. Roles y responsabilidades actuales. Largo plazo y final abierto. Ejemplos: finanzas, filosofía, ingeniería, etc.
+- Resources: temas que te interesan. Tu biblioteca personal de referencias, datos e inspiración para proyectos futuros. Ejemplo: un cuaderno de "miniaturas de vídeos de YouTube" con miniaturas buenas que puedas consultar después.
+- Archive: elementos inactivos de otras categorías. Información que no quieres olvidar pero que no impulsa tus objetivos actuales.
+
+Proceso CODE:
+
+- Capture: conserva las ideas e intuiciones que resuenan contigo, aquellas que consideras realmente relevantes y accionables.
+- Organize: guarda pensando en la acción, según los proyectos activos en los que estás trabajando ahora mismo.
+- Distill: encuentra la esencia; convierte las ideas que capturas y organizas en tu propio mensaje.
+- Express: apóyate en el material que destilas y úsalo para expresar tu propio punto de vista. Resalta los puntos principales de cada nota, y luego resalta los puntos principales de _esos_ resaltados.
+
+> El rasgo común de las personas que supuestamente tienen visión es que pasan mucho tiempo leyendo y recopilando información, y luego la sintetizan hasta que se les ocurre una idea. – Fred Smith
+
+## Minimizar el residuo de atención
+
+La doctora Leroy define el residuo de atención como "la persistencia de actividad cognitiva sobre una tarea A aunque se haya dejado de trabajar en esa tarea A y se esté realizando una tarea B".
+
+Existe un coste cognitivo al cambiar de atención. Cuando tu atención se desplaza, queda un "residuo" de la tarea anterior que perjudica tu rendimiento cognitivo en la nueva tarea.
+
+La multitarea es una mentira. La multitarea es hacer muchas cosas mal.
+
+Si una tarea tarda menos de dos minutos en completarse, hazla de inmediato.
+
+Cómete la rana: aborda tu tarea más desafiante a primera hora de la mañana.
+
+## Planificación inversa de objetivos
+
+La preparación siempre vence a la planificación. La planificación se basa en la expectativa de orden. La preparación se basa en la expectativa de caos.
 
 1. Visualiza el objetivo final con claridad.
 2. Define hitos trabajando hacia atrás.
-3. Identifica el paso concreto más cercano.
-4. Asigna tiempo, energía, dinero y ayuda.
-5. Empieza por la acción útil más cercana.
-6. Ajusta cuando la realidad te dé información nueva.
+3. Identifica los pasos de cada hito.
+4. Asigna los recursos necesarios.
+5. Asigna plazos según el objetivo final.
+6. Empieza por el paso más cercano.
+7. Sé flexible y ajusta cuando haga falta.
+8. Revisa el plan con regularidad para comprobar que sigue alineado.
 
-## Priorización
+Cuando revises, pregúntate:
 
-Solo puedes tener una primera prioridad. Si todo es importante, estás evitando la decisión.
-
-### Método ABCDE
-
-Enumera las tareas y clasifícalas:
-
-- **A** - Obligatorio. Hay una consecuencia real si lo ignoras.
-- **B** - Importante, pero no primero.
-- **C** - Agradable de hacer.
-- **D** - Delegar.
-- **E** - Eliminar.
-
-Trabaja en A antes de fingir que el resto es estrategia.
-
-### Regla uno-tres-cinco
-
-Al empezar el día, identifica:
-
-- **1** cosa grande.
-- **3** cosas medianas.
-- **5** cosas pequeñas.
-
-Esto evita la falsa productividad de escribir una lista heroica que nunca ibas a terminar.
-
-### Cómete la rana
-
-Haz temprano la cosa difícil más importante. No porque las mañanas sean mágicas, sino porque la evitación se fortalece cuando la alimentas.
-
-### Principio de Pareto
-
-Un número pequeño de acciones suele crear la mayor parte del resultado. Encuentra el 20% que importa y deja de dar la misma dignidad a cada tarea.
-
-## Residuo de atención
-
-La doctora Sophie Leroy define el residuo de atención como la persistencia de actividad cognitiva sobre una tarea A incluso después de haber dejado de trabajar en esa tarea A y haber empezado una tarea B.
-
-Existe un coste cognitivo al cambiar de atención. Cuando tu atención se desplaza, queda un residuo de la tarea anterior que perjudica el rendimiento cognitivo en la nueva tarea.
-
-Protege el trabajo profundo reduciendo el cambio de contexto:
-
-- Agrupa tareas superficiales.
-- Apaga notificaciones no esenciales.
-- Mantén una sola bandeja de captura en vez de diez.
-- Termina o aparca intencionalmente el trabajo antes de cambiar.
-- Escribe el siguiente paso antes de parar.
+- ¿Qué hago que creo que es productivo pero no lo es?
+- ¿Qué hago que no creo que sea productivo pero en realidad sí lo es?
+- ¿Qué no estoy logrando simplemente porque no lo he pedido?
+- ¿Qué puedes hacer hoy que no era posible hace seis meses?
 
 ## Técnicas
 
-### Regla de los dos minutos
-
-Si una tarea tarda menos de dos minutos, hazla ahora. No crees un sistema de gestión para algo más pequeño que el propio sistema.
-
-### Regla de los cinco segundos
-
-Cuenta hacia atrás de cinco a uno y muévete. Es útil cuando el problema es la duda, no la planificación.
-
-### Técnica Pomodoro
-
-Pon un temporizador, enfócate en una tarea, descansa brevemente y repite. Úsala cuando necesites un contenedor para la atención.
-
-### Bloques de tiempo
-
-Pon el trabajo importante en el calendario antes de que las prioridades de otros consuman el día.
-
-### Agrupar tareas
-
-Agrupa trabajo similar: mensajes, administración, recados, revisión, planificación. Cambiar menos veces multiplica la productividad.
-
-### Intenciones de implementación
-
-Decide de antemano el disparador y la conducta:
-
-- Cuando sean las 8:30, abro el documento.
-- Cuando termine de comer, camino diez minutos.
-- Cuando me sienta distraído, escribo la siguiente acción.
-
-### Apilar hábitos
-
-Une una conducta nueva a una ya existente. Cuanta menos negociación requiera, mejor.
-
-### Diseño por defecto
-
-Haz que la acción correcta sea más fácil que la incorrecta. Deja el libro en la mesa. Elimina la app que distrae. Prepara la bolsa del gimnasio. Diseña el entorno para que la disciplina tenga menos trabajo.
-
-### Auditar tareas
-
-Automatiza, elimina, delega. ¿Siempre en ese orden? No. A menudo la mejor acción es eliminar.
-
-### La pregunta única
-
-Después de un trabajo significativo, pregunta:
-
-> ¿Esto me acercó al resultado que quiero?
-
-Si la respuesta sigue siendo no, cambia el sistema.
-
-## Herramientas
-
-Las herramientas solo son útiles cuando reducen fricción.
-
-- **Calendario** - protege bloques de foco, citas y recuperación.
-- **Lista de tareas** - rastrea compromisos sin fingir que todo vale lo mismo.
-- **Segundo cerebro** - captura ideas, notas, referencias y material de proyectos.
-- **Checklists** - vuelven aburrido y fiable el trabajo repetido.
-- **Plantillas** - reducen la fricción inicial del trabajo recurrente.
-
-No confundas organizar el trabajo con hacer el trabajo.
-
-## Presencia
-
-La productividad que destruye la presencia es un mal trato.
-
-El objetivo no es vivir mentalmente inclinado hacia el futuro. Necesitas planes, pero también necesitas la capacidad de habitar el día que estás viviendo.
-
-Deja de medir cada día por lo productivo que se sintió. Algunos días son para producir. Otros son para recuperar, conectar, mantener, sufrir, celebrar y vivir lo ordinario. Un sistema debe ayudarte a volver a la presencia, no convertir tu mente en un dashboard.
-
-## Aprovechar mejor las noches
-
-Tu noche afecta a tu mañana más de lo que tu mañana afecta a tu noche.
-
-Estructura las noches con intención:
-
-- **Recuperación** - descomprime. Sin decisiones pesadas. Recarga.
-- **Crecimiento** - aprende, entrena, lee, practica o construye.
-- **Conexión** - dedica atención real a familia, amigos y comunidad.
-- **Reset** - prepara el día siguiente para que la mañana empiece con menos fricción.
-
-## Ideas clave
-
-> La preparación siempre vence a la planificación. La planificación se basa en la expectativa de orden. La preparación se basa en la expectativa de caos.
-
-- `velocidad = rapidez + dirección`
 - La mente debe recibir descanso. Después de una buena pausa se levanta mejorada y más afilada.
 - Las personas con altos niveles de autocontrol son buenas evitando la tentación, no solo resistiéndola.
-- Estar ocupado no es ser productivo. Aplica el esfuerzo de forma deliberada.
 - La estrategia es priorizar recursos limitados frente a opciones ilimitadas.
-- Que algo no sea óptimo no significa que no sea beneficioso.
-- Una tarea sin cerrar sigue tirando de la atención hasta que cierras el ciclo o la aparcas con claridad.
 
-## Preguntas de revisión
+## El culto a terminar
 
-- ¿Qué quiero y no estoy admitiendo con claridad?
-- ¿Qué hago que parece productivo, pero no lo es?
-- ¿Qué estoy evitando porque crearía un resultado real?
-- ¿Cuál es la acción más simple que puedo tomar hoy para crear progreso real?
-- ¿Qué puedo eliminar, automatizar, delegar o simplificar?
-- ¿Qué no estoy logrando simplemente porque no lo he pedido?
-- ¿Qué puedo hacer hoy que no era posible hace seis meses?
+Detén tu adicción a adquirir conocimiento. Acción por encima de perfección.
 
-## Hilos Relacionados
+1. Hay tres estados del ser. No saber, acción y finalización.
+2. Acepta que todo es un borrador. Ayuda a terminarlo.
+3. No hay etapa de edición.
+4. Fingir que sabes lo que haces es casi lo mismo que saber lo que haces, así que acepta que sabes lo que haces aunque no lo sepas y hazlo.
+5. Destierra la procrastinación. Si esperas más de una semana para terminar una idea, abandónala.
+6. El objetivo de terminar no es acabar, sino poder hacer otras cosas.
+7. Una vez terminado, puedes tirarlo.
+8. Ríete de la perfección. Es aburrida y te impide terminar.
+9. Las personas sin las manos sucias se equivocan. Hacer algo te da la razón.
+10. El fracaso cuenta como terminado. Los errores también.
+11. La destrucción es una variante de terminado.
+12. Si tienes una idea y la publicas en internet, eso cuenta como un fantasma de terminado.
+13. Terminar es el motor de más.
 
-- Hábitos - construir rutinas duraderas.
-- Objetivos SMART - un marco para definir metas.
-- OKRs - objetivos y resultados clave.
-- Principio de Pareto - la regla 80/20.
-- El culto a terminar - publicar por encima de perfeccionar.
-- Productividad profesional - aplicar trabajo disciplinado al crecimiento profesional.
+¿Cómo podemos traducir este manifiesto en ideas accionables?
+
+- Define "terminado" desde el principio: ¿cuáles son las funcionalidades centrales que constituyen un proyecto completo? Escríbelas y resiste la tentación de ampliar esta lista sobre la marcha.
+- Apunta a "suficientemente bueno": "perfecto" es enemigo de terminado.
+- Divide los proyectos grandes en fases más pequeñas y acotadas en el tiempo para mantener una sensación de progreso.
+- Separa la ideación de la implementación: mantén un registro de ideas aparte. Cuando aparezcan nuevas funcionalidades o ideas de proyecto durante la implementación, apúntalas para considerarlas en el futuro en vez de actuar sobre ellas de inmediato.
