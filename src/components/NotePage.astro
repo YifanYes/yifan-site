@@ -8,6 +8,7 @@ import RelatedContent from './RelatedContent.astro';
 import SiteShell from './SiteShell.astro';
 import TableOfContents from './TableOfContents.astro';
 import TaxonomyChip from './TaxonomyChip.astro';
+import TechnicalButton from './TechnicalButton.astro';
 
 type Props = {
 	entry: CollectionEntry<'notes'>;
@@ -81,6 +82,10 @@ const relatedItems = (data.related ?? [])
 
 <SiteShell locale={data.locale} currentPath={notePath} alternateLinks={alternateLinks}>
 	<main class="note-page">
+		<nav class="note-page__back" aria-label={copy.parentNavigationLabel}>
+			<TechnicalButton href={`/${data.locale}/notes/`} label={copy.backLinks.notes} variant="quiet" />
+		</nav>
+
 		<header class="note-page__header">
 			<div class="note-page__title">
 				<ModuleLabel label="NOTE //"/>
@@ -125,6 +130,10 @@ const relatedItems = (data.related ?? [])
 <style>
 	.note-page {
 		padding-bottom: clamp(56px, 9vw, 112px);
+	}
+
+	.note-page__back {
+		padding-top: clamp(18px, 4vw, 34px);
 	}
 
 	.note-page__header {

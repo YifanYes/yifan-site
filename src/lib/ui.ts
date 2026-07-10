@@ -95,15 +95,39 @@ export const DETAIL_COPY: Record<
 	{
 		tableOfContentsLabel: string;
 		tableOfContentsAriaLabel: string;
+		parentNavigationLabel: string;
+		backLinks: {
+			articles: string;
+			areas: string;
+			notes: string;
+			projects: string;
+			recommendations: string;
+		};
 	}
 > = {
 	en: {
 		tableOfContentsLabel: 'ON THIS PAGE //',
 		tableOfContentsAriaLabel: 'Table of contents',
+		parentNavigationLabel: 'Parent navigation',
+		backLinks: {
+			articles: '<- Articles',
+			areas: '<- Areas',
+			notes: '<- Notes',
+			projects: '<- Projects',
+			recommendations: '<- Recommendations',
+		},
 	},
 	es: {
 		tableOfContentsLabel: 'CONTENIDO //',
 		tableOfContentsAriaLabel: 'Tabla de contenido',
+		parentNavigationLabel: 'Navegación superior',
+		backLinks: {
+			articles: '<- Artículos',
+			areas: '<- Áreas',
+			notes: '<- Notas',
+			projects: '<- Proyectos',
+			recommendations: '<- Recomendaciones',
+		},
 	},
 };
 

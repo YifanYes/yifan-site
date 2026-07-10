@@ -82,6 +82,10 @@ const relatedItems = (data.related ?? [])
 
 <SiteShell locale={data.locale} currentPath={articlePath} alternateLinks={alternateLinks}>
 	<main class="article-page">
+		<nav class="article-page__back" aria-label={copy.parentNavigationLabel}>
+			<TechnicalButton href={`/${data.locale}/articles/`} label={copy.backLinks.articles} variant="quiet" />
+		</nav>
+
 		<header class="article-page__header">
 			<div class="article-page__title">
 				<ModuleLabel label="ARTICLE //"/>
@@ -134,6 +138,10 @@ const relatedItems = (data.related ?? [])
 <style>
 	.article-page {
 		padding-bottom: clamp(56px, 9vw, 112px);
+	}
+
+	.article-page__back {
+		padding-top: clamp(18px, 4vw, 34px);
 	}
 
 	.article-page__header {

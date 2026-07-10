@@ -2,11 +2,12 @@
 import type { CollectionEntry } from 'astro:content';
 import type { AreaDefinition } from '../lib/areas';
 import type { Locale } from '../lib/i18n';
-import { AREAS_COPY, ARCHIVE_FILTER_COPY } from '../lib/ui';
+import { AREAS_COPY, ARCHIVE_FILTER_COPY, DETAIL_COPY } from '../lib/ui';
 import ModuleLabel from './ModuleLabel.astro';
 import PageHeader from './PageHeader.astro';
 import SiteShell from './SiteShell.astro';
 import TaxonomyChip from './TaxonomyChip.astro';
+import TechnicalButton from './TechnicalButton.astro';
 
 type AreaEntry =
 	| CollectionEntry<'articles'>
@@ -28,6 +29,7 @@ type Props = {
 
 const { locale, area, content: AreaContent, items } = Astro.props;
 const copy = AREAS_COPY[locale];
+const detailCopy = DETAIL_COPY[locale];
 const filterCopy = ARCHIVE_FILTER_COPY[locale];
 const routeSegments: Record<AreaEntry['collection'], string> = {
 	articles: 'articles',
@@ -57,6 +59,10 @@ const getEntryHref = (entry: AreaEntry) => {
 
 <SiteShell locale={locale} currentPath={`/${locale}/areas/${area.slug}/`}>
 	<main class="area-page">
+		<nav class="area-page__back" aria-label={detailCopy.parentNavigationLabel}>
+			<TechnicalButton href={`/${locale}/areas/`} label={detailCopy.backLinks.areas} variant="quiet" />
+		</nav>
+
 		<PageHeader
 			moduleLabel={`AREA.${area.slug.toUpperCase()} //`}
 			kicker={copy.kicker}
@@ -110,6 +116,10 @@ const getEntryHref = (entry: AreaEntry) => {
 <style>
 	.area-page {
 		padding-bottom: clamp(48px, 8vw, 96px);
+	}
+
+	.area-page__back {
+		padding-top: clamp(18px, 4vw, 34px);
 	}
 
 	.area-page__focus {

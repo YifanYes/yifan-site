@@ -1,10 +1,12 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import type { AlternateLink } from '../lib/i18n';
+import { DETAIL_COPY } from '../lib/ui';
 import ModuleLabel from './ModuleLabel.astro';
 import RelatedContent from './RelatedContent.astro';
 import SiteShell from './SiteShell.astro';
 import TaxonomyChip from './TaxonomyChip.astro';
+import TechnicalButton from './TechnicalButton.astro';
 
 type ArtifactEntry = CollectionEntry<'projects'> | CollectionEntry<'recommendations'>;
 
@@ -16,6 +18,7 @@ type Props = {
 
 const { entry, content: Content, alternateLinks } = Astro.props;
 const { data } = entry;
+const copy = DETAIL_COPY[data.locale];
 const routeSegments = {
 	articles: 'articles',
 	documents: 'documents',
@@ -27,6 +30,8 @@ const routeSegments = {
 const slug = entry.id.split('/').slice(1).join('/');
 const routeSegment = routeSegments[entry.collection];
 const artifactPath = `/${data.locale}/${routeSegment}/${slug}/`;
+const backLinkLabel =
+	entry.collection === 'projects' ? copy.backLinks.projects : copy.backLinks.recommendations;
 const dateFormatter = new Intl.DateTimeFormat(data.locale, {
 	year: 'numeric',
 	month: 'long',
@@ -84,6 +89,10 @@ const relatedItems = (data.related ?? [])
 
 <SiteShell locale={data.locale} currentPath={artifactPath} alternateLinks={alternateLinks}>
 	<main class="artifact-page">
+		<nav class="artifact-page__back" aria-label={copy.parentNavigationLabel}>
+			<TechnicalButton href={`/${data.locale}/${routeSegment}/`} label={backLinkLabel} variant="quiet" />
+		</nav>
+
 		<header class="artifact-page__header">
 			<div class="artifact-page__title">
 				<ModuleLabel label={moduleLabel} />
@@ -122,6 +131,10 @@ const relatedItems = (data.related ?? [])
 <style>
 	.artifact-page {
 		padding-bottom: clamp(56px, 9vw, 112px);
+	}
+
+	.artifact-page__back {
+		padding-top: clamp(18px, 4vw, 34px);
 	}
 
 	.artifact-page__header {
