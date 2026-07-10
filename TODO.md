@@ -115,7 +115,7 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 
 ## Phase 10: Cleanup
 
-- [ ] Decide whether to keep or delete `/prototype/visual-style`.
-- [ ] If the prototype direction is absorbed, delete throwaway prototype code.
+- [x] Decide whether to keep or delete `/prototype/visual-style`.
+- [x] If the prototype direction is absorbed, delete throwaway prototype code.
 - [ ] Remove Astro starter assets if unused.
 - [ ] Keep `README.md`, `DESIGN.md`, `AGENTS.md`, and this `TODO.md` up to date as decisions change.

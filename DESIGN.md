@@ -19,11 +19,7 @@ It should not feel like:
 - A fantasy-themed product microsite.
 - A raw Obsidian publish dump.
 
-Reference prototype:
-
-```text
-/prototype/visual-style?variant=workbench
-```
+The original visual prototype has been absorbed into the live layout primitives and should not be exposed as a public route.
 
 ## Identity
 

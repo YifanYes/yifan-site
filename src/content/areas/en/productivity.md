@@ -13,13 +13,27 @@ locale: "en"
 related: ["notes/en/attention-is-a-training-surface"]
 ---
 
-If the work does not move you closer to the life you actually want, you're bullshiting yourself. Real productivity is not looking busy. It is not jumping between apps, filling calendars with random meetings, closing tickets in Jira, or performing discipline for other people.
+Productivity is a word that means a lot of things for many people.
+
+Why do you want to be productive?
+
+This question sounds dumb. But think about it.
+
+Do you want to be productive to prove yourself to others? Are you trying to impress someone? Are you seeking someone's validation? Do you want to be productive to prove your value to yourself? Do you want to look busy to others?
+
+The answer to these questions reveals a lot about your identity, needs, fears and focuses.
+
+These questions are fundamental. Often, we do things without clearly knowing why. We do them by inertia, unconsciously, by default.
+
+If the work does not move you closer to the life you actually want, you're bullshitting yourself. Real productivity is not looking busy. It is not jumping between apps, filling calendars with random meetings, closing tickets in Jira, or performing discipline for other people.
 
 Productivity is getting the results you want, as soon as you can, with the least amount of effort. Productivity is about working smart, not working hard.
 
-But if you're starting your journey, you don't know what working smart means. So you must work hard first.
+If you're starting your journey, you don't know what working smart means. You don't know what it looks like. So you must work hard first. Volume precedes quality.
 
 No vanity metrics. No worship of exhaustion. No approval-seeking through busyness.
+
+Just results. Show me the numbers.
 
 ## Efficiency vs Effectiveness
 

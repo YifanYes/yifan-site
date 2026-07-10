@@ -45,11 +45,7 @@ Rule of thumb: Astro for the personal website, Next.js for product applications.
 
 Use the Systems Workbench direction. Do not default to shadcn, Material UI, generic SaaS sections, rounded card grids, or a fantasy/product-first theme.
 
-The chosen direction is based on the `workbench` prototype at:
-
-```text
-/prototype/visual-style?variant=workbench
-```
+The chosen direction is based on the absorbed `workbench` prototype. Do not expose the old prototype as a public route.
 
 Core visual patterns to preserve:
 

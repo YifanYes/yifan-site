@@ -14,13 +14,29 @@ translationOf: "areas/en/productivity"
 related: ["notes/es/la-atencion-es-superficie-de-entrenamiento"]
 ---
 
-Si el trabajo no te acerca a la vida que realmente quieres, te estás engañando. La productividad real no es parecer ocupado. No es saltar entre apps, llenar calendarios con reuniones aleatorias, cerrar tickets en Jira o representar disciplina para otras personas.
+«Productividad» es una palabra que significa muchas cosas para mucha gente.
 
-La productividad consiste en conseguir los resultados que quieres, lo antes posible y con la menor cantidad de esfuerzo. Consiste en trabajar de forma inteligente, no en trabajar duro.
+¿Por qué quieres ser productivo?
 
-Pero si estás empezando el camino, todavía no sabes qué significa trabajar de forma inteligente. Así que primero tienes que trabajar duro.
+Esta pregunta puede parecer una tontería. Pero piénsalo.
 
-Sin métricas de vanidad. Sin culto al agotamiento. Sin buscar aprobación pareciendo ocupado.
+¿Quieres ser productivo para demostrar tu valía ante los demás? ¿Intentas impresionar a alguien? ¿Buscas la aprobación de alguien? ¿Quieres ser productivo para demostrarte a ti mismo tu valía? ¿Quieres parecer ocupado ante los demás?
+
+La respuesta a estas preguntas revela mucho sobre tu identidad, tus necesidades, tus miedos y tus prioridades.
+
+Estas preguntas son fundamentales. A menudo, hacemos cosas sin saber claramente por qué. Las hacemos por inercia, inconscientemente, por defecto.
+
+Si el trabajo no te acerca a la vida que realmente quieres, te estás engañando a ti mismo. La verdadera productividad no consiste en parecer ocupado. No es saltar de una aplicación a otra, llenar la agenda con reuniones aleatorias, cerrar tickets en Jira o cumplir con las exigencias de otras personas.
+
+La productividad consiste en conseguir los resultados que quieres, lo antes posible y con el menor esfuerzo posible. La productividad consiste en trabajar de forma inteligente, no en trabajar duro.
+
+Si estás empezando tu camino, no sabes lo que significa trabajar de forma inteligente. No sabes cómo es. Así que primero debes trabajar duro. El volumen precede a la calidad.
+
+Nada de métricas vanidosas. Nada de adorar el agotamiento. Nada de buscar la aprobación a través del ajetreo.
+
+Solo resultados. Muéstrame las cifras.
+
+Traducción realizada con la versión gratuita del traductor DeepL.com
 
 ## Eficiencia vs efectividad
 
