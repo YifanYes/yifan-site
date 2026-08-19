@@ -10,11 +10,7 @@ source: "obsidian"
 curated: true
 status: "evergreen"
 locale: "en"
-related:
-  [
-    "notes/en/attention-is-a-training-surface",
-    "documents/en/workbench-operating-notes"
-  ]
+related: ["notes/en/attention-is-a-training-surface", "documents/en/workbench-operating-notes"]
 ---
 
 > An idiot admires complexity. A genius admires simplicity.

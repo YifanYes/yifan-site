@@ -11,12 +11,7 @@ curated: true
 status: "evergreen"
 locale: "es"
 translationOf: "areas/en/philosophy"
-related:
-  [
-    "articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer",
-    "articles/es/naval-ravikant-y-el-budismo-racional",
-    "projects/es/libro-de-filosofia"
-  ]
+related: ["articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer", "articles/es/naval-ravikant-y-el-budismo-racional", "projects/es/libro-de-filosofia"]
 ---
 
 Dos de las grandes preguntas de la vida son:
