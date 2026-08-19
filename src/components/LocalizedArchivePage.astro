@@ -22,8 +22,6 @@ type ArchiveItem = {
 
 type Props = {
 	locale: Locale;
-	moduleLabel: string;
-	kicker: string;
 	title: string;
 	description: string;
 	listLabel: string;
@@ -36,8 +34,6 @@ type Props = {
 
 const {
 	locale,
-	moduleLabel,
-	kicker,
 	title,
 	description,
 	listLabel,
@@ -112,8 +108,6 @@ const visibleSecondaryCount = secondaryItems.filter(itemMatchesFilters).length;
 <SiteShell locale={locale}>
 	<main class="archive-page" data-archive-page data-archive-view={selectedView}>
 		<PageHeader
-			moduleLabel={moduleLabel}
-			kicker={kicker}
 			title={title}
 			description={description}
 		/>

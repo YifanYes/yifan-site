@@ -11,7 +11,12 @@ curated: true
 status: "evergreen"
 locale: "es"
 translationOf: "areas/en/philosophy"
-related: ["articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer", "articles/es/naval-ravikant-y-el-budismo-racional", "projects/es/libro-de-filosofia"]
+related:
+  [
+    "articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer",
+    "articles/es/naval-ravikant-y-el-budismo-racional",
+    "projects/es/libro-de-filosofia"
+  ]
 ---
 
 Dos de las grandes preguntas de la vida son:
@@ -63,6 +68,8 @@ No puedes ser libre si no eres poderoso.
 El crecimiento está relacionado con el aprendizaje. Todo aprendizaje es corrección de errores. Alex Hormozi define aprender como "misma situación, comportamiento distinto".
 
 Si estás luchando contra un jefe en un videojuego y el jefe te sigue ganando, es culpa tuya. No estás aprendiendo.
+
+![Meme que dice «git gud lmao — Sun Tzu» junto a un guerrero de terracota.](/git-gud.webp)
 
 Hasta que encuentres el mejor comportamiento para una situación, tienes que probar cosas distintas. A esto se le llama iterar.
 
@@ -209,11 +216,11 @@ A menudo somos esclavos de las pasiones porque no entendemos sus causas.
 
 Epicuro divide los deseos en:
 
-| Tipo de deseo | Ejemplo | Qué hacer |
-| --- | --- | --- |
-| Natural y necesario | comida, refugio, amistad | satisfacerlos de forma sencilla |
+| Tipo de deseo            | Ejemplo                   | Qué hacer                                           |
+| ------------------------ | ------------------------- | --------------------------------------------------- |
+| Natural y necesario      | comida, refugio, amistad  | satisfacerlos de forma sencilla                     |
 | Natural pero innecesario | comida lujosa, sexo, lujo | disfrutarlos con cuidado, pero no depender de ellos |
-| Vano y vacío | fama, poder, inmortalidad | rechazarlos |
+| Vano y vacío             | fama, poder, inmortalidad | rechazarlos                                         |
 
 > La felicidad es el estado en el que no falta nada. Cuando no falta nada, tu mente se apaga y deja de correr hacia el pasado o el futuro para arrepentirse de algo o planear algo. - Naval Ravikant
 

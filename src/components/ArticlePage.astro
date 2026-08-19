@@ -88,7 +88,6 @@ const relatedItems = (data.related ?? [])
 
 		<header class="article-page__header">
 			<div class="article-page__title">
-				<ModuleLabel label="ARTICLE //"/>
 				<h1>{data.title}</h1>
 				<p>{data.description}</p>
 			</div>
@@ -157,7 +156,6 @@ const relatedItems = (data.related ?? [])
 	}
 
 	.article-page__title h1 {
-		margin-top: 16px;
 		font-family: var(--font-display);
 		font-size: clamp(3.4rem, 9vw, 8.8rem);
 		letter-spacing: 0;
@@ -169,7 +167,7 @@ const relatedItems = (data.related ?? [])
 		max-width: 700px;
 		margin-top: 18px;
 		color: var(--color-muted);
-		font-family: var(--font-typewriter);
+		font-family: var(--font-body);
 		font-size: clamp(1rem, 1.5vw, 1.16rem);
 		line-height: 1.7;
 	}

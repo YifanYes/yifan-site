@@ -10,40 +10,70 @@ source: "obsidian"
 curated: true
 status: "evergreen"
 locale: "en"
-related: ["notes/en/attention-is-a-training-surface", "documents/en/workbench-operating-notes"]
+related:
+  [
+    "notes/en/attention-is-a-training-surface",
+    "documents/en/workbench-operating-notes"
+  ]
 ---
 
-Engineering is problem solving under uncertainty.
+> An idiot admires complexity. A genius admires simplicity.
+> — Terry A. Davis
 
-Software engineering is not mainly typing code. It is deciding what problem is worth solving, reducing the unknowns around it, and shaping a system simple enough that people can change it without fear.
+Engineering is problem solving under uncertainty. Software engineering is problem solving using code, through systems and applications.
 
-The work is technical, but the center of gravity is judgment: what to build, what to remove, what to stabilize, what to document, what to automate, and what to leave alone.
+Software engineering was never just about typing code. Nowadays any AI agent can type it for you, and with reasonable quality. Our work is technical, but the center of gravity has always been and will always be our judgment: what to build, what to remove, what to stabilize, what to document, what to automate, and what to leave alone.
+
+The main question you must ask yourself before doing anything:
+
+> What's the root problem I'm solving right now?
+
+Are you solving the real problem? Or are you just patching the symptom?
+
+The API is slow, so the team proposes Redis. But the real bottleneck may be an unindexed database column, an N+1 request pattern, or a downstream service. Caching first can make the system harder to understand while hiding the actual constraint.
+
+A good engineer should always approach a problem or a task with these mental frameworks.
+
+### First principles thinking
+
+Boil things down to the most fundamental truths. Separate underlying ideas from assumptions based on them. One of the best examples is Elon Musk and SpaceX. To take people to Mars and beyond, he needed rockets. But rockets are extremely expensive and difficult to manufacture. So he used first principles thinking:
+
+- What is a rocket made of?
+- What is the value of those materials on the commodity market?
+- Why is it so expensive to get a rocket into space?
+
+After this thought process and further investigation, it turned out that the materials cost of a rocket was around two percent of the typical price. So all the rest of the cost could be optimized. One way to do it was to build reusable rockets, so that the cost-per-launch would be cheaper. Nobody thought that way before. Everyone assumed that's impossible.
+
+### Second order thinking
+
+First-order thinking is easy and safe. "If we do this, this happens".
+
+It works for simple, reversible, low-stakes decisions. But for the rest, it ensures you get the same results as everyone else. Second-order thinking is thinking farther ahead and holistically — considering not only actions and immediate consequences but subsequent effects. Ask what happens next. Plan for long-term results.
+
+Second order thinkers ask themselves the question “And then what?”.
+
+You could automate a repetitive process, which means less manual work. Sounds great, right? But it also means that errors now execute automatically and at greater scale unless validation is added.
 
 ## Reduce Complexity To Simplicity
 
+Many engineers can solve a
 Complexity is the default. It arrives through unclear requirements, rushed abstractions, half-owned dependencies, inconsistent patterns, and decisions nobody remembers making.
 
-My current operating order:
+I really like Elon's Musk 5-step engineering process:
 
-1. Clarify the problem.
-2. Remove what should not exist.
-3. Simplify what remains.
-4. Shorten the feedback loop.
-5. Automate only after the work is understood.
+1. Make the requirements less dumb, less complex.
+2. Delete the component, step, process, etc. Delete at least 10%. ry very hard to delete the part or process.
+3. Simplify and optimize — don't optimize something that should not exist.
+4. Accelerate cycle time.
+5. Automate.
 
-Do not optimize something that should not exist. Do not automate a process nobody has questioned. Do not add architecture to avoid a conversation about requirements.
+One of our less visible responsibilities is helping sales and business think deeply about the problem we're trying to solve. We're more squared-minded, methodological, analytical.
 
-## Create Clarity
+## Build Trustworthy Systems
 
-In the AI era, code is cheap. Coherence is expensive.
-
-A good engineering environment makes the system understandable. The architecture has visible boundaries. The interfaces tell the truth. The infrastructure behaves predictably. The important decisions are written down before they become folklore.
-
-This matters for people and for AI. Humans move faster when they can reason locally. AI tools produce better work when the surrounding system has strong conventions, narrow interfaces, and tests that catch nonsense.
-
-## Build Reliable Systems
-
-Reliability is not glamour. It is the absence of drama.
+- Reliable
+- Scalable
+- Maintainable
 
 The best systems make ordinary work boring: deploys are calm, monitoring is useful, failures have owners, and recovery paths are known before anyone needs them. Reliability is not only uptime. It is whether the team can trust the system while changing it.
 

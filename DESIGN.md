@@ -93,7 +93,7 @@ Mono:        IBM Plex Mono, SFMono-Regular, Consolas
 Typewriter:  IBM Plex Mono, Courier Prime, Courier New
 ```
 
-Use the typewriter stack for compact editorial support copy, page header descriptions, artifact notes, and field-note style annotations. Keep it sober: normal casing, generous line-height, and no faux distressed effects.
+Use the body sans stack for page-header descriptions so large display titles have a quieter, cleaner counterpoint. Reserve the typewriter stack for compact editorial support copy, artifact notes, and field-note style annotations. Keep it sober: normal casing, generous line-height, and no faux distressed effects.
 
 ## Core Design Patterns
 
@@ -119,7 +119,7 @@ Rules:
 
 - Use mono type.
 - Keep labels short.
-- Place module labels above page titles, section headers, artifact blocks, and list groups.
+- Place module labels on section headers, artifact blocks, and list groups. Keep primary page headers label-free so the title and description remain calm and immediate.
 - Numbering can be derived from content order later; during early development, stable slugs or type labels are enough.
 - Do not overuse labels inside body prose.
 

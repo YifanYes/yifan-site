@@ -1,3 +1,8 @@
+---
+name: commit-changes
+description: Propose a Conventional Commits message from the current Git changes.
+---
+
 # Commit Changes
 
 Analyze the current git changes to propose a conventional-commits message.

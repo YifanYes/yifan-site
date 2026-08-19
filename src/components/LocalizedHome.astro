@@ -18,17 +18,17 @@ const copy = HOME_COPY[locale];
 <SiteShell locale={locale}>
 	<main class="home-board" aria-labelledby="home-title">
 		<PageHeader
-			moduleLabel={copy.moduleLabel}
-			kicker={copy.eyebrow}
 			title={copy.title}
 			description={copy.lede}
 			headingId="home-title"
 			titleScale="compact"
 		/>
 
+		<hr class="home-board__divider" />
+
 		<div class="home-board__grid">
 			<section class="home-panel" aria-label={copy.statusLabel.replace(' //', '')}>
-				<ArchiveSpecPanel label={copy.statusLabel} specs={copy.status} />
+				<ArchiveSpecPanel label={copy.statusLabel} specs={copy.status} flush />
 			</section>
 
 			<section class="home-panel" aria-labelledby="home-social-title">
@@ -107,17 +107,18 @@ const copy = HOME_COPY[locale];
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
 		gap: clamp(24px, 5vw, 64px);
-		margin-top: clamp(30px, 5vw, 56px);
-		border-top: 1px solid var(--color-ink);
 		padding-top: 18px;
+	}
+
+	.home-board__divider {
+		width: 100%;
+		margin: clamp(30px, 5vw, 56px) 0 0;
+		border: 0;
+		border-top: 1px solid var(--color-ink);
 	}
 
 	.home-panel {
 		min-width: 0;
-	}
-
-	.home-panel .archive-spec-panel {
-		padding-top: 0;
 	}
 
 	.home-panel h2,

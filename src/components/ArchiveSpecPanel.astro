@@ -12,12 +12,13 @@ type Props = {
 	label?: string;
 	title?: string;
 	specs?: Spec[];
+	flush?: boolean;
 };
 
-const { label = 'SPEC //', title, specs = [] } = Astro.props;
+const { label = 'SPEC //', title, specs = [], flush = false } = Astro.props;
 ---
 
-<aside class="archive-spec-panel">
+<aside class:list={['archive-spec-panel', { 'archive-spec-panel--flush': flush }]}>
 	<ModuleLabel label={label} tone="red" />
 	{title && <h2>{title}</h2>}
 	{specs.length > 0 && (
@@ -42,6 +43,11 @@ const { label = 'SPEC //', title, specs = [] } = Astro.props;
 		border-top: 1px solid var(--color-ink);
 		min-width: 0;
 		padding-top: 18px;
+	}
+
+	.archive-spec-panel--flush {
+		border-top: 0;
+		padding-top: 0;
 	}
 
 	h2 {

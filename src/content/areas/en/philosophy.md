@@ -10,7 +10,12 @@ source: "obsidian"
 curated: true
 status: "evergreen"
 locale: "en"
-related: ["articles/en/decide-who-you-want-to-be-and-then-do-what-you-must", "articles/en/naval-ravikant-and-rational-buddhism", "projects/en/philosophy-book"]
+related:
+  [
+    "articles/en/decide-who-you-want-to-be-and-then-do-what-you-must",
+    "articles/en/naval-ravikant-and-rational-buddhism",
+    "projects/en/philosophy-book"
+  ]
 ---
 
 Two of the big questions in life are:
@@ -62,6 +67,8 @@ You cannot be free if you are not powerful.
 Growth is related to learning. All learning is error correction. Alex Hormozi defines learning as "same situation, different behavior."
 
 If you are fighting a boss in a video game, and the boss keeps beating you, it is your fault. You are not learning.
+
+![Meme reading “git gud lmao — Sun Tzu” beside a terracotta warrior.](/git-gud.webp)
 
 Until you find the best behavior for a situation, you have to try different things. This is called iteration.
 
@@ -138,9 +145,13 @@ But you could also think:
 
 In this example, the reality is that this person was not loved in childhood. What they do with that fact becomes their reality. And that is true for all of us. We cannot change what happened to us. But we can change what we do with it.
 
-It might not be your fault. But it is your problem. And nobody is coming to save you.
+It might not be your fault. But it is your problem.
 
-You can use your past to justify yourself or to learn from it. The choice is yours, whether you make it consciously or not.
+What happened to you was not fair. You still have the responsibility to fix it.
+
+You can use your past to justify yourself or to learn from it. The choice is yours.
+
+---
 
 This connects to virtues, which are composed of many principles.
 
@@ -208,11 +219,11 @@ We are often enslaved by passions because we do not understand their causes.
 
 Epicurus divides desires into:
 
-| Type of desire | Example | What to do |
-| --- | --- | --- |
-| Natural and necessary | food, shelter, friendship | satisfy them simply |
-| Natural but unnecessary | rich food, sex, luxury | enjoy carefully, but do not depend on them |
-| Vain and empty | fame, power, immortality | reject them |
+| Type of desire          | Example                   | What to do                                 |
+| ----------------------- | ------------------------- | ------------------------------------------ |
+| Natural and necessary   | food, shelter, friendship | satisfy them simply                        |
+| Natural but unnecessary | rich food, sex, luxury    | enjoy carefully, but do not depend on them |
+| Vain and empty          | fame, power, immortality  | reject them                                |
 
 > Happiness is the state when nothing is missing. When nothing is missing, your mind shuts down and stops running into the past or future to regret something or to plan something. - Naval Ravikant
 

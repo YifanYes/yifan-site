@@ -21,15 +21,13 @@ const { data } = entry;
 <SiteShell locale={locale}>
 	<main class="cv-page">
 		<PageHeader
-			moduleLabel={copy.moduleLabel}
-			kicker={copy.kicker}
 			title={data.title}
 			description={data.description}
 		/>
 
 		<section class="cv-page__profile">
 			<div class="cv-page__spec" aria-label={copy.specLabel.replace(' //', '')}>
-				<ArchiveSpecPanel label={copy.specLabel} specs={copy.specs} />
+				<ArchiveSpecPanel label={copy.specLabel} specs={copy.specs} flush />
 			</div>
 
 			<aside class="cv-page__links" aria-label={copy.linksLabel.replace(' //', '')}>
@@ -65,10 +63,6 @@ const { data } = entry;
 		border-top: 2px solid var(--color-ink);
 		border-bottom: 1px solid var(--color-line);
 		padding: 18px 0;
-	}
-
-	.cv-page__spec .archive-spec-panel {
-		padding-top: 0;
 	}
 
 	.cv-page__links {
