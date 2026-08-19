@@ -7,8 +7,6 @@ area: "faith"
 tags: ["christianity", "theology", "evidence", "archaeology", "science"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/0*owV3_CiLQ4_-HNxN"
 originalUrl: "https://medium.com/@yifanyes/jes%C3%BAs-es-dios-cb92d4861c9e"

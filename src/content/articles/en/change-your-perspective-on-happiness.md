@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["happiness", "perspective", "stoicism", "life"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/0*ZN4pRGHA6MoUbUs2"
 originalUrl: "https://medium.com/@yifanyes/cambia-tu-perspectiva-de-la-felicidad-58dd3c0542fc"

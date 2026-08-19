@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["gratitude", "bitterness", "psychology", "reflection"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/1*XWdLM6xxEf78EdFO7v1rHg.png"
 originalUrl: "https://medium.com/@yifanyes/el-ant%C3%ADdoto-contra-la-amargura-a0eeba5166ce"

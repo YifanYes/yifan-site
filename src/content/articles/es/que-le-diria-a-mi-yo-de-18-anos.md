@@ -7,8 +7,6 @@ area: "productivity"
 tags: ["carrera", "finanzas", "inteligencia artificial", "marca personal"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "es"
 translationOf: "articles/en/what-i-would-tell-my-18-year-old-self"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/0*UKtupOs3z6kNUAci"

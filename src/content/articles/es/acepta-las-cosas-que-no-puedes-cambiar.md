@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["aceptacion", "estoicismo", "budismo", "control"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "es"
 translationOf: "articles/en/accept-the-things-you-cannot-change"
 coverImage: "https://cdn-images-1.medium.com/max/841/1*3KjZ8_8ZgvVdqHhHMqNOUA.jpeg"

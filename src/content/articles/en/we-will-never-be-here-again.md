@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["memento mori", "life", "death", "presence"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/0*0m4U6EQ_ypfN3ZuA"
 originalUrl: "https://medium.com/@yifanyes/el-arte-de-vivir-bien-y-morir-bien-cde4647babe7"

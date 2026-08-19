@@ -7,8 +7,6 @@ area: "faith"
 tags: ["cristianismo", "teologia", "evidencia", "arqueologia", "ciencia"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "es"
 translationOf: "articles/en/jesus-is-god"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/0*owV3_CiLQ4_-HNxN"

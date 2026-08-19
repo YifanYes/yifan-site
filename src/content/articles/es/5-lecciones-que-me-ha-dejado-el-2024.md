@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["2024", "lecciones", "salud", "felicidad"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "es"
 translationOf: "articles/en/5-lessons-2024-left-me"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/0*8ueJHrGCko89wGhm"

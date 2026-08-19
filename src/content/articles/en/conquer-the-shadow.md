@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["shadow", "jung", "psychology", "growth"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/0*yXpctcVZzQP-3zwO"
 originalUrl: "https://medium.com/@yifanyes/conquistar-la-sombra-f6e0975d8f72"

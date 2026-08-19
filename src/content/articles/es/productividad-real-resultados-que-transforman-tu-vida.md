@@ -7,8 +7,6 @@ area: "productivity"
 tags: ["productividad", "sistemas", "objetivos", "segundo cerebro"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "es"
 translationOf: "articles/en/real-productivity-results-that-transform-your-life"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/1*r861RJ0EiyF4nXucjob8KA.jpeg"

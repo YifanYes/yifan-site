@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["virtue", "character", "stoicism", "bushido", "discipline"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/1*3rwr11sNkOxARvnuEhbcxg.jpeg"
 originalUrl: "https://medium.com/@yifanyes/decide-qui%C3%A9n-quieres-ser-y-luego-haz-lo-que-debas-hacer-a2cec07a5f49"

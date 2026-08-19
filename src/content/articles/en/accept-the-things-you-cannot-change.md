@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["acceptance", "stoicism", "buddhism", "control"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://cdn-images-1.medium.com/max/841/1*3KjZ8_8ZgvVdqHhHMqNOUA.jpeg"
 originalUrl: "https://medium.com/@yifanyes/acepta-las-cosas-que-no-puedes-cambiar-1ec0f927c399"

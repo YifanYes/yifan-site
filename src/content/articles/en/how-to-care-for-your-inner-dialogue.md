@@ -7,8 +7,6 @@ area: "productivity"
 tags: ["inner dialogue", "mind", "discipline", "psychology"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/1*Iz2gIab6Rs-w5lnNGMDJ1A.jpeg"
 originalUrl: "https://medium.com/@yifanyes/c%C3%B3mo-cuidar-tu-di%C3%A1logo-interno-6b540598c5fc"

@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["virtud", "caracter", "estoicismo", "bushido", "disciplina"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "es"
 translationOf: "articles/en/decide-who-you-want-to-be-and-then-do-what-you-must"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/1*3rwr11sNkOxARvnuEhbcxg.jpeg"

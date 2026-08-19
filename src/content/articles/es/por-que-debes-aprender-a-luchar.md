@@ -7,8 +7,6 @@ area: "martial-arts"
 tags: ["artes marciales", "combate", "violencia", "disciplina"]
 draft: false
 featured: false
-status: "published"
-source: "substack"
 locale: "es"
 translationOf: "articles/en/why-you-should-learn-to-fight"
 originalUrl: "https://substack.com/home/post/p-199597991"

@@ -7,8 +7,6 @@ area: "martial-arts"
 tags: ["martial arts", "combat", "violence", "discipline"]
 draft: false
 featured: false
-status: "published"
-source: "substack"
 locale: "en"
 originalUrl: "https://substack.com/home/post/p-199597991"
 ---

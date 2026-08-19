@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["sufrimiento", "fortaleza", "disciplina", "estoicismo"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "es"
 translationOf: "articles/en/suffering-is-a-natural-condition-of-being-human"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/1*sluGTP280VbPiKhLwD_cUQ.jpeg"

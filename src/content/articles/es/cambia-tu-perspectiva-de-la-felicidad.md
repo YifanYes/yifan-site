@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["felicidad", "perspectiva", "estoicismo", "vida"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "es"
 translationOf: "articles/en/change-your-perspective-on-happiness"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/0*ZN4pRGHA6MoUbUs2"

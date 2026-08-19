@@ -7,8 +7,6 @@ area: "productivity"
 tags: ["dialogo interno", "mente", "disciplina", "psicologia"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "es"
 translationOf: "articles/en/how-to-care-for-your-inner-dialogue"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/1*Iz2gIab6Rs-w5lnNGMDJ1A.jpeg"

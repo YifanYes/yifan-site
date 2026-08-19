@@ -7,8 +7,6 @@ area: "productivity"
 tags: ["productivity", "systems", "goals", "second brain"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/1*r861RJ0EiyF4nXucjob8KA.jpeg"
 originalUrl: "https://medium.com/@yifanyes/productividad-real-resultados-que-transforman-tu-vida-7a1dde3226e2"

@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["2024", "lessons", "health", "happiness"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/0*8ueJHrGCko89wGhm"
 originalUrl: "https://medium.com/@yifanyes/5-lecciones-que-me-ha-dejado-el-2024-1d29df6ee7e6"

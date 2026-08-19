@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["character", "discipline", "virtue", "practice"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://miro.medium.com/v2/resize:fit:612/1*PF64eGrICx9lTYA0C2nolw.jpeg"
 originalUrl: "https://medium.com/@yifanyes/el-m%C3%A1rmol-y-el-escultor-12fa24f5239a"

@@ -451,8 +451,7 @@ export const ARCHIVE_COPY: Record<
   es: {
     now: {
       metaTitle: "Ahora",
-      description:
-        "Construcción, estudio, entrenamiento y preguntas activas de Yifan.",
+      description: "Construcción, estudio, entrenamiento y preguntas activas.",
       moduleLabel: "NOW.001 //",
       kicker: "TRABAJO ACTUAL",
       title: "Lo que está activo ahora.",
@@ -502,7 +501,7 @@ export const ARCHIVE_COPY: Record<
     recommendations: {
       metaTitle: "Recomendaciones",
       description:
-        "Favoritos curados de Yifan: libros, media, cursos, herramientas, juegos y recursos.",
+        "Favoritos curados: libros, media, cursos, herramientas, juegos y recursos.",
       moduleLabel: "RECOMMENDATION.INDEX //",
       kicker: "FAVORITOS CURADOS",
       title: "Recomendaciones para volver.",
@@ -613,7 +612,7 @@ export const AREAS_COPY: Record<
   en: {
     metaTitle: "Areas",
     description:
-      "Broad topic hubs connecting Yifan’s articles, notes, recommendations, and projects.",
+      "Broad topic hubs connecting articles, notes, recommendations, and projects.",
     moduleLabel: "AREA.INDEX //",
     kicker: "TOPIC HUBS",
     title: "Areas of study and work.",
@@ -630,7 +629,7 @@ export const AREAS_COPY: Record<
   es: {
     metaTitle: "Áreas",
     description:
-      "Hubs temáticos que conectan artículos, notas, recomendaciones y proyectos de Yifan.",
+      "Hubs temáticos que conectan artículos, notas, recomendaciones y proyectos.",
     moduleLabel: "AREA.INDEX //",
     kicker: "HUBS TEMÁTICOS",
     title: "Áreas de estudio y trabajo.",
@@ -762,7 +761,7 @@ export const ABOUT_COPY: Record<
   en: {
     metaTitle: "About",
     description:
-      "Bio, areas of interest, taste, contact links, and collaboration surface for Yifan.",
+      "Bio, areas of interest, taste, contact links, and collaboration surface.",
     moduleLabel: "ABOUT.001 //",
     kicker: "BIO AND SURFACE AREA",
     title: "A builder working through systems, practice, and product judgment.",
@@ -780,7 +779,7 @@ export const ABOUT_COPY: Record<
   es: {
     metaTitle: "Acerca",
     description:
-      "Bio, áreas de interés, gusto, enlaces de contacto y superficie de colaboración de Yifan.",
+      "Bio, áreas de interés, gusto, enlaces de contacto y superficie de colaboración.",
     moduleLabel: "ABOUT.001 //",
     kicker: "BIO Y SUPERFICIE",
     title:

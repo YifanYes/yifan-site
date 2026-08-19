@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["caracter", "disciplina", "virtud", "practica"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "es"
 translationOf: "articles/en/the-marble-and-the-sculptor"
 coverImage: "https://miro.medium.com/v2/resize:fit:612/1*PF64eGrICx9lTYA0C2nolw.jpeg"

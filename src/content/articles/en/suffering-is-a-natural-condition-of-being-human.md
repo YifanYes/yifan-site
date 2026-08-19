@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["suffering", "strength", "discipline", "stoicism"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/1*sluGTP280VbPiKhLwD_cUQ.jpeg"
 originalUrl: "https://medium.com/@yifanyes/c%C3%B3mo-el-sufrimiento-te-est%C3%A1-volviendo-m%C3%A1s-fuerte-5619aecd198b"

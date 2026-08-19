@@ -7,8 +7,6 @@ area: "productivity"
 tags: ["career", "finance", "artificial intelligence", "personal brand"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "en"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/0*UKtupOs3z6kNUAci"
 originalUrl: "https://medium.com/@yifanyes/qu%C3%A9-le-dir%C3%ADa-a-mi-yo-de-18-a%C3%B1os-753e3f9d3533"

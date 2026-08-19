@@ -7,8 +7,6 @@ area: "philosophy"
 tags: ["memento mori", "vida", "muerte", "presencia"]
 draft: false
 featured: false
-status: "published"
-source: "medium"
 locale: "es"
 translationOf: "articles/en/we-will-never-be-here-again"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/0*0m4U6EQ_ypfN3ZuA"
