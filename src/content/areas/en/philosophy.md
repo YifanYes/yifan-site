@@ -38,24 +38,31 @@ They are not owners of their own time.
 
 Freedom means being able to choose what to do with your time and how to do it.
 
-In order to make your own choices and have options, you need money. Money is not going to give you happiness. Money only solves your money problems.
+To make your own choices and have options, you need money. Money will not give you happiness, but not having it will make you truly miserable. Money allows you to:
 
-The goal is not more money. The goal is:
-
-- Taking three months off if you want to.
-- Quitting a job that does not fulfill you.
-- Helping your loved ones when needed.
-- Owning your time and energy.
-- Being free to choose what you want.
-- More time with family and friends.
+- Take three months off if you want to.
+- Leave a job that does not fulfill you.
+- Help your loved ones when they need it.
+- Own your time and energy.
+- Be free to choose what you want.
+- Spend more time with family and friends.
 
 Freedom does not mean doing everything you want. How many people are enslaved to their pleasures? How many are enslaved to their own suffering and self-pity? How many are enslaved by their own success?
 
-Ironically, you could choose to damage your own freedom. We should be wise enough to know the difference between freedom and debauchery. What is the difference?
+> Freedom consists not in doing what we like, but in having the right to do what we ought.
+>
+> John Paul II
+
+Freedom sometimes means doing what you ought to do.
+
+Ironically, you could choose to damage your own freedom. Do not confuse freedom with license.
+
+- Freedom is the ability to choose and act of your own will, while taking responsibility for your decisions and recognizing that not everything you can do is necessarily good for you or right.
+- License means treating freedom as an almost complete absence of limits: "I am free, so I do whatever I feel like," even if that ends up harming you, hurting others, or making you a slave to your own impulses.
+
+(Add an example of freedom versus license)
 
 Freedom comes through understanding reality. Understanding the consequences of our choices.
-
-You cannot be free if you are not powerful.
 
 #### Growth
 
@@ -140,13 +147,9 @@ But you could also think:
 
 In this example, the reality is that this person was not loved in childhood. What they do with that fact becomes their reality. And that is true for all of us. We cannot change what happened to us. But we can change what we do with it.
 
-It might not be your fault. But it is your problem.
+It might not be your fault. But it is your problem. And nobody is coming to save you.
 
-What happened to you was not fair. You still have the responsibility to fix it.
-
-You can use your past to justify yourself or to learn from it. The choice is yours.
-
----
+You can use your past to justify yourself or to learn from it. The choice is yours, whether you make it consciously or not.
 
 This connects to virtues, which are composed of many principles.
 
@@ -207,6 +210,8 @@ Alex Hormozi talks about "ignorance debt." He claims ignorance is the most expen
 ## Desire Is The Root Of All Suffering
 
 > It does not make sense to continue wanting something if you are not willing to do what it takes to get it. If you do not want to live the lifestyle, then release yourself from the desire. - James Clear
+
+The central idea of Buddhism is that desire is the root of suffering.
 
 How can we balance ambition with peace?
 

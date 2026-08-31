@@ -39,9 +39,7 @@ No son dueñas de su propio tiempo.
 
 Libertad significa poder elegir qué hacer con tu tiempo y cómo hacerlo.
 
-Para tomar tus propias decisiones y tener opciones, necesitas dinero. El dinero no te va a dar felicidad. El dinero solo resuelve tus problemas de dinero.
-
-El objetivo no es más dinero. El objetivo es:
+Para tomar tus propias decisiones y tener opciones, necesitas dinero. El dinero no te va a dar felicidad, pero no tenerlo te va a hacer realmente miserable. El dinero te permite:
 
 - Tomarte tres meses libres si quieres.
 - Dejar un trabajo que no te llena.
@@ -52,11 +50,19 @@ El objetivo no es más dinero. El objetivo es:
 
 Libertad no significa hacer todo lo que quieres. ¿Cuántas personas están esclavizadas por sus placeres? ¿Cuántas están esclavizadas por su propio sufrimiento y autocompasión? ¿Cuántas están esclavizadas por su propio éxito?
 
-Irónicamente, podrías elegir dañar tu propia libertad. Deberíamos ser lo bastante sabios para conocer la diferencia entre libertad y desenfreno. ¿Cuál es la diferencia?
+> La libertad no consiste en hacer lo que nos gusta, sino en tener el derecho de hacer lo que debemos.
+> — Juan Pablo II
+
+La libertad a veces significa hacer lo que debes hacer.
+
+Irónicamente, podrías elegir dañar tu propia libertad. No confundas la libertad y el libertinaje.
+
+- Libertad es la capacidad de elegir y actuar por voluntad propia, pero haciéndote responsable de tus decisiones y reconociendo que no todo lo que puedes hacer necesariamente te conviene o es correcto.
+- Libertinaje es entender la libertad como ausencia casi total de límites: “soy libre, así que hago lo que me apetezca”, aunque eso termine dañándote a ti, perjudicando a otros o convirtiéndote en esclavo de tus propios impulsos.
+
+(Añadir ejemplo de libertad vs libertinaje)
 
 La libertad llega a través de entender la realidad. Entender las consecuencias de nuestras decisiones.
-
-No puedes ser libre si no eres poderoso.
 
 #### Crecimiento
 
@@ -204,6 +210,8 @@ Alex Hormozi habla de la "deuda de ignorancia". Afirma que la ignorancia es la d
 ## El Deseo Es La Raíz De Todo Sufrimiento
 
 > No tiene sentido seguir queriendo algo si no estás dispuesto a hacer lo que hace falta para conseguirlo. Si no quieres vivir ese estilo de vida, entonces libérate del deseo. - James Clear
+
+La idea principal del budismo es que la raíz del sufrimiento es el deseo.
 
 ¿Cómo podemos equilibrar la ambición con la paz?
 
