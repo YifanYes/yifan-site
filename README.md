@@ -22,7 +22,7 @@ This is not a generic portfolio or a product marketing site. The website should 
 
 ## Commands
 
-All commands are run from the project root.
+All commands are run from the project root. Use pnpm 11.20.0, pinned in `package.json`, for local and deployment installs.
 
 ```sh
 pnpm install
@@ -42,4 +42,6 @@ pnpm astro check
 
 ## Deployment
 
-Start with one deploy target when the site has enough real content. Vercel is the simplest personal-site workflow; Cloudflare is also a good static deployment option.
+Railway uses Railpack to detect this as an Astro static site. It installs dependencies with `pnpm install --frozen-lockfile --prefer-offline`, runs `pnpm run build`, and serves `dist` with Caddy.
+
+Keep the `packageManager` version in `package.json` aligned with local pnpm. Without this pin, Railpack can infer pnpm 9 from the lockfile format even when the workspace settings were written for pnpm 11. The `packages` entry in `pnpm-workspace.yaml` explicitly includes this repository's root package.
