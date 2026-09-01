@@ -9,7 +9,7 @@ draft: false
 featured: true
 status: "active"
 locale: "en"
-related: ["articles/en/decide-who-you-want-to-be-and-then-do-what-you-must", "notes/en/attention-is-a-training-surface"]
+related: ["articles/en/decide-who-you-want-to-be-and-then-do-what-you-must"]
 ---
 
 This is an active book project, but the title is intentionally generic for now.

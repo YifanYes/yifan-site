@@ -10,7 +10,7 @@ featured: true
 status: "active"
 locale: "es"
 translationOf: "projects/en/philosophy-book"
-related: ["articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer", "notes/es/la-atencion-es-superficie-de-entrenamiento"]
+related: ["articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer"]
 ---
 
 Este es un proyecto activo de libro, pero el título público se mantiene genérico por ahora.

@@ -22,7 +22,6 @@ const copy = DETAIL_COPY[data.locale];
 const routeSegments = {
 	articles: 'articles',
 	documents: 'documents',
-	notes: 'notes',
 	now: 'now',
 	projects: 'projects',
 	recommendations: 'recommendations',
@@ -53,7 +52,6 @@ if (entry.collection === 'recommendations') {
 
 const relatedCollections = await Promise.all([
 	getCollection('articles'),
-	getCollection('notes'),
 	getCollection('documents'),
 	getCollection('projects'),
 	getCollection('recommendations'),
@@ -120,7 +118,7 @@ const relatedItems = (data.related ?? [])
 
 		<RelatedContent label="RELATED //" items={relatedItems}>
 			<p class="artifact-page__related-empty">
-				Related articles, notes, recommendations, and projects will appear here as the archive grows.
+				Related articles, recommendations, and projects will appear here as the archive grows.
 			</p>
 		</RelatedContent>
 	</main>

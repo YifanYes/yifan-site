@@ -6,7 +6,6 @@ This directory contains the public content model for the site.
 
 - `articles`: long-form articles and essays.
 - `areas`: body content for broad topic hubs such as software engineering or martial arts.
-- `notes`: study notes from books, courses, resources, Obsidian exports, and active learning.
 - `recommendations`: curated favorite books, courses, movies, anime, manga, video games, tools, and other resources.
 - `documents`: longer documents, study notes, PDFs, and polished artifacts.
 - `projects`: case studies, experiments, tools, prototypes, systems, and active writing projects.
@@ -36,7 +35,6 @@ faith
 productivity
 martial-arts
 finance
-notes
 ```
 
 Recommendations also require a `medium` value:
@@ -62,7 +60,7 @@ source: "obsidian"
 curated: true
 featured: false
 status: "published"
-related: ["notes/en/attention-is-a-training-surface"]
+related: ["articles/en/decide-who-you-want-to-be-and-then-do-what-you-must"]
 translationOf: "articles/en/decide-who-you-want-to-be-and-then-do-what-you-must"
 ```
 
@@ -79,12 +77,12 @@ tags: ["philosophy", "practice"]
 draft: false
 curated: true
 locale: "en"
-related: ["notes/en/example-book-notes"]
+related: ["articles/en/example-book-essay"]
 ```
 
 ## Detail Body Features
 
-Long article and note pages automatically show a table of contents when the body has at least three `h2` or `h3` headings.
+Long article pages automatically show a table of contents when the body has at least three `h2` or `h3` headings.
 
 Fenced Markdown code blocks are styled as dark workbench code artifacts. For richer MDX artifacts, import the shared figure primitive:
 

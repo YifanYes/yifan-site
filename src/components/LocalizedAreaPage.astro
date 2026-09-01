@@ -11,7 +11,6 @@ import TechnicalButton from './TechnicalButton.astro';
 
 type AreaEntry =
 	| CollectionEntry<'articles'>
-	| CollectionEntry<'notes'>
 	| CollectionEntry<'projects'>
 	| CollectionEntry<'recommendations'>;
 
@@ -21,7 +20,6 @@ type Props = {
 	content?: any;
 	items: {
 		articles: AreaEntry[];
-		notes: AreaEntry[];
 		recommendations: AreaEntry[];
 		projects: AreaEntry[];
 	};
@@ -33,7 +31,6 @@ const detailCopy = DETAIL_COPY[locale];
 const filterCopy = ARCHIVE_FILTER_COPY[locale];
 const routeSegments: Record<AreaEntry['collection'], string> = {
 	articles: 'articles',
-	notes: 'notes',
 	projects: 'projects',
 	recommendations: 'recommendations',
 };
@@ -45,7 +42,6 @@ const dateFormatter = new Intl.DateTimeFormat(locale, {
 const formatLabel = (value: string) => value.replaceAll('-', ' ');
 const sectionEntries = [
 	{ label: copy.sections.articles, entries: items.articles },
-	{ label: copy.sections.notes, entries: items.notes },
 	{ label: copy.sections.recommendations, entries: items.recommendations },
 	{ label: copy.sections.projects, entries: items.projects },
 ];

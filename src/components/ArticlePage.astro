@@ -39,7 +39,6 @@ const metadata = [
 ];
 const relatedCollections = await Promise.all([
 	getCollection('articles'),
-	getCollection('notes'),
 	getCollection('documents'),
 	getCollection('projects'),
 	getCollection('recommendations'),
@@ -48,7 +47,6 @@ const relatedCollections = await Promise.all([
 const routeSegments = {
 	articles: 'articles',
 	documents: 'documents',
-	notes: 'notes',
 	now: 'now',
 	projects: 'projects',
 	recommendations: 'recommendations',
@@ -128,7 +126,7 @@ const relatedItems = (data.related ?? [])
 
 		<RelatedContent label="CONTINUE THREAD //" items={relatedItems}>
 			<p class="article-page__related-empty">
-				More related articles and notes will appear here as the archive grows.
+				More related articles will appear here as the archive grows.
 			</p>
 		</RelatedContent>
 	</main>

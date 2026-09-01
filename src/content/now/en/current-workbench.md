@@ -8,7 +8,6 @@ tags: ["now", "workbench", "practice"]
 draft: false
 status: "active"
 locale: "en"
-related: ["notes/en/attention-is-a-training-surface"]
 ---
 
 The current work is to turn the personal site into a durable public surface.

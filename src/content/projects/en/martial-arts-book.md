@@ -9,7 +9,7 @@ draft: false
 featured: true
 status: "active"
 locale: "en"
-related: ["notes/en/attention-is-a-training-surface", "documents/en/workbench-operating-notes"]
+related: ["documents/en/workbench-operating-notes"]
 ---
 
 This is an active book project, but the title is intentionally generic for now.

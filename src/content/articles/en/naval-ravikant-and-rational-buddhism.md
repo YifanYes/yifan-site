@@ -10,7 +10,7 @@ featured: true
 locale: "en"
 coverImage: "https://substackcdn.com/image/fetch/$s_!xNuh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F63b97e1b-dfe3-4f05-99e4-b44ebe2d9761_1280x720.png"
 originalUrl: "https://yifanyz.substack.com/p/naval-ravikant-y-el-budismo-racional"
-related: ["articles/en/decide-who-you-want-to-be-and-then-do-what-you-must", "notes/en/attention-is-a-training-surface"]
+related: ["articles/en/decide-who-you-want-to-be-and-then-do-what-you-must"]
 ---
 
 > A calm mind, a fit body, and a house full of love. These things cannot be bought. They must be earned.

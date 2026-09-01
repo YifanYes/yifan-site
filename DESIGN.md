@@ -8,7 +8,7 @@ This document exists so agents and future contributors preserve the site's ident
 
 Chosen visual direction: **Systems Workbench**.
 
-The website should feel like a precise public working surface for engineering, product, philosophy, productivity, martial arts, and curated notes. It should be editorial, technical, calm, and distinctive.
+The website should feel like a precise public working surface for engineering, product, philosophy, productivity, martial arts, and curated documents. It should be editorial, technical, calm, and distinctive.
 
 It should not feel like:
 
@@ -64,7 +64,7 @@ The site is centered on:
 - Productivity.
 - Martial arts.
 - Finance.
-- Curated Obsidian notes and documents.
+- Curated Obsidian documents.
 - Curated recommendations across books, courses, media, games, tools, and resources.
 - Projects and case studies.
 - A practical CV surface.
@@ -107,8 +107,8 @@ Format:
 
 ```text
 ARTICLE.014 //
-NOTE.032 //
 DOC.007 //
+RECOMMENDATION.011 //
 PROJECT.003 //
 AREA.ENGINEERING //
 SOURCE.OBSIDIAN //
@@ -125,7 +125,7 @@ Rules:
 
 ### Grid/List Indexes
 
-Indexes for articles, notes, documents, and projects should support two browsing modes when content volume justifies it.
+Indexes for articles, documents, and projects should support two browsing modes when content volume justifies it.
 
 Use:
 
@@ -181,7 +181,7 @@ Taxonomy chips should feel like archive filters, not colorful badges.
 Use them for:
 
 - Areas: `Engineering`, `Product`, `Philosophy`, `Faith`, `Productivity`, `Martial Arts`, `Finance`.
-- Content types: `Article`, `Note`, `Recommendation`, `Document`, `Project`.
+- Content types: `Article`, `Recommendation`, `Document`, `Project`.
 - Source/status: `Obsidian`, `Curated`, `Draft`, `Published`, `Updated`.
 
 Style:
@@ -195,12 +195,11 @@ Style:
 
 ### Related Content
 
-Article, note, document, and project pages should end with related content when useful.
+Article, document, and project pages should end with related content when useful.
 
 Labels:
 
 ```text
-RELATED NOTES
 RELATED ARTICLES
 RELATED DOCUMENTS
 RELATED PROJECTS
@@ -246,7 +245,7 @@ Use:
 
 - Left rail navigation on desktop where useful.
 - Main content column with strong max-width.
-- Split boards for home, notes, and project indexes.
+- Split boards for home, document, and project indexes.
 - Article pages with readable measure.
 - Metadata columns for date, area, tags, status, source.
 - Full-width sections only when they serve content hierarchy.
@@ -333,7 +332,6 @@ ArticleBody
 AreaIndex
 IndexViewToggle
 ArticleList
-NoteRow
 DocumentRow
 ProjectEntry
 MetadataRail
@@ -357,7 +355,6 @@ Component style:
 - Tags should look like metadata, not colorful pills.
 - Callouts should use a strong side rule or top rule.
 - Project entries should expose problem, decision, tradeoff, and result.
-- Notes should feel browsable and lightweight.
 - Documents should feel more durable and archival.
 
 ## Navigation
@@ -365,12 +362,12 @@ Component style:
 Primary navigation should make the content model obvious:
 
 ```text
-Now
+Home
 Articles
-Notes
-Documents
+Areas
+Recommendations
 Projects
-About
+CV
 ```
 
 Individual projects can appear under Projects or as selected homepage items. They should not become the only primary CTA across the site.
@@ -386,7 +383,7 @@ It should include:
 - A direct identity statement.
 - Current focus.
 - Latest articles.
-- Selected notes/documents.
+- Selected documents.
 - Selected projects.
 - Areas of interest.
 
@@ -404,23 +401,11 @@ Productivity
 Martial Arts
 ```
 
-### Notes
-
-Notes can be shorter and rougher than articles, but they must still be curated.
-
-Good metadata:
-
-- Area.
-- Source.
-- Date.
-- Tags.
-- Status.
-
 ### Documents
 
 Documents are durable artifacts. They can include longer Obsidian exports, PDFs, study documents, or reference guides.
 
-They should have a stronger archival layout than notes.
+They should use a strong archival layout.
 
 ### Projects
 
@@ -447,12 +432,12 @@ Rules:
 - Convert internal links intentionally.
 - Avoid publishing half-thoughts that need private context.
 - Use stable slugs.
-- Prefer `notes` for shorter artifacts and `documents` for polished long-form materials.
+- Publish shorter ideas as articles and longer reference material as documents.
 
 Potential visual treatment:
 
 - `Source: Obsidian` metadata.
-- `Curated note` or `Working note` status.
+- `Curated` or `Working` status.
 - Linkable references at the bottom.
 - Clear last-updated date.
 
@@ -513,7 +498,7 @@ Rules:
 - Make metadata useful.
 - Let content density feel intentional.
 - Keep individual projects visible but proportionate.
-- Treat notes and documents as first-class content.
+- Treat documents as first-class content.
 
 ## Do Not
 
@@ -532,7 +517,6 @@ When adding or changing UI, first identify which content surface is being design
 ```text
 home
 article
-note
 document
 project
 about

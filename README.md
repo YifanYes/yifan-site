@@ -1,6 +1,6 @@
 # yifan-site
 
-Personal website for Yifan: a minimalist personal profile and content-first workbench for articles, topic areas, study notes, curated recommendations, projects, and a professional CV.
+Personal website for Yifan: a minimalist personal profile and content-first workbench for articles, topic areas, curated recommendations, projects, and a professional CV.
 
 This is not a generic portfolio or a product marketing site. The website should be centered on Yifan's thinking, practice, writing, study, recommendations, projects, and systems.
 
@@ -9,8 +9,8 @@ This is not a generic portfolio or a product marketing site. The website should 
 - Built with Astro.
 - Uses English and Spanish localized routes: `/en/...` and `/es/...`.
 - Root route redirects to `/en/`.
-- Primary public structure: Home, Articles, Areas, Notes, Recommendations, Projects, and CV.
-- Content is modeled with Astro Content Collections for articles, notes, projects, recommendations, documents, and current-status entries.
+- Primary public structure: Home, Articles, Areas, Recommendations, Projects, and CV.
+- Content is modeled with Astro Content Collections for articles, projects, recommendations, documents, and current-status entries.
 - React should be reserved for interactive islands.
 - Visual work follows the Systems Workbench direction in `DESIGN.md`.
 

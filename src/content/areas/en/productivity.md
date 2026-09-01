@@ -10,7 +10,6 @@ source: "obsidian"
 curated: true
 status: "evergreen"
 locale: "en"
-related: ["notes/en/attention-is-a-training-surface"]
 ---
 
 Productivity is a word that means a lot of things for many people.

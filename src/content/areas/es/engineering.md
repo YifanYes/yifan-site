@@ -11,7 +11,7 @@ curated: true
 status: "evergreen"
 locale: "es"
 translationOf: "areas/en/engineering"
-related: ["notes/es/la-atencion-es-superficie-de-entrenamiento", "documents/es/notas-operativas-del-workbench"]
+related: ["documents/es/notas-operativas-del-workbench"]
 ---
 
 La ingeniería es resolver problemas bajo incertidumbre.

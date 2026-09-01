@@ -11,7 +11,7 @@ locale: "es"
 translationOf: "articles/en/naval-ravikant-and-rational-buddhism"
 coverImage: "https://substackcdn.com/image/fetch/$s_!xNuh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F63b97e1b-dfe3-4f05-99e4-b44ebe2d9761_1280x720.png"
 originalUrl: "https://yifanyz.substack.com/p/naval-ravikant-y-el-budismo-racional"
-related: ["articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer", "notes/es/la-atencion-es-superficie-de-entrenamiento"]
+related: ["articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer"]
 ---
 
 > Una mente en calma, un cuerpo en forma y una casa llena de amor. Estas cosas no se pueden comprar. Se deben ganar.

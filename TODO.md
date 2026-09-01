@@ -15,7 +15,7 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 ## Phase 2: Content Architecture
 
 - [x] Add Astro Content Collections.
-- [x] Define schemas for `articles`, `notes`, `recommendations`, `documents`, `projects`, and optional `now`.
+- [x] Define schemas for `articles`, `recommendations`, `documents`, `projects`, and optional `now`.
 - [x] Include locale-aware fields in content schemas.
 - [x] Add required frontmatter: `title`, `description`, `date`, `type`, `area`, `tags`, `draft`, `locale`.
 - [x] Add optional frontmatter: `source`, `curated`, `featured`, `status`, `related`, `translationOf`.
@@ -29,7 +29,7 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Turn the `workbench` prototype into reusable layout primitives.
 - [x] Create `SiteShell` with responsive navigation.
 - [x] Create `PageHeader` with module label, title, and right-side description.
-- [x] Create `ModuleLabel` for `ARTICLE.014 //`, `NOTE.032 //`, etc.
+- [x] Create `ModuleLabel` for `ARTICLE.014 //`, `DOC.007 //`, etc.
 - [x] Create `TaxonomyChip` for areas, content types, source, and status.
 - [x] Create `TechnicalButton` for rectangular mono actions.
 - [x] Create `CloseUpBlock` for dark artifact sections.
@@ -44,7 +44,6 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Build `/[locale]/now`.
 - [x] Build `/[locale]/articles` index.
 - [x] Build `/[locale]/areas` index and area detail pages.
-- [x] Build `/[locale]/notes` index.
 - [x] Build `/[locale]/recommendations` index.
 - [x] Build `/[locale]/documents` index.
 - [x] Build `/[locale]/projects` index.
@@ -64,23 +63,22 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 ## Phase 6: Detail Templates
 
 - [x] Create article detail layout.
-- [x] Create note detail layout.
 - [x] Create project detail layout.
 - [x] Create recommendation detail layout.
 - [x] Add metadata rail: area, date, source/status/tags/language where relevant.
-- [x] Add related content section for article, note, project, and recommendation pages.
-- [x] Add optional table of contents for long articles and long notes.
+- [x] Add related content section for article, project, and recommendation pages.
+- [x] Add optional table of contents for long articles.
 - [x] Add support for code blocks and artifact figures.
-- [x] Add bilingual navigation between article, note, project, and recommendation translations.
-- [x] Replace duplicated article/note alternate-link logic with the shared content alternate helper.
+- [x] Add bilingual navigation between article, project, and recommendation translations.
+- [x] Use the shared content alternate helper across translated detail pages.
 
 ## Phase 7: Obsidian Publishing
 
 - [ ] Decide where curated Obsidian exports live.
 - [ ] Expand import/curation guidelines in `docs/` or `src/content/README.md`.
 - [ ] Define how to handle internal links, backlinks, embeds, images, and PDFs.
-- [ ] Add one curated Obsidian note as a pilot.
-- [ ] Add one longer curated note or reference artifact as a pilot.
+- [ ] Add one curated Obsidian document as a pilot.
+- [ ] Add one longer curated reference artifact as a pilot.
 - [ ] Verify private context is removed before publishing.
 
 ## Phase 8: Content Seed
@@ -89,11 +87,11 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Write initial minimalist homepage copy in Spanish.
 - [ ] Add first engineering article.
 - [ ] Add first product article.
-- [x] Add first philosophy article or note.
-- [x] Add first productivity article or note.
+- [x] Add first philosophy article.
+- [x] Add first productivity article.
 - [x] Add first faith article.
-- [ ] Add first martial arts article or note.
-- [ ] Add first finance note or recommendation.
+- [ ] Add first martial arts article.
+- [ ] Add first finance article or recommendation.
 - [ ] Add first curated recommendation.
 - [x] Add generic philosophy book project.
 - [x] Add generic martial arts book project.

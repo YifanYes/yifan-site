@@ -11,7 +11,7 @@ locale: "es"
 translationOf: "articles/en/decide-who-you-want-to-be-and-then-do-what-you-must"
 coverImage: "https://miro.medium.com/v2/resize:fit:700/1*3rwr11sNkOxARvnuEhbcxg.jpeg"
 originalUrl: "https://medium.com/@yifanyes/decide-qui%C3%A9n-quieres-ser-y-luego-haz-lo-que-debas-hacer-a2cec07a5f49"
-related: ["articles/es/naval-ravikant-y-el-budismo-racional", "notes/es/la-atencion-es-superficie-de-entrenamiento"]
+related: ["articles/es/naval-ravikant-y-el-budismo-racional"]
 ---
 
 Tú decides quién quieres ser.

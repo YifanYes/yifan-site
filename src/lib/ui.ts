@@ -56,7 +56,6 @@ export const NAV_COPY: Record<
       { label: "Home", path: "/" },
       { label: "Articles", path: "/articles" },
       { label: "Areas", path: "/areas" },
-      { label: "Notes", path: "/notes" },
       { label: "Recommendations", path: "/recommendations" },
       { label: "Projects", path: "/projects" },
       { label: "CV", path: "/cv" }
@@ -84,7 +83,6 @@ export const NAV_COPY: Record<
       { label: "Inicio", path: "/" },
       { label: "Artículos", path: "/articles" },
       { label: "Áreas", path: "/areas" },
-      { label: "Notas", path: "/notes" },
       { label: "Recomendaciones", path: "/recommendations" },
       { label: "Proyectos", path: "/projects" },
       { label: "CV", path: "/cv" }
@@ -101,7 +99,6 @@ export const DETAIL_COPY: Record<
     backLinks: {
       articles: string
       areas: string
-      notes: string
       projects: string
       recommendations: string
     }
@@ -114,7 +111,6 @@ export const DETAIL_COPY: Record<
     backLinks: {
       articles: "<- Articles",
       areas: "<- Areas",
-      notes: "<- Notes",
       projects: "<- Projects",
       recommendations: "<- Recommendations"
     }
@@ -126,7 +122,6 @@ export const DETAIL_COPY: Record<
     backLinks: {
       articles: "<- Artículos",
       areas: "<- Áreas",
-      notes: "<- Notas",
       projects: "<- Proyectos",
       recommendations: "<- Recomendaciones"
     }
@@ -162,7 +157,7 @@ export const HOME_COPY: Record<
   en: {
     metaTitle: "Home",
     description:
-      "Personal website for Yifan: writing, study notes, recommendations, projects, and a professional CV.",
+      "Personal website for Yifan: writing, recommendations, projects, and a professional CV.",
     moduleLabel: "PROFILE.001 //",
     eyebrow: "PERSONAL WEBSITE",
     title: "Yifan Ye Zhang",
@@ -232,14 +227,8 @@ export const HOME_COPY: Record<
       {
         title: "Areas",
         description:
-          "Topic hubs that connect writing, notes, recommendations, and projects.",
+          "Topic hubs that connect writing, recommendations, and projects.",
         path: "/areas"
-      },
-      {
-        title: "Notes",
-        description:
-          "Study notes from books, courses, resources, and active learning.",
-        path: "/notes"
       },
       {
         title: "Recommendations",
@@ -263,7 +252,7 @@ export const HOME_COPY: Record<
   es: {
     metaTitle: "Inicio",
     description:
-      "Sitio personal de Yifan: artículos, notas de estudio, recomendaciones, proyectos y CV profesional.",
+      "Sitio personal de Yifan: artículos, recomendaciones, proyectos y CV profesional.",
     moduleLabel: "PROFILE.001 //",
     eyebrow: "SITIO PERSONAL",
     title: "Yifan Ye Zhang",
@@ -334,14 +323,8 @@ export const HOME_COPY: Record<
       {
         title: "Áreas",
         description:
-          "Hubs temáticos que conectan artículos, notas, recomendaciones y proyectos.",
+          "Hubs temáticos que conectan artículos, recomendaciones y proyectos.",
         path: "/areas"
-      },
-      {
-        title: "Notas",
-        description:
-          "Notas de estudio de libros, cursos, recursos y aprendizaje activo.",
-        path: "/notes"
       },
       {
         title: "Recomendaciones",
@@ -368,7 +351,6 @@ export const HOME_COPY: Record<
 type ArchivePage =
   | "now"
   | "articles"
-  | "notes"
   | "documents"
   | "projects"
   | "recommendations"
@@ -407,16 +389,6 @@ export const ARCHIVE_COPY: Record<
       title: "Articles and essays.",
       listLabel: "PUBLISHED ARTICLES //",
       empty: "No articles are published yet."
-    },
-    notes: {
-      metaTitle: "Notes",
-      description:
-        "Study notes from books, courses, resources, and active learning.",
-      moduleLabel: "NOTE.INDEX //",
-      kicker: "STUDY NOTES",
-      title: "Notes from study and practice.",
-      listLabel: "PUBLISHED NOTES //",
-      empty: "No notes are published yet."
     },
     documents: {
       metaTitle: "Documents",
@@ -467,16 +439,6 @@ export const ARCHIVE_COPY: Record<
       title: "Artículos y ensayos.",
       listLabel: "ARTÍCULOS PUBLICADOS //",
       empty: "Todavía no hay artículos publicados."
-    },
-    notes: {
-      metaTitle: "Notas",
-      description:
-        "Notas de estudio de libros, cursos, recursos y aprendizaje activo.",
-      moduleLabel: "NOTE.INDEX //",
-      kicker: "NOTAS DE ESTUDIO",
-      title: "Notas de estudio y práctica.",
-      listLabel: "NOTAS PUBLICADAS //",
-      empty: "Todavía no hay notas publicadas."
     },
     documents: {
       metaTitle: "Documentos",
@@ -546,12 +508,10 @@ export const ARCHIVE_FILTER_COPY: Record<
       faith: "Faith",
       productivity: "Productivity",
       "martial-arts": "Martial Arts",
-      finance: "Finance",
-      notes: "Notes"
+      finance: "Finance"
     },
     types: {
       article: "Article",
-      note: "Note",
       document: "Document",
       project: "Project",
       recommendation: "Recommendation",
@@ -576,12 +536,10 @@ export const ARCHIVE_FILTER_COPY: Record<
       faith: "Fe",
       productivity: "Productividad",
       "martial-arts": "Artes marciales",
-      finance: "Finanzas",
-      notes: "Notas"
+      finance: "Finanzas"
     },
     types: {
       article: "Artículo",
-      note: "Nota",
       document: "Documento",
       project: "Proyecto",
       recommendation: "Recomendación",
@@ -603,7 +561,6 @@ export const AREAS_COPY: Record<
     emptyLabel: string
     sections: {
       articles: string
-      notes: string
       recommendations: string
       projects: string
     }
@@ -612,7 +569,7 @@ export const AREAS_COPY: Record<
   en: {
     metaTitle: "Areas",
     description:
-      "Broad topic hubs connecting articles, notes, recommendations, and projects.",
+      "Broad topic hubs connecting articles, recommendations, and projects.",
     moduleLabel: "AREA.INDEX //",
     kicker: "TOPIC HUBS",
     title: "Areas of study and work.",
@@ -621,7 +578,6 @@ export const AREAS_COPY: Record<
     emptyLabel: "No public artifacts are published in this area yet.",
     sections: {
       articles: "ARTICLES //",
-      notes: "NOTES //",
       recommendations: "RECOMMENDATIONS //",
       projects: "PROJECTS //"
     }
@@ -629,7 +585,7 @@ export const AREAS_COPY: Record<
   es: {
     metaTitle: "Áreas",
     description:
-      "Hubs temáticos que conectan artículos, notas, recomendaciones y proyectos.",
+      "Hubs temáticos que conectan artículos, recomendaciones y proyectos.",
     moduleLabel: "AREA.INDEX //",
     kicker: "HUBS TEMÁTICOS",
     title: "Áreas de estudio y trabajo.",
@@ -638,7 +594,6 @@ export const AREAS_COPY: Record<
     emptyLabel: "Todavía no hay artefactos públicos en esta área.",
     sections: {
       articles: "ARTÍCULOS //",
-      notes: "NOTAS //",
       recommendations: "RECOMENDACIONES //",
       projects: "PROYECTOS //"
     }
@@ -773,7 +728,7 @@ export const ABOUT_COPY: Record<
         label: "02",
         value: "Philosophy, productivity, and disciplined practice"
       },
-      { label: "03", value: ["Articles", "Curated notes", "Projects"] }
+      { label: "03", value: ["Articles", "Documents", "Projects"] }
     ]
   },
   es: {
@@ -792,7 +747,7 @@ export const ABOUT_COPY: Record<
         label: "02",
         value: "Filosofía, productividad y práctica disciplinada"
       },
-      { label: "03", value: ["Artículos", "Notas curadas", "Proyectos"] }
+      { label: "03", value: ["Artículos", "Documentos", "Proyectos"] }
     ]
   }
 }

@@ -10,7 +10,7 @@ featured: true
 status: "active"
 locale: "es"
 translationOf: "projects/en/martial-arts-book"
-related: ["notes/es/la-atencion-es-superficie-de-entrenamiento", "documents/es/notas-operativas-del-workbench"]
+related: ["documents/es/notas-operativas-del-workbench"]
 ---
 
 Este es un proyecto activo de libro, pero el título público se mantiene genérico por ahora.

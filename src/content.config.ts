@@ -13,7 +13,6 @@ const areaSchema = z.enum([
 	'productivity',
 	'martial-arts',
 	'finance',
-	'notes',
 ]);
 
 const statusSchema = z.enum(['draft', 'published', 'active', 'paused', 'archived', 'evergreen']);
@@ -71,14 +70,6 @@ const areas = defineCollection({
 	}),
 });
 
-const notes = defineCollection({
-	loader: contentLoader('notes'),
-	schema: z.object({
-		...baseContentSchema,
-		type: z.literal('note'),
-	}),
-});
-
 const documents = defineCollection({
 	loader: contentLoader('documents'),
 	schema: z.object({
@@ -124,7 +115,6 @@ const cv = defineCollection({
 export const collections = {
 	articles,
 	areas,
-	notes,
 	documents,
 	projects,
 	recommendations,

@@ -3,7 +3,6 @@ import type { CollectionEntry } from 'astro:content';
 type ArchiveEntry =
 	| CollectionEntry<'articles'>
 	| CollectionEntry<'documents'>
-	| CollectionEntry<'notes'>
 	| CollectionEntry<'now'>
 	| CollectionEntry<'projects'>
 	| CollectionEntry<'recommendations'>;
@@ -11,7 +10,6 @@ type ArchiveEntry =
 const routeSegments: Record<ArchiveEntry['collection'], string> = {
 	articles: 'articles',
 	documents: 'documents',
-	notes: 'notes',
 	now: 'now',
 	projects: 'projects',
 	recommendations: 'recommendations',

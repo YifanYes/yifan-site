@@ -11,7 +11,6 @@ curated: true
 status: "evergreen"
 locale: "es"
 translationOf: "areas/en/productivity"
-related: ["notes/es/la-atencion-es-superficie-de-entrenamiento"]
 ---
 
 «Productividad» es una palabra que significa muchas cosas para mucha gente.

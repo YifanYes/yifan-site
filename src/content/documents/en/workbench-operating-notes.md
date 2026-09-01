@@ -1,18 +1,17 @@
 ---
 title: "Workbench Operating Notes"
-description: "A living document for how the public site should organize articles, notes, documents, and projects."
+description: "A living document for how the public site should organize articles, documents, recommendations, and projects."
 date: 2026-06-17
 type: "document"
-area: "notes"
+area: "product"
 tags: ["workbench", "content", "systems"]
 draft: false
 source: "manual"
 curated: true
 status: "active"
 locale: "en"
-related: ["notes/en/attention-is-a-training-surface"]
 ---
 
 The workbench should make artifacts easier to inspect.
 
-Articles can carry arguments, notes can keep working models alive, documents can hold longer reference material, and projects can show decisions under pressure.
+Articles can carry arguments, documents can hold longer reference material, recommendations can explain what is worth consuming, and projects can show decisions under pressure.
