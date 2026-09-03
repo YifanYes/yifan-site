@@ -50,8 +50,10 @@ function parseFrontmatter(source, filePath) {
 
 function parseYamlSubset(frontmatter, filePath) {
 	const data = {};
+	const lines = frontmatter.split('\n');
 
-	for (const [index, line] of frontmatter.split('\n').entries()) {
+	for (let index = 0; index < lines.length; index += 1) {
+		const line = lines[index];
 		const trimmed = line.trim();
 
 		if (!trimmed || trimmed.startsWith('#')) {
@@ -66,7 +68,20 @@ function parseYamlSubset(frontmatter, filePath) {
 		}
 
 		const key = trimmed.slice(0, separatorIndex).trim();
-		const rawValue = trimmed.slice(separatorIndex + 1).trim();
+		let rawValue = trimmed.slice(separatorIndex + 1).trim();
+
+		if (!rawValue && lines[index + 1]?.trim().startsWith('[')) {
+			index += 1;
+			rawValue = lines[index].trim();
+		}
+
+		if (rawValue.startsWith('[') && !rawValue.endsWith(']')) {
+			while (index + 1 < lines.length && !rawValue.endsWith(']')) {
+				index += 1;
+				rawValue += lines[index].trim();
+			}
+		}
+
 		data[key] = parseValue(rawValue);
 	}
 
@@ -146,7 +161,7 @@ function assertStringArray(value, filePath, field) {
 	}
 
 	if (!Array.isArray(value) || value.some((item) => typeof item !== 'string' || item.length === 0)) {
-		errors.push(`${filePath}: ${field} must be an inline array of non-empty strings`);
+		errors.push(`${filePath}: ${field} must be an array of non-empty strings`);
 		return [];
 	}
 
