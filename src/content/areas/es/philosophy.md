@@ -11,7 +11,12 @@ curated: true
 status: "evergreen"
 locale: "es"
 translationOf: "areas/en/philosophy"
-related: ["articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer", "articles/es/naval-ravikant-y-el-budismo-racional", "projects/es/libro-de-filosofia"]
+related:
+  [
+    "articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer",
+    "articles/es/naval-ravikant-y-el-budismo-racional",
+    "projects/es/libro-de-filosofia"
+  ]
 ---
 
 Dos de las grandes preguntas de la vida son:
@@ -131,7 +136,7 @@ Quizá la felicidad se encuentra en dar todo lo que tienes a algo que te importa
 
 > Las tres grandes cosas de la vida son riqueza, salud y felicidad. Las perseguimos en ese orden, pero su importancia va en sentido contrario. - Naval Ravikant
 
-## Principios
+## Construye tu identidad
 
 Una de las cosas más sorprendentes de nosotros es nuestra capacidad para moldear nuestra identidad. Podemos convertirnos en muchas cosas, aunque no en todo.
 

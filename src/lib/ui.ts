@@ -168,7 +168,6 @@ export const HOME_COPY: Record<
       {
         label: "Building",
         value: [
-          "Spanish Advanced Drones",
           "Philosophy book",
           "Martial arts book"
         ]
@@ -193,11 +192,6 @@ export const HOME_COPY: Record<
     ],
     projectsLabel: "CURRENT PROJECTS //",
     projects: [
-      {
-        title: "Spanish Advanced Drones",
-        description: "Drone work and advanced aerial services in Spain.",
-        href: "https://www.spanish-advanced-drones.com/"
-      },
       {
         title: "Philosophy book",
         description:
@@ -263,7 +257,6 @@ export const HOME_COPY: Record<
       {
         label: "Construyendo",
         value: [
-          "Spanish Advanced Drones",
           "Libro de filosofía",
           "Libro de artes marciales"
         ]
@@ -288,12 +281,6 @@ export const HOME_COPY: Record<
     ],
     projectsLabel: "PROYECTOS ACTUALES //",
     projects: [
-      {
-        title: "Spanish Advanced Drones",
-        description:
-          "Trabajo con drones y servicios aéreos avanzados en España.",
-        href: "https://www.spanish-advanced-drones.com/"
-      },
       {
         title: "Libro de filosofía",
         description:
