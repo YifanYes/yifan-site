@@ -1,12 +1,3 @@
 ---
-import LocalizedAreasPage from '../../../components/LocalizedAreasPage.astro';
-import Layout from '../../../layouts/Layout.astro';
-import { AREAS_COPY } from '../../../lib/ui';
-
-const locale = 'en';
-const copy = AREAS_COPY[locale];
+return Astro.redirect('/en/notes/', 301);
 ---
-
-<Layout title={copy.metaTitle} description={copy.description} locale={locale} path="/en/areas/">
-	<LocalizedAreasPage locale={locale} />
-</Layout>

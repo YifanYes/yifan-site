@@ -55,7 +55,7 @@ export const NAV_COPY: Record<
     links: [
       { label: "Home", path: "/" },
       { label: "Articles", path: "/articles" },
-      { label: "Areas", path: "/areas" },
+      { label: "Notes", path: "/notes" },
       { label: "Projects", path: "/projects" },
       { label: "CV", path: "/cv" }
     ]
@@ -81,7 +81,7 @@ export const NAV_COPY: Record<
     links: [
       { label: "Inicio", path: "/" },
       { label: "Artículos", path: "/articles" },
-      { label: "Áreas", path: "/areas" },
+      { label: "Notas", path: "/notes" },
       { label: "Proyectos", path: "/projects" },
       { label: "CV", path: "/cv" }
     ]
@@ -96,7 +96,7 @@ export const DETAIL_COPY: Record<
     parentNavigationLabel: string
     backLinks: {
       articles: string
-      areas: string
+      notes: string
       projects: string
     }
   }
@@ -107,7 +107,7 @@ export const DETAIL_COPY: Record<
     parentNavigationLabel: "Parent navigation",
     backLinks: {
       articles: "<- Articles",
-      areas: "<- Areas",
+      notes: "<- Notes",
       projects: "<- Projects"
     }
   },
@@ -117,7 +117,7 @@ export const DETAIL_COPY: Record<
     parentNavigationLabel: "Navegación superior",
     backLinks: {
       articles: "<- Artículos",
-      areas: "<- Áreas",
+      notes: "<- Notas",
       projects: "<- Proyectos"
     }
   }
@@ -214,10 +214,10 @@ export const HOME_COPY: Record<
         path: "/articles"
       },
       {
-        title: "Areas",
+        title: "Notes",
         description:
-          "Topic hubs that connect writing and projects.",
-        path: "/areas"
+          "Writing and projects organized by subject.",
+        path: "/notes"
       },
       {
         title: "Projects",
@@ -297,10 +297,10 @@ export const HOME_COPY: Record<
         path: "/articles"
       },
       {
-        title: "Áreas",
+        title: "Notas",
         description:
-          "Hubs temáticos que conectan artículos y proyectos.",
-        path: "/areas"
+          "Artículos y proyectos organizados por tema.",
+        path: "/notes"
       },
       {
         title: "Proyectos",
@@ -495,7 +495,7 @@ export const ARCHIVE_FILTER_COPY: Record<
   }
 }
 
-export const AREAS_COPY: Record<
+export const NOTES_COPY: Record<
   Locale,
   {
     metaTitle: string
@@ -513,13 +513,13 @@ export const AREAS_COPY: Record<
   }
 > = {
   en: {
-    metaTitle: "Areas",
+    metaTitle: "Notes",
     description:
-      "Broad topic hubs connecting articles and projects.",
-    moduleLabel: "AREA.INDEX //",
-    kicker: "TOPIC HUBS",
-    title: "Areas of study and work.",
-    listLabel: "ACTIVE AREAS //",
+      "Notes on subjects I'm obsessed about",
+    moduleLabel: "NOTE.INDEX //",
+    kicker: "SUBJECT INDEX",
+    title: "Notes",
+    listLabel: "SUBJECTS //",
     focusLabel: "FOCUS //",
     emptyLabel: "No public artifacts are published in this area yet.",
     sections: {
@@ -528,13 +528,13 @@ export const AREAS_COPY: Record<
     }
   },
   es: {
-    metaTitle: "Áreas",
+    metaTitle: "Notas",
     description:
-      "Hubs temáticos que conectan artículos y proyectos.",
-    moduleLabel: "AREA.INDEX //",
-    kicker: "HUBS TEMÁTICOS",
-    title: "Áreas de estudio y trabajo.",
-    listLabel: "ÁREAS ACTIVAS //",
+      "Notas sobre temas que me obsesionan",
+    moduleLabel: "NOTE.INDEX //",
+    kicker: "ÍNDICE TEMÁTICO",
+    title: "Notas",
+    listLabel: "TEMAS //",
     focusLabel: "FOCO //",
     emptyLabel: "Todavía no hay artefactos públicos en esta área.",
     sections: {

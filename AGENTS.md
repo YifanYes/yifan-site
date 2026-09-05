@@ -72,11 +72,11 @@ Planned localized routes use English and Spanish prefixes from the start. The ro
 /{locale}/articles
   Long-form articles and essays.
 
-/{locale}/areas
-  Broad topic hubs such as software engineering, philosophy, martial arts, finance, product, productivity, and faith.
+/{locale}/notes
+  Notes organized around software engineering, philosophy, martial arts, finance, product, productivity, and faith.
 
-/{locale}/areas/{area}
-  Area hub linking related articles and projects.
+/{locale}/notes/{area}
+  Subject page linking related articles and projects.
 
 /{locale}/documents
   Longer imported documents, PDFs, polished Obsidian artifacts, or reference material.
@@ -177,7 +177,7 @@ finance
 
 - Home: minimalist personal profile, current role at Signe, social links, current projects, currently studying topics, and a short guide to the site.
 - Articles: long-form authority around engineering, product, philosophy, productivity, and martial arts.
-- Areas: broad topic hubs that connect articles, documents, and projects by interest area.
+- Notes: writing, documents, and projects organized by interest area.
 - Projects: systems and judgment, not only polished products. Include software experiments, client work, the personal website, and the two generic active book projects while final titles may change.
 - CV: practical professional profile for recruiters and collaborators. Keep it direct, skimmable, and visible in the main navigation.
 - Documents: secondary archive for longer PDFs, polished artifacts, or reference material if needed.
@@ -214,6 +214,7 @@ Obsidian draft -> curated MD/MDX -> src/content/documents or src/content/article
 ## Editing Principles
 
 - Keep the site content-first.
+- Apply user-facing changes to both English and Spanish unless the user explicitly limits the request to one language.
 - Prefer custom, simple Astro components and CSS.
 - Use MDX and Astro Content Collections for content surfaces.
 - Treat Obsidian imports as curated public artifacts, not raw vault dumps.

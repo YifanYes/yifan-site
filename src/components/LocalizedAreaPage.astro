@@ -2,7 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import type { AreaDefinition } from '../lib/areas';
 import type { Locale } from '../lib/i18n';
-import { AREAS_COPY, ARCHIVE_FILTER_COPY, DETAIL_COPY } from '../lib/ui';
+import { NOTES_COPY, ARCHIVE_FILTER_COPY, DETAIL_COPY } from '../lib/ui';
 import ModuleLabel from './ModuleLabel.astro';
 import PageHeader from './PageHeader.astro';
 import SiteShell from './SiteShell.astro';
@@ -24,7 +24,7 @@ type Props = {
 };
 
 const { locale, area, content: AreaContent, items } = Astro.props;
-const copy = AREAS_COPY[locale];
+const copy = NOTES_COPY[locale];
 const detailCopy = DETAIL_COPY[locale];
 const filterCopy = ARCHIVE_FILTER_COPY[locale];
 const routeSegments: Record<AreaEntry['collection'], string> = {
@@ -49,10 +49,10 @@ const getEntryHref = (entry: AreaEntry) => {
 };
 ---
 
-<SiteShell locale={locale} currentPath={`/${locale}/areas/${area.slug}/`}>
+<SiteShell locale={locale} currentPath={`/${locale}/notes/${area.slug}/`}>
 	<main class="area-page">
 		<nav class="area-page__back" aria-label={detailCopy.parentNavigationLabel}>
-			<TechnicalButton href={`/${locale}/areas/`} label={detailCopy.backLinks.areas} variant="quiet" />
+			<TechnicalButton href={`/${locale}/notes/`} label={detailCopy.backLinks.notes} variant="quiet" />
 		</nav>
 
 		<PageHeader

@@ -362,7 +362,7 @@ Primary navigation should make the content model obvious:
 ```text
 Home
 Articles
-Areas
+Notes
 Projects
 CV
 ```
@@ -382,7 +382,7 @@ It should include:
 - Latest articles.
 - Selected documents.
 - Selected projects.
-- Areas of interest.
+- Notes organized by area of interest.
 
 ### Articles
 

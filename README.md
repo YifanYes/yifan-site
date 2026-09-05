@@ -9,7 +9,7 @@ This is not a generic portfolio or a product marketing site. The website should 
 - Built with Astro.
 - Uses English and Spanish localized routes: `/en/...` and `/es/...`.
 - Root route redirects to `/en/`.
-- Primary public structure: Home, Articles, Areas, Projects, and CV.
+- Primary public structure: Home, Articles, Notes, Projects, and CV.
 - Content is modeled with Astro Content Collections for articles, projects, documents, and current-status entries.
 - React should be reserved for interactive islands.
 - Visual work follows the Systems Workbench direction in `DESIGN.md`.

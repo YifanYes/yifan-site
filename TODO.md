@@ -42,7 +42,7 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Build localized home pages for English and Spanish.
 - [x] Build `/[locale]/now`.
 - [x] Build `/[locale]/articles` index.
-- [x] Build `/[locale]/areas` index and area detail pages.
+- [x] Build `/[locale]/notes` index and subject detail pages.
 - [x] Build `/[locale]/documents` index.
 - [x] Build `/[locale]/projects` index.
 - [x] Build `/[locale]/projects/[slug]` detail pages.

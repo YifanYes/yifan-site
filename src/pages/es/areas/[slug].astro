@@ -1,11 +1,5 @@
 ---
-import { getCollection, render } from 'astro:content';
-import LocalizedAreaPage from '../../../components/LocalizedAreaPage.astro';
-import Layout from '../../../layouts/Layout.astro';
-import { AREA_BY_SLUG, AREA_DEFINITIONS } from '../../../lib/areas';
-import { byNewestEntry } from '../../../lib/archive-items';
-
-const locale = 'es';
+import { AREA_DEFINITIONS } from '../../../lib/areas';
 
 export async function getStaticPaths() {
 	return AREA_DEFINITIONS.map((area) => ({
@@ -13,35 +7,5 @@ export async function getStaticPaths() {
 	}));
 }
 
-const { slug } = Astro.params;
-const area = AREA_BY_SLUG.get(slug as any);
-
-if (!area) {
-	return Astro.redirect('/es/areas/');
-}
-
-const [areaEntries, articles, projects] = await Promise.all([
-	getCollection('areas', ({ data }) => data.locale === locale && data.area === area.slug && !data.draft),
-	getCollection('articles', ({ data }) => data.locale === locale && data.area === area.slug && !data.draft),
-	getCollection('projects', ({ data }) => data.locale === locale && data.area === area.slug && !data.draft),
-]);
-const areaEntry = areaEntries[0];
-const AreaContent = areaEntry ? (await render(areaEntry)).Content : undefined;
+return Astro.redirect(`/es/notes/${Astro.params.slug}/`, 301);
 ---
-
-<Layout
-	title={`${area.title[locale]} Area`}
-	description={area.description[locale]}
-	locale={locale}
-	path={`/es/areas/${area.slug}/`}
->
-	<LocalizedAreaPage
-		locale={locale}
-		area={area}
-		content={AreaContent}
-		items={{
-			articles: articles.sort(byNewestEntry),
-			projects: projects.sort(byNewestEntry),
-		}}
-	/>
-</Layout>

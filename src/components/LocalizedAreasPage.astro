@@ -2,7 +2,7 @@
 import type { Locale } from '../lib/i18n';
 import { AREA_DEFINITIONS } from '../lib/areas';
 import { getLocalizedPath } from '../lib/i18n';
-import { AREAS_COPY } from '../lib/ui';
+import { NOTES_COPY } from '../lib/ui';
 import ModuleLabel from './ModuleLabel.astro';
 import PageHeader from './PageHeader.astro';
 import SiteShell from './SiteShell.astro';
@@ -13,7 +13,7 @@ type Props = {
 };
 
 const { locale } = Astro.props;
-const copy = AREAS_COPY[locale];
+const copy = NOTES_COPY[locale];
 ---
 
 <SiteShell locale={locale}>
@@ -28,8 +28,8 @@ const copy = AREAS_COPY[locale];
 
 			<div class="areas-page__grid">
 				{AREA_DEFINITIONS.map((area) => (
-					<a class="areas-page__card" href={getLocalizedPath(locale, `/areas/${area.slug}`)}>
-						<span>AREA.{area.slug.toUpperCase()} //</span>
+					<a class="areas-page__card" href={getLocalizedPath(locale, `/notes/${area.slug}`)}>
+						<span>NOTE.{area.slug.toUpperCase()} //</span>
 						<strong>{area.title[locale]}</strong>
 						<p>{area.description[locale]}</p>
 						<div class="areas-page__chips">
