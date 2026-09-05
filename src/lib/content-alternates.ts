@@ -1,7 +1,7 @@
 import type { CollectionEntry } from 'astro:content';
 import { LOCALE_LABELS, type AlternateLink } from './i18n';
 
-type TranslatedCollection = 'articles' | 'projects' | 'recommendations';
+type TranslatedCollection = 'articles' | 'projects';
 
 type TranslatedEntry<Collection extends TranslatedCollection> = CollectionEntry<Collection>;
 

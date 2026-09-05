@@ -4,15 +4,13 @@ type ArchiveEntry =
 	| CollectionEntry<'articles'>
 	| CollectionEntry<'documents'>
 	| CollectionEntry<'now'>
-	| CollectionEntry<'projects'>
-	| CollectionEntry<'recommendations'>;
+	| CollectionEntry<'projects'>;
 
 const routeSegments: Record<ArchiveEntry['collection'], string> = {
 	articles: 'articles',
 	documents: 'documents',
 	now: 'now',
 	projects: 'projects',
-	recommendations: 'recommendations',
 };
 
 export function byNewestEntry(left: ArchiveEntry, right: ArchiveEntry): number {

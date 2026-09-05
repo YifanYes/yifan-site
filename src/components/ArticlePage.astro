@@ -41,7 +41,6 @@ const relatedCollections = await Promise.all([
 	getCollection('articles'),
 	getCollection('documents'),
 	getCollection('projects'),
-	getCollection('recommendations'),
 	getCollection('now'),
 ]);
 const routeSegments = {
@@ -49,7 +48,6 @@ const routeSegments = {
 	documents: 'documents',
 	now: 'now',
 	projects: 'projects',
-	recommendations: 'recommendations',
 };
 const relatedEntries = new Map(
 	relatedCollections.flat().map((relatedEntry) => [

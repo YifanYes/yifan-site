@@ -14,7 +14,7 @@ related: ["articles/en/decide-who-you-want-to-be-and-then-do-what-you-must"]
 
 This is an active book project, but the title is intentionally generic for now.
 
-The work is still early. The public page should track the premise, related essays, study notes, and recommendations without pretending the book is close to finished.
+The work is still early. The public page should track the premise, related essays, and study notes without pretending the book is close to finished.
 
 ## Current Shape
 

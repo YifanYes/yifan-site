@@ -11,8 +11,7 @@ import TechnicalButton from './TechnicalButton.astro';
 
 type AreaEntry =
 	| CollectionEntry<'articles'>
-	| CollectionEntry<'projects'>
-	| CollectionEntry<'recommendations'>;
+	| CollectionEntry<'projects'>;
 
 type Props = {
 	locale: Locale;
@@ -20,7 +19,6 @@ type Props = {
 	content?: any;
 	items: {
 		articles: AreaEntry[];
-		recommendations: AreaEntry[];
 		projects: AreaEntry[];
 	};
 };
@@ -32,7 +30,6 @@ const filterCopy = ARCHIVE_FILTER_COPY[locale];
 const routeSegments: Record<AreaEntry['collection'], string> = {
 	articles: 'articles',
 	projects: 'projects',
-	recommendations: 'recommendations',
 };
 const dateFormatter = new Intl.DateTimeFormat(locale, {
 	year: 'numeric',
@@ -42,7 +39,6 @@ const dateFormatter = new Intl.DateTimeFormat(locale, {
 const formatLabel = (value: string) => value.replaceAll('-', ' ');
 const sectionEntries = [
 	{ label: copy.sections.articles, entries: items.articles },
-	{ label: copy.sections.recommendations, entries: items.recommendations },
 	{ label: copy.sections.projects, entries: items.projects },
 ];
 const hasItems = sectionEntries.some((section) => section.entries.length > 0);

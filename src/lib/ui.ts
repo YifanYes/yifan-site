@@ -56,7 +56,6 @@ export const NAV_COPY: Record<
       { label: "Home", path: "/" },
       { label: "Articles", path: "/articles" },
       { label: "Areas", path: "/areas" },
-      { label: "Recommendations", path: "/recommendations" },
       { label: "Projects", path: "/projects" },
       { label: "CV", path: "/cv" }
     ]
@@ -83,7 +82,6 @@ export const NAV_COPY: Record<
       { label: "Inicio", path: "/" },
       { label: "Artículos", path: "/articles" },
       { label: "Áreas", path: "/areas" },
-      { label: "Recomendaciones", path: "/recommendations" },
       { label: "Proyectos", path: "/projects" },
       { label: "CV", path: "/cv" }
     ]
@@ -100,7 +98,6 @@ export const DETAIL_COPY: Record<
       articles: string
       areas: string
       projects: string
-      recommendations: string
     }
   }
 > = {
@@ -111,8 +108,7 @@ export const DETAIL_COPY: Record<
     backLinks: {
       articles: "<- Articles",
       areas: "<- Areas",
-      projects: "<- Projects",
-      recommendations: "<- Recommendations"
+      projects: "<- Projects"
     }
   },
   es: {
@@ -122,8 +118,7 @@ export const DETAIL_COPY: Record<
     backLinks: {
       articles: "<- Artículos",
       areas: "<- Áreas",
-      projects: "<- Proyectos",
-      recommendations: "<- Recomendaciones"
+      projects: "<- Proyectos"
     }
   }
 }
@@ -157,7 +152,7 @@ export const HOME_COPY: Record<
   en: {
     metaTitle: "Home",
     description:
-      "Personal website for Yifan: writing, recommendations, projects, and a professional CV.",
+      "Personal website for Yifan: writing, projects, and a professional CV.",
     moduleLabel: "PROFILE.001 //",
     eyebrow: "PERSONAL WEBSITE",
     title: "Yifan Ye Zhang",
@@ -221,14 +216,8 @@ export const HOME_COPY: Record<
       {
         title: "Areas",
         description:
-          "Topic hubs that connect writing, recommendations, and projects.",
+          "Topic hubs that connect writing and projects.",
         path: "/areas"
-      },
-      {
-        title: "Recommendations",
-        description:
-          "Curated favorite books, media, courses, tools, and games.",
-        path: "/recommendations"
       },
       {
         title: "Projects",
@@ -246,7 +235,7 @@ export const HOME_COPY: Record<
   es: {
     metaTitle: "Inicio",
     description:
-      "Sitio personal de Yifan: artículos, recomendaciones, proyectos y CV profesional.",
+      "Sitio personal de Yifan: artículos, proyectos y CV profesional.",
     moduleLabel: "PROFILE.001 //",
     eyebrow: "SITIO PERSONAL",
     title: "Yifan Ye Zhang",
@@ -310,14 +299,8 @@ export const HOME_COPY: Record<
       {
         title: "Áreas",
         description:
-          "Hubs temáticos que conectan artículos, recomendaciones y proyectos.",
+          "Hubs temáticos que conectan artículos y proyectos.",
         path: "/areas"
-      },
-      {
-        title: "Recomendaciones",
-        description:
-          "Favoritos curados: libros, media, cursos, herramientas y juegos.",
-        path: "/recommendations"
       },
       {
         title: "Proyectos",
@@ -340,7 +323,6 @@ type ArchivePage =
   | "articles"
   | "documents"
   | "projects"
-  | "recommendations"
 
 type ArchivePageCopy = {
   metaTitle: string
@@ -395,16 +377,6 @@ export const ARCHIVE_COPY: Record<
       title: "Projects and case studies.",
       listLabel: "SELECTED PROJECTS //",
       empty: "No projects are published yet."
-    },
-    recommendations: {
-      metaTitle: "Recommendations",
-      description:
-        "Curated favorite books, media, courses, tools, games, and resources from Yifan.",
-      moduleLabel: "RECOMMENDATION.INDEX //",
-      kicker: "CURATED FAVORITES",
-      title: "Recommendations worth returning to.",
-      listLabel: "CURATED RECOMMENDATIONS //",
-      empty: "No recommendations are published yet."
     }
   },
   es: {
@@ -446,16 +418,6 @@ export const ARCHIVE_COPY: Record<
       title: "Proyectos y casos de estudio.",
       listLabel: "PROYECTOS SELECCIONADOS //",
       empty: "Todavía no hay proyectos publicados."
-    },
-    recommendations: {
-      metaTitle: "Recomendaciones",
-      description:
-        "Favoritos curados: libros, media, cursos, herramientas, juegos y recursos.",
-      moduleLabel: "RECOMMENDATION.INDEX //",
-      kicker: "FAVORITOS CURADOS",
-      title: "Recomendaciones para volver.",
-      listLabel: "RECOMENDACIONES CURADAS //",
-      empty: "Todavía no hay recomendaciones publicadas."
     }
   }
 }
@@ -501,7 +463,6 @@ export const ARCHIVE_FILTER_COPY: Record<
       article: "Article",
       document: "Document",
       project: "Project",
-      recommendation: "Recommendation",
       now: "Now"
     }
   },
@@ -529,7 +490,6 @@ export const ARCHIVE_FILTER_COPY: Record<
       article: "Artículo",
       document: "Documento",
       project: "Proyecto",
-      recommendation: "Recomendación",
       now: "Ahora"
     }
   }
@@ -548,7 +508,6 @@ export const AREAS_COPY: Record<
     emptyLabel: string
     sections: {
       articles: string
-      recommendations: string
       projects: string
     }
   }
@@ -556,7 +515,7 @@ export const AREAS_COPY: Record<
   en: {
     metaTitle: "Areas",
     description:
-      "Broad topic hubs connecting articles, recommendations, and projects.",
+      "Broad topic hubs connecting articles and projects.",
     moduleLabel: "AREA.INDEX //",
     kicker: "TOPIC HUBS",
     title: "Areas of study and work.",
@@ -565,14 +524,13 @@ export const AREAS_COPY: Record<
     emptyLabel: "No public artifacts are published in this area yet.",
     sections: {
       articles: "ARTICLES //",
-      recommendations: "RECOMMENDATIONS //",
       projects: "PROJECTS //"
     }
   },
   es: {
     metaTitle: "Áreas",
     description:
-      "Hubs temáticos que conectan artículos, recomendaciones y proyectos.",
+      "Hubs temáticos que conectan artículos y proyectos.",
     moduleLabel: "AREA.INDEX //",
     kicker: "HUBS TEMÁTICOS",
     title: "Áreas de estudio y trabajo.",
@@ -581,7 +539,6 @@ export const AREAS_COPY: Record<
     emptyLabel: "Todavía no hay artefactos públicos en esta área.",
     sections: {
       articles: "ARTÍCULOS //",
-      recommendations: "RECOMENDACIONES //",
       projects: "PROYECTOS //"
     }
   }

@@ -8,7 +8,7 @@ import SiteShell from './SiteShell.astro';
 import TaxonomyChip from './TaxonomyChip.astro';
 import TechnicalButton from './TechnicalButton.astro';
 
-type ArtifactEntry = CollectionEntry<'projects'> | CollectionEntry<'recommendations'>;
+type ArtifactEntry = CollectionEntry<'projects'>;
 
 type Props = {
 	entry: ArtifactEntry;
@@ -24,13 +24,11 @@ const routeSegments = {
 	documents: 'documents',
 	now: 'now',
 	projects: 'projects',
-	recommendations: 'recommendations',
 };
 const slug = entry.id.split('/').slice(1).join('/');
 const routeSegment = routeSegments[entry.collection];
 const artifactPath = `/${data.locale}/${routeSegment}/${slug}/`;
-const backLinkLabel =
-	entry.collection === 'projects' ? copy.backLinks.projects : copy.backLinks.recommendations;
+const backLinkLabel = copy.backLinks.projects;
 const dateFormatter = new Intl.DateTimeFormat(data.locale, {
 	year: 'numeric',
 	month: 'long',
@@ -46,15 +44,10 @@ const metadata = [
 	['Language', data.locale],
 ];
 
-if (entry.collection === 'recommendations') {
-	metadata.splice(2, 0, ['Medium', formatTitleLabel(entry.data.medium)]);
-}
-
 const relatedCollections = await Promise.all([
 	getCollection('articles'),
 	getCollection('documents'),
 	getCollection('projects'),
-	getCollection('recommendations'),
 	getCollection('now'),
 ]);
 const relatedEntries = new Map(
@@ -118,7 +111,7 @@ const relatedItems = (data.related ?? [])
 
 		<RelatedContent label="RELATED //" items={relatedItems}>
 			<p class="artifact-page__related-empty">
-				Related articles, recommendations, and projects will appear here as the archive grows.
+				Related articles and projects will appear here as the archive grows.
 			</p>
 		</RelatedContent>
 	</main>

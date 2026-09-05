@@ -16,19 +16,6 @@ const areaSchema = z.enum([
 ]);
 
 const statusSchema = z.enum(['draft', 'published', 'active', 'paused', 'archived', 'evergreen']);
-const recommendationMediumSchema = z.enum([
-	'book',
-	'course',
-	'movie',
-	'anime',
-	'manga',
-	'video-game',
-	'podcast',
-	'tool',
-	'article',
-	'video',
-	'other',
-]);
 
 const baseContentSchema = {
 	title: z.string().min(1),
@@ -86,16 +73,6 @@ const projects = defineCollection({
 	}),
 });
 
-const recommendations = defineCollection({
-	loader: contentLoader('recommendations'),
-	schema: z.object({
-		...baseContentSchema,
-		type: z.literal('recommendation'),
-		medium: recommendationMediumSchema,
-		recommendedFor: z.array(z.string().min(1)).optional(),
-	}),
-});
-
 const now = defineCollection({
 	loader: contentLoader('now'),
 	schema: z.object({
@@ -117,7 +94,6 @@ export const collections = {
 	areas,
 	documents,
 	projects,
-	recommendations,
 	now,
 	cv,
 };

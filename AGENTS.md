@@ -2,14 +2,14 @@
 
 ## Project
 
-`yifan-site` is Yifan's personal website: a minimalist personal profile and content-first workbench for articles, topic areas, curated recommendations, projects, and a professional CV.
+`yifan-site` is Yifan's personal website: a minimalist personal profile and content-first workbench for articles, topic areas, projects, and a professional CV.
 
 The site should answer five questions quickly:
 
 - Who is Yifan?
 - What does he think about engineering, product, productivity, philosophy, and disciplined practice?
 - What is he building, studying, and testing?
-- What articles, recommendations, documents, and projects are worth reading?
+- What articles, documents, and projects are worth reading?
 - How do the projects fit into the larger body of work?
 
 Core thesis:
@@ -31,7 +31,7 @@ Before changing structure, content models, routes, visual design, CSS, or page l
 - Use Astro for the personal website.
 - Use TypeScript where project code needs types.
 - Use MDX when content needs embedded components.
-- Use Astro Content Collections for articles, recommendations, projects, documents, and now entries.
+- Use Astro Content Collections for articles, projects, documents, and now entries.
 - Use React only for interactive islands.
 - Use Tailwind CSS only if utility CSS becomes useful; default to custom, simple CSS.
 - Prefer pnpm for package management.
@@ -49,12 +49,12 @@ The chosen direction is based on the absorbed `workbench` prototype. Do not expo
 
 Core visual patterns to preserve:
 
-- Module system: `ARTICLE.014 //`, `DOC.007 //`, `RECOMMENDATION.011 //`, `PROJECT.003 //`.
-- Indexes with `GRID` / `LIST` modes for articles, recommendations, projects, and documents when content volume justifies it.
+- Module system: `ARTICLE.014 //`, `DOC.007 //`, `PROJECT.003 //`.
+- Indexes with `GRID` / `LIST` modes for articles, projects, and documents when content volume justifies it.
 - Hard separators and archive layouts instead of soft card-heavy surfaces.
 - Dark `CLOSE-UP //` blocks for code, diagrams, document previews, screenshots, and important artifacts.
 - Sober taxonomy chips for area, type, source, and status.
-- Related content sections at the end of articles, recommendations, documents, and projects.
+- Related content sections at the end of articles, documents, and projects.
 - Technical rectangular buttons with mono labels and strong borders.
 
 ## Site Structure
@@ -76,10 +76,7 @@ Planned localized routes use English and Spanish prefixes from the start. The ro
   Broad topic hubs such as software engineering, philosophy, martial arts, finance, product, productivity, and faith.
 
 /{locale}/areas/{area}
-  Area hub linking related articles, recommendations, and projects.
-
-/{locale}/recommendations
-  Curated favorite books, courses, movies, anime, manga, video games, tools, and other resources, with why Yifan recommends them.
+  Area hub linking related articles and projects.
 
 /{locale}/documents
   Longer imported documents, PDFs, polished Obsidian artifacts, or reference material.
@@ -126,9 +123,6 @@ src/content/articles/
 src/content/areas/
   Body content for broad topic hubs such as software engineering, philosophy, martial arts, finance, product, productivity, and faith.
 
-src/content/recommendations/
-  Curated favorite books, courses, movies, anime, manga, video games, tools, and other resources.
-
 src/content/documents/
   Longer documents, study notes, PDFs, and structured artifacts.
 
@@ -168,22 +162,6 @@ curated: true
 locale: "en"
 ```
 
-Suggested frontmatter for recommendations:
-
-```yaml
-title: "Meditations"
-description: "Why this book is worth returning to."
-date: 2026-06-17
-type: "recommendation"
-medium: "book"
-area: "philosophy"
-tags: ["stoicism", "character", "practice"]
-draft: false
-curated: true
-locale: "en"
-related: ["documents/en/notes-on-meditations"]
-```
-
 Suggested `area` values:
 
 ```text
@@ -199,8 +177,7 @@ finance
 
 - Home: minimalist personal profile, current role at Signe, social links, current projects, currently studying topics, and a short guide to the site.
 - Articles: long-form authority around engineering, product, philosophy, productivity, and martial arts.
-- Areas: broad topic hubs that connect articles, recommendations, documents, and projects by interest area.
-- Recommendations: curated favorites only. Include books, courses, movies, anime, manga, video games, tools, and other media/resources, with a concise reason for the recommendation and links to articles or documents when available.
+- Areas: broad topic hubs that connect articles, documents, and projects by interest area.
 - Projects: systems and judgment, not only polished products. Include software experiments, client work, the personal website, and the two generic active book projects while final titles may change.
 - CV: practical professional profile for recruiters and collaborators. Keep it direct, skimmable, and visible in the main navigation.
 - Documents: secondary archive for longer PDFs, polished artifacts, or reference material if needed.

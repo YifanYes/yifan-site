@@ -20,10 +20,9 @@ if (!area) {
 	return Astro.redirect('/es/areas/');
 }
 
-const [areaEntries, articles, recommendations, projects] = await Promise.all([
+const [areaEntries, articles, projects] = await Promise.all([
 	getCollection('areas', ({ data }) => data.locale === locale && data.area === area.slug && !data.draft),
 	getCollection('articles', ({ data }) => data.locale === locale && data.area === area.slug && !data.draft),
-	getCollection('recommendations', ({ data }) => data.locale === locale && data.area === area.slug && !data.draft),
 	getCollection('projects', ({ data }) => data.locale === locale && data.area === area.slug && !data.draft),
 ]);
 const areaEntry = areaEntries[0];
@@ -42,7 +41,6 @@ const AreaContent = areaEntry ? (await render(areaEntry)).Content : undefined;
 		content={AreaContent}
 		items={{
 			articles: articles.sort(byNewestEntry),
-			recommendations: recommendations.sort(byNewestEntry),
 			projects: projects.sort(byNewestEntry),
 		}}
 	/>

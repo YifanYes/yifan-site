@@ -6,7 +6,6 @@ This directory contains the public content model for the site.
 
 - `articles`: long-form articles and essays.
 - `areas`: body content for broad topic hubs such as software engineering or martial arts.
-- `recommendations`: curated favorite books, courses, movies, anime, manga, video games, tools, and other resources.
 - `documents`: longer documents, study notes, PDFs, and polished artifacts.
 - `projects`: case studies, experiments, tools, prototypes, systems, and active writing projects.
 - `now`: current-status entries if `/now` becomes archival.
@@ -37,22 +36,6 @@ martial-arts
 finance
 ```
 
-Recommendations also require a `medium` value:
-
-```text
-book
-course
-movie
-anime
-manga
-video-game
-podcast
-tool
-article
-video
-other
-```
-
 Optional fields:
 
 ```yaml
@@ -62,22 +45,6 @@ featured: false
 status: "published"
 related: ["articles/en/decide-who-you-want-to-be-and-then-do-what-you-must"]
 translationOf: "articles/en/decide-who-you-want-to-be-and-then-do-what-you-must"
-```
-
-Recommendation example:
-
-```yaml
-title: "Title"
-description: "Why this favorite is worth recommending."
-date: 2026-06-17
-type: "recommendation"
-medium: "book"
-area: "philosophy"
-tags: ["philosophy", "practice"]
-draft: false
-curated: true
-locale: "en"
-related: ["articles/en/example-book-essay"]
 ```
 
 ## Detail Body Features

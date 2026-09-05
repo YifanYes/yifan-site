@@ -65,7 +65,6 @@ The site is centered on:
 - Martial arts.
 - Finance.
 - Curated Obsidian documents.
-- Curated recommendations across books, courses, media, games, tools, and resources.
 - Projects and case studies.
 - A practical CV surface.
 
@@ -108,7 +107,6 @@ Format:
 ```text
 ARTICLE.014 //
 DOC.007 //
-RECOMMENDATION.011 //
 PROJECT.003 //
 AREA.ENGINEERING //
 SOURCE.OBSIDIAN //
@@ -181,7 +179,7 @@ Taxonomy chips should feel like archive filters, not colorful badges.
 Use them for:
 
 - Areas: `Engineering`, `Product`, `Philosophy`, `Faith`, `Productivity`, `Martial Arts`, `Finance`.
-- Content types: `Article`, `Recommendation`, `Document`, `Project`.
+- Content types: `Article`, `Document`, `Project`.
 - Source/status: `Obsidian`, `Curated`, `Draft`, `Published`, `Updated`.
 
 Style:
@@ -365,7 +363,6 @@ Primary navigation should make the content model obvious:
 Home
 Articles
 Areas
-Recommendations
 Projects
 CV
 ```

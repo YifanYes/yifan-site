@@ -15,7 +15,7 @@ related: ["articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer"]
 
 Este es un proyecto activo de libro, pero el título público se mantiene genérico por ahora.
 
-El trabajo todavía está en una fase temprana. Esta página debería seguir la premisa, los ensayos relacionados, las notas de estudio y las recomendaciones sin presentar el libro como si estuviera cerca de estar terminado.
+El trabajo todavía está en una fase temprana. Esta página debería seguir la premisa, los ensayos relacionados y las notas de estudio sin presentar el libro como si estuviera cerca de estar terminado.
 
 ## Forma actual
 

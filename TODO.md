@@ -15,14 +15,13 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 ## Phase 2: Content Architecture
 
 - [x] Add Astro Content Collections.
-- [x] Define schemas for `articles`, `recommendations`, `documents`, `projects`, and optional `now`.
+- [x] Define schemas for `articles`, `documents`, `projects`, and optional `now`.
 - [x] Include locale-aware fields in content schemas.
 - [x] Add required frontmatter: `title`, `description`, `date`, `type`, `area`, `tags`, `draft`, `locale`.
 - [x] Add optional frontmatter: `source`, `curated`, `featured`, `status`, `related`, `translationOf`.
 - [x] Decide slug strategy for translated content.
 - [x] Create sample English and Spanish entries for initial content types.
 - [x] Add generic active project entries for the philosophy book and martial arts book.
-- [ ] Add first curated recommendation entries once Yifan chooses the favorites to publish.
 
 ## Phase 3: Design System
 
@@ -44,11 +43,9 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Build `/[locale]/now`.
 - [x] Build `/[locale]/articles` index.
 - [x] Build `/[locale]/areas` index and area detail pages.
-- [x] Build `/[locale]/recommendations` index.
 - [x] Build `/[locale]/documents` index.
 - [x] Build `/[locale]/projects` index.
 - [x] Build `/[locale]/projects/[slug]` detail pages.
-- [x] Build `/[locale]/recommendations/[slug]` detail pages.
 - [x] Build `/[locale]/cv`.
 - [x] Build `/[locale]/about`.
 
@@ -64,12 +61,11 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 
 - [x] Create article detail layout.
 - [x] Create project detail layout.
-- [x] Create recommendation detail layout.
 - [x] Add metadata rail: area, date, source/status/tags/language where relevant.
-- [x] Add related content section for article, project, and recommendation pages.
+- [x] Add related content section for article and project pages.
 - [x] Add optional table of contents for long articles.
 - [x] Add support for code blocks and artifact figures.
-- [x] Add bilingual navigation between article, project, and recommendation translations.
+- [x] Add bilingual navigation between article and project translations.
 - [x] Use the shared content alternate helper across translated detail pages.
 
 ## Phase 7: Obsidian Publishing
@@ -91,8 +87,7 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Add first productivity article.
 - [x] Add first faith article.
 - [ ] Add first martial arts article.
-- [ ] Add first finance article or recommendation.
-- [ ] Add first curated recommendation.
+- [ ] Add first finance article.
 - [x] Add generic philosophy book project.
 - [x] Add generic martial arts book project.
 - [x] Add CV page in English and Spanish.
