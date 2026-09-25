@@ -11,7 +11,7 @@ curated: true
 status: "evergreen"
 locale: "es"
 translationOf: "areas/en/martial-arts"
-related: ["articles/es/por-que-debes-aprender-a-luchar", "projects/es/libro-de-artes-marciales"]
+related: ["articles/es/por-que-debes-aprender-a-luchar"]
 ---
 
 Las artes marciales vuelven honestas las abstracciones.

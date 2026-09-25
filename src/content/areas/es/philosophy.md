@@ -14,8 +14,7 @@ translationOf: "areas/en/philosophy"
 related:
   [
     "articles/es/decide-quien-quieres-ser-y-luego-haz-lo-que-debas-hacer",
-    "articles/es/naval-ravikant-y-el-budismo-racional",
-    "projects/es/libro-de-filosofia"
+    "articles/es/naval-ravikant-y-el-budismo-racional"
   ]
 ---
 

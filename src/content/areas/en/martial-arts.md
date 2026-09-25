@@ -10,7 +10,7 @@ source: "obsidian"
 curated: true
 status: "evergreen"
 locale: "en"
-related: ["articles/en/why-you-should-learn-to-fight", "projects/en/martial-arts-book"]
+related: ["articles/en/why-you-should-learn-to-fight"]
 ---
 
 Martial arts make abstractions honest.

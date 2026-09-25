@@ -10,7 +10,7 @@ source: "obsidian"
 curated: true
 status: "evergreen"
 locale: "en"
-related: ["articles/en/decide-who-you-want-to-be-and-then-do-what-you-must", "articles/en/naval-ravikant-and-rational-buddhism", "projects/en/philosophy-book"]
+related: ["articles/en/decide-who-you-want-to-be-and-then-do-what-you-must", "articles/en/naval-ravikant-and-rational-buddhism"]
 ---
 
 Two of the big questions in life are:

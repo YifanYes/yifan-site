@@ -35,8 +35,6 @@ Nada de métricas vanidosas. Nada de adorar el agotamiento. Nada de buscar la ap
 
 Solo resultados. Muéstrame las cifras.
 
-Traducción realizada con la versión gratuita del traductor DeepL.com
-
 ## Eficiencia vs efectividad
 
 El uso más eficiente de tu tiempo es hacer lo que haces mejor y lo que nadie más puede hacer.

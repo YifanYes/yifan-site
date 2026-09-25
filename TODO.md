@@ -21,7 +21,7 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Add optional frontmatter: `source`, `curated`, `featured`, `status`, `related`, `translationOf`.
 - [x] Decide slug strategy for translated content.
 - [x] Create sample English and Spanish entries for initial content types.
-- [x] Add generic active project entries for the philosophy book and martial arts book.
+- [x] Add Covenant as an active project.
 
 ## Phase 3: Design System
 
@@ -88,8 +88,7 @@ The site should support English and Spanish from the beginning. Do not hardcode 
 - [x] Add first faith article.
 - [ ] Add first martial arts article.
 - [ ] Add first finance article.
-- [x] Add generic philosophy book project.
-- [x] Add generic martial arts book project.
+- [x] Add Covenant project in English and Spanish.
 - [x] Add CV page in English and Spanish.
 - [x] Add About page in English and Spanish.
 

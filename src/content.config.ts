@@ -70,6 +70,10 @@ const projects = defineCollection({
 	schema: z.object({
 		...baseContentSchema,
 		type: z.literal('project'),
+		demoVideo: z.object({
+			src: z.string().min(1),
+			label: z.string().min(1),
+		}).optional(),
 	}),
 });
 

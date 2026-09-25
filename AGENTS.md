@@ -84,9 +84,8 @@ Planned localized routes use English and Spanish prefixes from the start. The ro
 /{locale}/projects
   Experiments, tools, prototypes, systems, client work, and active writing projects.
 
-/{locale}/projects/philosophy-book
-/{locale}/projects/martial-arts-book
-  Generic public pages for the two active book projects until final titles are stable.
+/{locale}/projects/covenant
+  Project page for the Covenant productivity app.
 
 /{locale}/cv
   Practical professional profile and recruiter-friendly surface.
@@ -178,7 +177,7 @@ finance
 - Home: minimalist personal profile, current role at Signe, social links, current projects, currently studying topics, and a short guide to the site.
 - Articles: long-form authority around engineering, product, philosophy, productivity, and martial arts.
 - Notes: writing, documents, and projects organized by interest area.
-- Projects: systems and judgment, not only polished products. Include software experiments, client work, the personal website, and the two generic active book projects while final titles may change.
+- Projects: systems and judgment, not only polished products. Include software experiments, client work, the personal website, and active product work such as Covenant.
 - CV: practical professional profile for recruiters and collaborators. Keep it direct, skimmable, and visible in the main navigation.
 - Documents: secondary archive for longer PDFs, polished artifacts, or reference material if needed.
 - Now: secondary current-status route if kept; the homepage carries the main current-work summary.

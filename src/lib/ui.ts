@@ -162,10 +162,7 @@ export const HOME_COPY: Record<
       { label: "Work", value: "Software engineer at Signe" },
       {
         label: "Building",
-        value: [
-          "Philosophy book",
-          "Martial arts book"
-        ]
+        value: "Covenant"
       },
       {
         label: "Studying",
@@ -188,16 +185,10 @@ export const HOME_COPY: Record<
     projectsLabel: "CURRENT PROJECTS //",
     projects: [
       {
-        title: "Philosophy book",
+        title: "Covenant",
         description:
-          "An early writing project about philosophy, character, discipline, and how to live.",
-        path: "/projects/philosophy-book"
-      },
-      {
-        title: "Martial arts book",
-        description:
-          "An early writing project about martial arts, training, pressure, and practice.",
-        path: "/projects/martial-arts-book"
+          "A gamified productivity app for managing tasks, habits, and objectives through RPG-style progression.",
+        path: "/projects/covenant"
       }
     ],
     studyingLabel: "CURRENTLY STUDYING //",
@@ -245,10 +236,7 @@ export const HOME_COPY: Record<
       { label: "Trabajo", value: "Software engineer en Signe" },
       {
         label: "Construyendo",
-        value: [
-          "Libro de filosofía",
-          "Libro de artes marciales"
-        ]
+        value: "Covenant"
       },
       {
         label: "Estudiando",
@@ -271,16 +259,10 @@ export const HOME_COPY: Record<
     projectsLabel: "PROYECTOS ACTUALES //",
     projects: [
       {
-        title: "Libro de filosofía",
+        title: "Covenant",
         description:
-          "Un proyecto temprano de escritura sobre filosofía, carácter, disciplina y cómo vivir.",
-        path: "/projects/libro-de-filosofia"
-      },
-      {
-        title: "Libro de artes marciales",
-        description:
-          "Un proyecto temprano de escritura sobre artes marciales, entrenamiento, presión y práctica.",
-        path: "/projects/libro-de-artes-marciales"
+          "Una aplicación de productividad gamificada para gestionar tareas, hábitos y objetivos mediante una progresión de estilo RPG.",
+        path: "/projects/covenant"
       }
     ],
     studyingLabel: "ESTUDIANDO //",

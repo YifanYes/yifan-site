@@ -29,6 +29,19 @@ const slug = entry.id.split('/').slice(1).join('/');
 const routeSegment = routeSegments[entry.collection];
 const artifactPath = `/${data.locale}/${routeSegment}/${slug}/`;
 const backLinkLabel = copy.backLinks.projects;
+const projectVideos = import.meta.glob('../assets/projects/*.{mp4,webm}', {
+	eager: true,
+	query: '?url',
+	import: 'default',
+}) as Record<string, string>;
+const demoVideoUrl = data.demoVideo
+	? projectVideos[`../assets/projects/${data.demoVideo.src}`]
+	: undefined;
+
+if (data.demoVideo && !demoVideoUrl) {
+	throw new Error(`Project video not found: ${data.demoVideo.src}`);
+}
+
 const dateFormatter = new Intl.DateTimeFormat(data.locale, {
 	year: 'numeric',
 	month: 'long',
@@ -106,6 +119,19 @@ const relatedItems = (data.related ?? [])
 		</header>
 
 		<div class="artifact-page__body workbench-prose">
+			{demoVideoUrl && data.demoVideo && (
+				<video
+					class="artifact-page__video"
+					src={demoVideoUrl}
+					aria-label={data.demoVideo.label}
+					autoplay
+					muted
+					loop
+					playsinline
+					controls
+					preload="metadata"
+				/>
+			)}
 			<Content />
 		</div>
 
@@ -197,6 +223,15 @@ const relatedItems = (data.related ?? [])
 		margin: clamp(36px, 6vw, 72px) auto;
 		font-size: clamp(1.02rem, 1.4vw, 1.14rem);
 		line-height: 1.8;
+	}
+
+	.artifact-page__video {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin: 0 0 clamp(28px, 5vw, 48px);
+		border: 0;
+		background: transparent;
 	}
 
 	.artifact-page__body :global(*) {
